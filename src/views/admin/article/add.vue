@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-03 17:32:56
- * @LastEditTime: 2022-03-08 11:12:33
+ * @LastEditTime: 2022-03-16 22:52:10
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /vvt/src/views/admin/article/add.vue
@@ -348,7 +348,7 @@
     }
     .editor {
       min-height: 290px;
-      /deep/ .el-form-item__content {
+      :deep(.el-form-item__content) {
         display: block !important;
       }
     }

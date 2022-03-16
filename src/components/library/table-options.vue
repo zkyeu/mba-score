@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-16 08:07:09
- * @LastEditTime: 2022-03-16 17:06:02
- * @LastEditors: liliang
+ * @LastEditTime: 2022-03-16 22:51:12
+ * @LastEditors: Please set LastEditors
  * @Description: 
  * @FilePath: /score/src/components/library/table-options.vue
 -->
@@ -160,25 +160,25 @@
     .el-range-editor.el-input__inner {
       padding: 3px 1px 3px 10px;
     }
-    /deep/ .el-tag.el-tag--info {
+    :deep(.el-tag.el-tag--info) {
       background-color: rgb(247, 248, 251);
       color: rgb(51, 51, 51);
       border-color: #dde9ff;
     }
-    /deep/ .el-date-editor--datetimerange {
+    :deep(.el-date-editor--datetimerange) {
       width: 340px;
     }
-    /deep/ .el-date-editor--time-select {
+    :deep(.el-date-editor--time-select) {
       width: 116px;
     }
-    /deep/ .el-date-editor--daterange,
+    :deep(.el-date-editor--daterange),
     .el-date-editor--timerange {
       width: 280px;
       .el-range-separator {
         width: 17px;
       }
     }
-    /deep/ .el-date-editor--date {
+    :deep(.el-date-editor--date) {
       width: 140px;
     }
     .input-with-select-wrapper {
@@ -187,7 +187,7 @@
       .option-select.el-select.el-select--mini,
       .option-input.el-input.el-input--mini {
         @common-option();
-        /deep/ .el-input .el-input__inner {
+        :deep(.el-input .el-input__inner) {
           width: 140px;
         }
       }
@@ -202,13 +202,13 @@
         background-color: #606266;
       }
     }
-    .input-with-select /deep/ .el-input-group__prepend {
+    .input-with-select :deep(.el-input-group__prepend) {
       background-color: #fff;
       .el-input {
         width: 100px;
       }
     }
-    /deep/ .option-select-input {
+    :deep(.option-select-input) {
       .item-select {
         input {
           border-radius: 0;

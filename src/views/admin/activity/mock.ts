@@ -1,8 +1,8 @@
 /*
  * @Author: liliang
  * @Date: 2022-03-16 21:01:33
- * @LastEditors: liliang
- * @LastEditTime: 2022-03-16 21:35:17
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-03-17 00:50:33
  * @FilePath: /score/src/views/admin/activity/mock.js
  * @Description:
  */
@@ -109,7 +109,7 @@ export default {
       },
       {
         value: 'is',
-        label: '必须',
+        label: '大类',
       },
       {
         value: 'class',

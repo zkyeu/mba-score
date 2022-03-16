@@ -1,8 +1,8 @@
 /*
  * @Author: liliang
  * @Date: 2022-01-25 10:10:09
- * @LastEditors: liliang
- * @LastEditTime: 2022-03-16 09:44:52
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-03-16 22:48:38
  * @FilePath: /score/src/router/index.ts
  * @Description: 
  */
@@ -19,24 +19,6 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/', // 后台首页
         component: () => import('@/views/admin/view.vue')
-      },
-      { // 文章管理
-        path: 'article',
-        component: () => import('@/views/admin/article/article.vue'),
-        children: [
-          {
-            path: '/admin/article',
-            component: () => import('@/views/admin/article/list.vue')
-          },
-          {
-            path: '/admin/article/add',
-            component: () => import('@/views/admin/article/add.vue')
-          },
-          {
-            path: '/admin/article/edit',
-            component: () => import('@/views/admin/b.vue')
-          }
-        ]
       },
       { // 活动系统
         path: 'activity',

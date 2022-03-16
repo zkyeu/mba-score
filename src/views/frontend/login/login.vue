@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-01-06 14:19:28
- * @LastEditTime: 2022-01-28 22:38:46
+ * @LastEditTime: 2022-03-16 22:52:25
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /vvt/src/views/frontend/login/login.vue
@@ -243,7 +243,7 @@
           margin: 0 auto;
           &.form {
             width: 300px;
-            /deep/ .el-form {
+            :deep(.el-form) {
               width: 100%;
             }
           }
