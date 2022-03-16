@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  font-size: 14px;
+}
+html,
+body {
+  height: 100%;
+  background: #f8f8f8;
+}
+li {
+  list-style: none;
+}
