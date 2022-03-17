@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-02 20:10:38
- * @LastEditTime: 2022-03-17 08:19:15
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-03-17 21:00:29
+ * @LastEditors: liliang
  * @Description: In User Settings Edit
  * @FilePath: /score/src/components/admin/left-nav.vue
 -->
@@ -92,7 +92,7 @@
   const store = useStore(key);
   const leftNavData = computed(() => store.state.leftNav);
   const leftNav = reactive({
-    data: navMock,
+    data: navMock
   });
   const therouter = (v: string) => {
     // activeRouter.value = v;
@@ -145,6 +145,7 @@
           border-right: #2483ff solid 1px;
         }
       }
+
       .el-sub-menu [class^='el-icon-'],
       .el-menu-item [class^='el-icon-'] {
         margin-top: -1px;

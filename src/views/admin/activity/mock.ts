@@ -1,9 +1,9 @@
 /*
  * @Author: liliang
  * @Date: 2022-03-16 21:01:33
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-03-17 00:50:33
- * @FilePath: /score/src/views/admin/activity/mock.js
+ * @LastEditors: liliang
+ * @LastEditTime: 2022-03-17 19:21:43
+ * @FilePath: /score/src/views/admin/activity/mock.ts
  * @Description:
  */
 export default {
@@ -35,15 +35,15 @@ export default {
           label: '省部级',
         },
         {
-          value: 1,
+          value: '院校级',
           label: '院校级',
         },
         {
-          value: 2,
+          value: '年级',
           label: '年级',
         },
         {
-          value: 3,
+          value: '班级',
           label: '班级',
         },
         {
@@ -63,12 +63,12 @@ export default {
           label: '全部',
         },
         {
-          value: 0,
-          label: '是',
+          value: '一级分类',
+          label: '一级分类',
         },
         {
-          value: 1,
-          label: '否',
+          value: '二级分类',
+          label: '二级分类',
         },
       ],
     },
@@ -91,7 +91,7 @@ export default {
           label: '暂停',
         },
         {
-          value: 3,
+          value: '正常',
           label: '正常',
         },
       ],
@@ -109,7 +109,7 @@ export default {
       },
       {
         value: 'is',
-        label: '大类',
+        label: '类别',
       },
       {
         value: 'class',
@@ -131,7 +131,7 @@ export default {
     tablelist: [
       {
         id: 1,
-        is: '是',
+        is: '一级分类',
         class: '院校级',
         date: '2016-05-03',
         status: '正常',
@@ -153,7 +153,7 @@ export default {
       },
       {
         id: 2,
-        is: '是',
+        is: '一级分类',
         class: '院校级',
         date: '2016-02-03',
         status: '正常',
@@ -176,7 +176,7 @@ export default {
       },
       {
         id: 4,
-        is: '是',
+        is: '一级分类',
         class: '院校级',
         date: '2019-05-03',
         status: '正常',
@@ -199,7 +199,7 @@ export default {
       },
       {
         id: 5,
-        is: '是',
+        is: '二级分类',
         class: '院校级',
         date: '2021-05-03',
         status: '正常',
@@ -222,7 +222,7 @@ export default {
       },
       {
         id: 6,
-        is: '否',
+        is: '二级分类',
         class: '院校级',
         date: '2018-05-03',
         status: '正常',
@@ -245,7 +245,7 @@ export default {
       },
       {
         id: 10,
-        is: '否',
+        is: '一级分类',
         class: '院校级',
         date: '2016-05-03',
         status: '正常',
@@ -268,7 +268,7 @@ export default {
       },
       {
         id: 11,
-        is: '是',
+        is: '一级分类',
         class: '院校级',
         date: '2016-05-03',
         status: '正常',
@@ -290,7 +290,7 @@ export default {
       },
       {
         id: 17,
-        is: '是',
+        is: '二级分类',
         class: '院校级',
         date: '2016-05-03',
         status: '正常',
@@ -312,7 +312,7 @@ export default {
       },
       {
         id: 18,
-        is: '是',
+        is: '一级分类',
         class: '院校级',
         date: '2016-05-03',
         status: '正常',
@@ -325,6 +325,7 @@ export default {
           {
             value: 'edit',
             label: '编辑',
+            disabled: true
           },
           {
             value: 'delete',
@@ -334,7 +335,7 @@ export default {
       },
       {
         id: 19,
-        is: '是',
+        is: '二级分类',
         class: '院校级',
         date: '2016-05-03',
         status: '正常',
@@ -347,13 +348,14 @@ export default {
           {
             value: 'edit',
             label: '编辑',
+            
           },
           {
             value: 'delete',
-            label: '删除',
-          },
-        ],
-      },
-    ],
+            label: "删除"
+          }
+        ]
+      }
+    ]
   },
 };

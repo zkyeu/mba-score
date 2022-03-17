@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-02 20:10:05
- * @LastEditTime: 2022-03-17 08:11:49
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-03-17 20:45:05
+ * @LastEditors: liliang
  * @Description: 后台首页
  * @FilePath: /score/src/views/admin/index.vue
 -->
@@ -20,7 +20,7 @@
   import LeftNav from '@/components/admin/left-nav.vue';
   import Header from '@/components/admin/header.vue';
   export default {
-    components: { Header, LeftNav },
+    components: { Header, LeftNav }
   };
 </script>
 
@@ -35,7 +35,8 @@
       .main-content-right {
         background: #fff;
         // margin: 10px 10px 2px;
-        width: calc(100vw - 201px);
+        // width: calc(100vw - 201px);
+        flex: 1;
         min-width: 600px;
         height: calc(100vh - 62px);
         overflow-y: auto;

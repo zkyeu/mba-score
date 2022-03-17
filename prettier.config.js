@@ -1,10 +1,10 @@
 /*
  * @Author: your name
  * @Date: 2021-07-28 17:23:11
- * @LastEditTime: 2021-08-16 16:30:24
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-03-17 18:32:51
+ * @LastEditors: liliang
  * @Description: In User Settings Edit
- * @FilePath: /vvt/prettier.config.js
+ * @FilePath: /score/prettier.config.js
  */
 module.exports = {
   printWidth: 100,
@@ -25,4 +25,5 @@ module.exports = {
   htmlWhitespaceSensitivity: 'strict',
   endOfLine: 'lf',
   rangeStart: 0,
+  trailingComma: 'none',
 };
