@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-02 20:10:05
- * @LastEditTime: 2022-03-16 19:01:40
- * @LastEditors: liliang
+ * @LastEditTime: 2022-03-17 08:11:49
+ * @LastEditors: Please set LastEditors
  * @Description: 后台首页
  * @FilePath: /score/src/views/admin/index.vue
 -->
@@ -37,7 +37,7 @@
         // margin: 10px 10px 2px;
         width: calc(100vw - 201px);
         min-width: 600px;
-        height: calc(100vh - 52px);
+        height: calc(100vh - 62px);
         overflow-y: auto;
         &::-webkit-scrollbar {
           width: 3px;

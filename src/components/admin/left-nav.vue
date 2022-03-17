@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-02 20:10:38
- * @LastEditTime: 2022-03-16 21:55:37
- * @LastEditors: liliang
+ * @LastEditTime: 2022-03-17 08:19:15
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /score/src/components/admin/left-nav.vue
 -->
@@ -123,8 +123,8 @@
 <style lang="less" scoped>
   .left-navs {
     display: flex;
-    width: 203px;
-    height: calc(100vh - 52px);
+    width: 200px;
+    height: calc(100vh - 60px);
     padding-top: 10px;
     overflow-y: auto;
     border-right: solid 1px #e6e6e6;

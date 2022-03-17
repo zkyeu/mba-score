@@ -1,8 +1,8 @@
 <!--
  * @Author: liliang
  * @Date: 2022-03-16 08:07:09
- * @LastEditors: liliang
- * @LastEditTime: 2022-03-16 21:25:56
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-03-17 08:23:54
  * @FilePath: /score/src/components/library/table-list.vue
  * @Description: 
 -->
@@ -10,7 +10,7 @@
 <template>
   <section class="table-list">
     <el-table :data="tableData.tablelist" style="width: 100%" border>
-      <el-table-column type="selection" width="38" />
+      <el-table-column type="selection" width="38" v-if="canSelect" />
       <template v-for="(item, index) in tableData.tabletitle">
         <el-table-column
           v-if="item.value !== 'operate'"
@@ -63,6 +63,10 @@
       align: {
         type: String,
         default: 'center',
+      },
+      canSelect: {
+        type: Boolean,
+        default: false,
       },
     },
     setup: (props, ctx) => {
