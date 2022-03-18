@@ -1,11 +1,11 @@
 /*
- * @Author: liliang
- * @Date: 2022-03-16 21:01:33
+ * @Author: liliang | zkyeu@163.com
+ * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-18 20:40:56
- * @FilePath: /score/src/views/admin/activity/mock2.ts
- * @Description:
+ * @LastEditTime: 2022-03-19 00:44:48
+ * @FilePath: /mba-score/src/views/admin/activity/mock2.ts
  */
+
 export default {
   "option": [
       {
@@ -353,94 +353,100 @@ export default {
   ],
   "table": {
       "tabletitle": [
-          {
-              "value": "id",
-              "label": "活动ID",
+        //   {
+        //       "value": "id",
+        //       "label": "活动ID",
+        //       width: '90px'
            
-          },
+        //   },
           {
               "value": "rname",
-              "label": "存档编号",
+              "label": "活动存档编号",
+              width: '170px'
             
           },
           {
               "value": "mba",
               "label": "学生类别",
-         
+              width: '90px'
           },
           {
               "value": "grade",
               "label": "年级",
-            
+              width: '80px'
           },
           {
               "value": "period",
               "label": "学年学期",
-             
+              width: '190px'
           },
           {
               "value": "colortitle",
-              "label": "活动名称"
+              "label": "活动名称",
+              width: '320px',
+              align:'left'
           },
           {
               "value": "leibie",
               "label": "大类别",
-         
+              width: '120px'
           },
           {
               "value": "xleibie",
               "label": "小类别",
-          
+              width: '150px'
           },
           {
               "value": "is",
               "label": "是否必修",
-           
+              width: '90px'
           },
           {
               "value": "jibie",
               "label": "活动等级",
-            
+              width: '90px'
           },
           {
               "value": "xingzhi",
               "label": "活动性质",
-          
+              width: '90px'
           },
           {
               "value": "status",
               "label": "活动状态",
-         
+              width: '90px'
           },
           {
               "value": "bmdate",
               "label": "报名时间",
-         
+              width: '290px'
           },
           {
               "value": "date",
               "label": "活动举办时间",
-       
+              width: '290px'
           },
           {
               "value": "user",
-              "label": "活动负责人"
+              "label": "活动负责人",
+              width: '100px'
           },
           {
               "value": "finsh",
-              "label": "完成情况"
+              "label": "完成情况",
+              width: '90px'
           },
           {
               "value": "operate",
               "label": "操作",
-              "fixed": "right"
+              fixed: 'right'
           }
       ],
       "tablelist": [
           {
               "id": 1231223,
-              "rname": "MBA2022012801",
-              "mba": "MBA",
+              "rname": "ALL2022012801",
+              "mba": "全部",
               "grade": "2021",
               "period": "2021-2022学年 第一学期",
               "colortitle": "《庆新春 迎冬奥》新年云祝福",
@@ -479,7 +485,7 @@ export default {
               "leibie": "文体活动",
               "xleibie": "体育活动",
               "is": "选修",
-              "jibie": "年级",
+              "jibie": "院校级",
               "xingzhi": "线下",
               "status": "正常",
               "bmdate": "2022-03-08 12:00 ～ 2022-03-10 18:00",
@@ -511,7 +517,7 @@ export default {
               "leibie": "文体活动",
               "xleibie": "读书活动",
               "is": "选修",
-              "jibie": "年级",
+              "jibie": "班级",
               "xingzhi": "线上",
               "status": "正常",
               "bmdate": "2022-03-12 12:00 ～ 2022-03-18 18:00",
@@ -535,15 +541,15 @@ export default {
           },
           {
               "id": 432333,
-              "rname": "MBA20220228012",
-              "mba": "MBA",
+              "rname": "MEM20220228012",
+              "mba": "MEM",
               "grade": "2021",
               "period": "2021-2022学年 第一学期",
-              "colortitle": "第十七届企业经营沙盘大赛中获全国总决赛",
+              "colortitle": "第十七届企业经营沙盘大赛",
               "leibie": "赛事",
               "xleibie": "学生比赛",
               "is": "必修",
-              "jibie": "年级",
+              "jibie": "院校",
               "xingzhi": "线下",
               "status": "正常",
               "bmdate": "2022-02-12 12:00 ～ 2022-02-13 18:00",
@@ -567,15 +573,15 @@ export default {
           },
           {
               "id": 123234,
-              "rname": "MBA2021012801",
-              "mba": "MBA",
+              "rname": "MPAcc2021012801",
+              "mba": "MPAcc",
               "grade": "2020",
               "period": "2021-2022学年 第一学期",
               "colortitle": "新年云祝福",
               "leibie": "文体活动",
               "xleibie": "2022冬奥会系列",
               "is": "选修",
-              "jibie": "年级",
+              "jibie": "联合会",
               "xingzhi": "线上",
               "status": "正常",
               "bmdate": "2022-02-12 12:00 ～ 2022-02-13 18:00",
@@ -607,7 +613,7 @@ export default {
               "leibie": "院校活动",
               "xleibie": "2022比赛系列",
               "is": "必修",
-              "jibie": "年级",
+              "jibie": "院校",
               "xingzhi": "线下",
               "status": "正常",
               "bmdate": "2022-02-12 12:00 ～ 2022-02-20 18:00",
@@ -630,16 +636,16 @@ export default {
               ]
           },
           {
-              "id": 123,
-              "rname": "MBA2022012801",
-              "mba": "MBA",
+              "id": 43123,
+              "rname": "EMBA2022012801",
+              "mba": "EMBA",
               "grade": "2021",
               "period": "2021-2022学年 第一学期",
               "colortitle": "北航MBA演讲俱乐部举办第二期演讲沙龙活动",
               "leibie": "社会实践",
               "xleibie": "2022冬奥会系列",
               "is": "选修",
-              "jibie": "年级",
+              "jibie": "联合会",
               "xingzhi": "线下",
               "status": "正常",
               "bmdate": "2022-02-12 12:00 ～ 2022-02-13 18:00",
@@ -663,15 +669,15 @@ export default {
           },
           {
               "id": 12424,
-              "rname": "MBA20220128041",
-              "mba": "MBA",
+              "rname": "MPAcc20220128041",
+              "mba": "MPAcc",
               "grade": "2020",
               "period": "2020-2021学年 第一学期",
-              "colortitle": "嗅觉品味天地，气味影响人生——北航MBA开展文化沙龙主题活动",
+              "colortitle": "嗅觉品味天地，气味影响人生——北航MPAcc开展文化沙龙主题活动",
               "leibie": "社会公益",
               "xleibie": "文体活动",
               "is": "选修",
-              "jibie": "年级",
+              "jibie": "联合会",
               "xingzhi": "线下",
               "status": "正常",
               "bmdate": "2021-09-12 12:00 ～ 2021-09-13 18:00",
@@ -695,8 +701,8 @@ export default {
           },
           {
               "id": 1233532,
-              "rname": "MBA20220128019",
-              "mba": "MBA",
+              "rname": "ALL20220128019",
+              "mba": "全部",
               "grade": "2021",
               "period": "2021-2022学年 第一学期",
               "colortitle": "知行论坛202108期",
@@ -735,7 +741,7 @@ export default {
               "leibie": "社会实践",
               "xleibie": "企业参观",
               "is": "必修",
-              "jibie": "年级",
+              "jibie": "MBA中心",
               "xingzhi": "线下",
               "status": "正常",
               "bmdate": "2022-02-12 12:00 ～ 2022-02-13 18:00",
@@ -790,7 +796,7 @@ export default {
               ]
           },
           {
-              "id": 123,
+              "id": 56123,
               "rname": "MBA202201280111",
               "mba": "MBA",
               "grade": "2020",
@@ -799,7 +805,7 @@ export default {
               "leibie": "文体活动",
               "xleibie": "2022冬奥会系列",
               "is": "必修",
-              "jibie": "年级",
+              "jibie": "中心活动",
               "xingzhi": "线下",
               "status": "暂停",
               "bmdate": "2022-02-12 12:00 ～ 2022-02-13 18:00",
@@ -822,9 +828,9 @@ export default {
               ]
           },
           {
-              "id": 123,
-              "rname": "MBA20220128018",
-              "mba": "MBA",
+              "id": 43123,
+              "rname": "ALL20220128018",
+              "mba": "全部",
               "grade": "2021",
               "period": "2021-2022学年 第一学期",
               "colortitle": "知行论坛 — 区块链与数字经济生态",
@@ -854,7 +860,7 @@ export default {
               ]
           },
           {
-              "id": 123,
+              "id":77123,
               "rname": "MBA20220128014",
               "mba": "MBA",
               "grade": "2021",
@@ -863,7 +869,7 @@ export default {
               "leibie": "文体活动",
               "xleibie": "2022冬奥会系列",
               "is": "必修",
-              "jibie": "年级",
+              "jibie": "联合会",
               "xingzhi": "线上",
               "status": "正常",
               "bmdate": "2022-02-12 12:00 ～ 2022-02-13 18:00",
@@ -886,9 +892,9 @@ export default {
               ]
           },
           {
-              "id": 123,
+              "id": 12323,
               "rname": "MBA20220128012",
-              "mba": "MBA",
+              "mba": "MEM",
               "grade": "2021",
               "period": "2021-2022学年 第一学期",
               "colortitle": "知行论坛 | 演讲与口才系列 — 管理沟通",
@@ -918,9 +924,9 @@ export default {
               ]
           },
           {
-              "id": 123,
-              "rname": "MBA2022012801",
-              "mba": "MBA",
+              "id": 87123,
+              "rname": "ALL2022012801",
+              "mba": "全部",
               "grade": "2021",
               "period": "2021-2022学年 第一学期",
               "colortitle": "《庆新春 迎冬奥》新年云祝福",
@@ -950,7 +956,7 @@ export default {
               ]
           },
           {
-              "id": 123,
+              "id": 7123,
               "rname": "MBA2022012801",
               "mba": "MBA",
               "grade": "2021",
@@ -982,9 +988,9 @@ export default {
               ]
           },
           {
-              "id": 123,
+              "id": 8123,
               "rname": "MBA202201280177",
-              "mba": "MBA",
+              "mba": "EMBA",
               "grade": "2021",
               "period": "2021-2022学年 第一学期",
               "colortitle": "第四届创乐盟大赛初赛",
@@ -1014,16 +1020,16 @@ export default {
               ]
           },
           {
-              "id": 123,
+              "id": 12123,
               "rname": "MBA202201280134",
-              "mba": "MBA",
+              "mba": "MPAcc",
               "grade": "2021",
               "period": "2021-2022学年 第一学期",
               "colortitle": "知行论坛 | 李炳森 — 聚力数字新基建，共建能源互联网",
               "leibie": "文体活动",
               "xleibie": "2022冬奥会系列",
               "is": "必修",
-              "jibie": "年级",
+              "jibie": "院校级",
               "xingzhi": "线上",
               "status": "正常",
               "bmdate": "2022-02-12 12:00 ～ 2022-02-13 18:00",
@@ -1046,7 +1052,7 @@ export default {
               ]
           },
           {
-              "id": 123,
+              "id": 12773,
               "rname": "MBA202201280123",
               "mba": "MBA",
               "grade": "2021",
@@ -1078,7 +1084,7 @@ export default {
               ]
           },
           {
-              "id": 123,
+              "id": 12323,
               "rname": "MBA202201280132",
               "mba": "MBA",
               "grade": "2021",

@@ -1,8 +1,8 @@
 <!--
  * @Author: liliang
  * @Date: 2022-03-16 08:07:09
- * @LastEditors: liliang
- * @LastEditTime: 2022-03-18 20:34:39
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-03-18 23:19:27
  * @FilePath: /score/src/components/library/table-list.vue
  * @Description: 
 -->
@@ -13,8 +13,8 @@
       <el-table-column type="selection" width="38" v-if="canSelect" />
       <template v-for="(item, index) in tableData.tabletitle">
         <el-table-column
-          v-if="item.value !== 'operate'"
-          :key="index + Math.random()"
+          v-if="item.value !== 'operate' && item.value !== 'colortitle'"
+          :key="index + item.value"
           :prop="item.value"
           :label="item.label"
           :sortable="item.sortable"
@@ -22,24 +22,24 @@
           :width="item.width"
         >
         </el-table-column>
-        <!-- <el-table-column
+        <el-table-column
           v-else-if="item.value === 'colortitle'"
-          :key="index + Math.random()"
+          :key="index + item.value"
           :prop="item.value"
           :label="item.label"
           :align="align"
           :width="item.width"
         >
           <template v-slot="scope">
-            <span style="color: #c00">
+            <span class="color-title" @click="handleOperate(item.value, scope.row)">
               {{ scope.row.colortitle }}
             </span>
           </template>
-        </el-table-column> -->
+        </el-table-column>
 
         <el-table-column
           v-else
-          :key="index + Math.random()"
+          :key="index + item.value"
           :prop="item.value"
           :label="item.label"
           :sortable="item.sortable"
@@ -51,7 +51,7 @@
           <template v-slot="scope">
             <span
               v-for="(oper, index) in scope.row.operate"
-              :key="index + Math.random()"
+              :key="index + oper.value"
               class="operation-style"
               :class="oper.disabled ? 'disabled' : ''"
               @click="handleOperate(oper.disabled ? '' : oper.value, scope.row)"
@@ -101,6 +101,12 @@
 
 <style lang="less" scoped>
   .table-list {
+    :deep(.color-title) {
+      color: #2483ff;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: left;
+    }
     :deep(.operation-style) {
       padding: 3px 8px;
       color: #2483ff;

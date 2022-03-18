@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-18 08:38:23
- * @LastEditTime: 2022-03-17 19:44:17
- * @LastEditors: liliang
+ * @LastEditTime: 2022-03-18 23:26:34
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /score/src/views/admin/activity/activity-classify.vue
 -->
@@ -25,7 +25,7 @@
       <pages :total="100" @currentPage="currentPage" />
     </div>
 
-    <!-- 新建分类&编辑分类 -->
+    <!-- 新建&编辑 -->
     <el-dialog
       v-model="showLayer.create"
       :title="showLayer.title"
@@ -42,7 +42,7 @@
           size="default"
         >
           <el-form-item label="分类名称" prop="name">
-            <el-input v-model="ruleForm.name" placeholder="请输入活动名称" />
+            <el-input v-model="ruleForm.name" placeholder="请输入分类名称" />
           </el-form-item>
           <el-form-item label="父类名称" prop="parentId">
             <el-select v-model="ruleForm.parentId" placeholder="选择父类">
@@ -52,7 +52,7 @@
             </el-select>
           </el-form-item>
           <el-form-item label="活动状态" prop="status">
-            <el-select v-model="ruleForm.status" placeholder="请选择活动状态">
+            <el-select v-model="ruleForm.status" placeholder="请选择分类状态">
               <el-option label="院校级" value="yx" />
               <el-option label="新生报道" value="bd" />
             </el-select>
@@ -165,6 +165,7 @@
   const tableData = reactive({
     data: mockData.table
   });
+
   const viewObj = reactive({ data: {} });
   const ruleFormRef = ref<FormInstance>();
   const ruleForm = reactive({
@@ -261,6 +262,8 @@
 
   // 操作
   const handleOperate = (v: any) => {
+    console.log(v);
+
     let key = v.operate;
     viewObj.data = v.rowData;
     switch (key) {

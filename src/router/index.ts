@@ -1,10 +1,9 @@
 /*
- * @Author: liliang
- * @Date: 2022-01-25 10:10:09
+ * @Author: liliang | zkyeu@163.com
+ * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-18 17:34:07
- * @FilePath: /score/src/router/index.ts
- * @Description: 
+ * @LastEditTime: 2022-03-19 00:45:09
+ * @FilePath: /mba-score/src/router/index.ts
  */
 
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
@@ -59,7 +58,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/admin/student/view.vue'),
         children: [
           {
-            path: '/student-info',
+            path: '/student',
             component: () => import('@/views/admin/student/student-info.vue')
           },{
             path: '/student-add',

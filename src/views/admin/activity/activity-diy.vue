@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-18 08:38:23
- * @LastEditTime: 2022-03-18 19:37:32
- * @LastEditors: liliang
+ * @LastEditTime: 2022-03-19 00:01:59
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /score/src/views/admin/activity/activity-diy.vue
 -->
@@ -25,11 +25,11 @@
       <pages :total="100" @currentPage="currentPage" />
     </div>
 
-    <!-- 新建分类&编辑分类 -->
+    <!-- 新建&编辑 -->
     <el-dialog
       v-model="showLayer.create"
       :title="showLayer.title"
-      width="450px"
+      width="650px"
       draggable
       :before-close="handleClose"
     >
@@ -41,26 +41,115 @@
           label-width="90px"
           size="default"
         >
-          <el-form-item label="分类名称" prop="name">
+          基础信息 学生信息 辅助信息
+          <el-form-item label="活动名称" prop="name">
             <el-input v-model="ruleForm.name" placeholder="请输入活动名称" />
           </el-form-item>
-          <el-form-item label="父类名称" prop="parentId">
-            <el-select v-model="ruleForm.parentId" placeholder="选择父类">
-              <el-option label="无" value="无" />
-              <el-option label="院校级" value="院校级" />
-              <el-option label="新生报道" value="新生报道" />
+          <el-form-item label="存档编码" prop="uniqueNumber">
+            <el-input v-model="ruleForm.uniqueNumber" placeholder="请输入活动存档编码" />
+          </el-form-item>
+          <el-form-item label="学生类型" prop="studentType">
+            <el-select v-model="ruleForm.studentType" placeholder="选择父类">
+              <el-option label="全部" value="0" />
+              <el-option label="MBA" value="mba" />
+              <el-option label="EMBA" value="emba" />
+              <el-option label="MEM" value="mem" />
+              <el-option label="MPAcc" value="mpacc" />
+              <el-option label="其他的自己加" value="24" />
+            </el-select>
+          </el-form-item>
+          <el-form-item label="活动年级" prop="grade">
+            <el-select v-model="ruleForm.grade" placeholder="选择父类">
+              <el-option label="不区分" value="0" />
+              <el-option label="2022" value="2022" />
+              <el-option label="2021" value="2021" />
+              <el-option label="2020" value="2020" />
+              <el-option label="2019" value="2019" />
+              <el-option label="2018" value="2018" />
+              <el-option label="其他的自己加" value="24" />
+            </el-select>
+          </el-form-item>
+          <el-form-item label="活动班级" prop="grade">
+            <el-select v-model="ruleForm.grade" placeholder="选择活动班级">
+              <el-option label="不区分" value="0" />
+              <el-option label="21081" value="1" />
+              <el-option label="21082" value="2" />
+              <el-option label="21083" value="3" />
+              <el-option label="21084" value="4" />
+              <el-option label="21085" value="5" />
+              <el-option label="21086" value="6" />
+              <el-option label="20081" value="7" />
+              <el-option label="20082" value="8" />
+              <el-option label="其他的自己加" value="24" />
+            </el-select>
+          </el-form-item>
+          <el-form-item label="学年学期" prop="year">
+            <el-select v-model="ruleForm.year" placeholder="选择学年学期">
+              <el-option label="不区分" value="0" />
+              <el-option label="2021-2022学年 第一学期" value="1" />
+              <el-option label="2020-2021学年 第二学期" value="2" />
+              <el-option label="2020-2021学年 第一学期" value="3" />
+              <el-option label="其他的自己加" value="24" />
+            </el-select>
+          </el-form-item>
+          <el-form-item label="活动归类" prop="belong">
+            <el-select v-model="ruleForm.belong" placeholder="选择活动归属类别">
+              <el-option label="不区分" value="0" />
+              <el-option label="新生入学向导" value="1" />
+              <el-option label="社会公益" value="2" />
+              <el-option label="院校赛事" value="21" />
+              <el-option label="企业实践" value="22" />
+              <el-option label="其他的自己加" value="24" />
+            </el-select>
+          </el-form-item>
+          <el-form-item label="活动等级" prop="class">
+            <el-select v-model="ruleForm.status" placeholder="请选择活动等级">
+              <el-option label="院校级" value="yx" />
+              <el-option label="学院级" value="bd" />
+              <el-option label="年级" value="b1d" />
+              <el-option label="班级" value="b2d" />
+              <el-option label="其他的自己加" value="24" />
             </el-select>
           </el-form-item>
           <el-form-item label="活动状态" prop="status">
             <el-select v-model="ruleForm.status" placeholder="请选择活动状态">
-              <el-option label="院校级" value="yx" />
-              <el-option label="新生报道" value="bd" />
+              <el-option label="全部" value="yx" />
+              <el-option label="正常" value="bd" />
+              <el-option label="暂停" value="b1d" />
+              <el-option label="停止" value="b2d" />
+              <el-option label="其他的自己加" value="24" />
             </el-select>
           </el-form-item>
-          <el-form-item label="备注信息" prop="desc">
-            <el-input v-model="ruleForm.desc" type="textarea" />
+          <el-form-item label="完成情况" prop="status">
+            <el-select v-model="ruleForm.status" placeholder="请选择活动完成情况">
+              <el-option label="全部" value="yx" />
+              <el-option label="已完成" value="bd" />
+              <el-option label="暂停" value="b1d" />
+              <el-option label="未开始" value="b2d" />
+              <el-option label="其他的自己加" value="24" />
+            </el-select>
           </el-form-item>
-          <el-form-item> </el-form-item>
+          <el-form-item label="活动性质" prop="status">
+            <el-select v-model="ruleForm.status" placeholder="请选择活动性质">
+              <el-option label="全部" value="yx" />
+              <el-option label="线上" value="bd" />
+              <el-option label="线下" value="b1d" />
+              <el-option label="其他的自己加" value="24" />
+            </el-select>
+          </el-form-item>
+          <el-form-item label="线下输入地址" prop="status">
+            <el-select v-model="ruleForm.status" placeholder="请选择活动地址">
+              <el-option label="全部" value="yx" />
+              <el-option label="线上" value="bd" />
+              <el-option label="线下" value="b1d" />
+              <el-option label="其他的自己加" value="24" />
+            </el-select>
+          </el-form-item>
+          <el-form-item label="报名时间" prop="status"> </el-form-item>
+          <el-form-item label="活动时间" prop="status"> </el-form-item>
+          <el-form-item label="负责人" prop="status"> </el-form-item>
+          <el-form-item label="备注" prop="status"> </el-form-item>
+          <el-form-item label="宣传图片" prop="status"> </el-form-item>
         </el-form>
       </div>
       <template #footer>
@@ -169,6 +258,11 @@
   const ruleFormRef = ref<FormInstance>();
   const ruleForm = reactive({
     name: '',
+    uniqueNumber: '',
+    studentType: '',
+    grade: '',
+    year: '',
+    belong: '',
     parentId: '',
     status: '',
     desc: ''

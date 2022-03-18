@@ -1,11 +1,10 @@
 /*
- * @Author: your name
- * @Date: 2022-03-12 15:26:55
- * @LastEditTime: 2022-03-16 09:45:43
+ * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- * @FilePath: /score/src/components/admin/left-nav.js
+ * @LastEditTime: 2022-03-19 00:42:57
+ * @FilePath: /mba-score/src/components/admin/left-nav.js
  */
+
 export default [
   {
     id: 1,
@@ -26,13 +25,13 @@ export default [
       {
         id: 103,
         title: '学生活动审核',
-        router: '/activity-verify'
-      },
-      {
-        id: 104,
-        title: '活动申请',
         router: '/activity-apply'
-      }
+      },
+      // {
+      //   id: 104,
+      //   title: '活动申请',
+      //   router: '/activity-verify'
+      // }
     ]
   },
   {
@@ -43,8 +42,8 @@ export default [
     child: [
       {
         id: 21,
-        title: '学生信息查询',
-        router: '/student-info'
+        title: '学生信息管理',
+        router: '/student'
       },
       {
         id: 22,
