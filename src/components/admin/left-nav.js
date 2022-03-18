@@ -16,24 +16,24 @@ export default [
       {
         id: 101,
         title: '活动分类管理',
-        router: '/activity-classify',
+        router: '/activity-classify'
       },
       {
         id: 102,
-        title: '活动查询',
-        router: '/activity-search',
+        title: '活动管理',
+        router: '/activity-diy'
       },
       {
         id: 103,
         title: '学生活动审核',
-        router: '/activity-verify',
+        router: '/activity-verify'
       },
       {
         id: 104,
         title: '活动申请',
-        router: '/activity-apply',
-      },
-    ],
+        router: '/activity-apply'
+      }
+    ]
   },
   {
     id: 2,
@@ -44,14 +44,14 @@ export default [
       {
         id: 21,
         title: '学生信息查询',
-        router: '/student-info',
+        router: '/student-info'
       },
       {
         id: 22,
         title: '学生添加',
-        router: '/student-add',
-      },
-    ],
+        router: '/student-add'
+      }
+    ]
   },
   {
     id: 7,
@@ -62,24 +62,24 @@ export default [
       {
         id: 7133,
         title: '学分录入',
-        router: '/score-input',
+        router: '/score-input'
       },
       {
         id: 714,
         title: '学分查询',
-        router: '/score-search',
+        router: '/score-search'
       },
       {
         id: 714,
         title: '学分规则配置',
-        router: '/score-rule',
+        router: '/score-rule'
       },
       {
         id: 714,
         title: '学分活动查询',
-        router: '/score-activity',
-      },
-    ],
+        router: '/score-activity'
+      }
+    ]
   },
   {
     id: 713,
@@ -90,14 +90,14 @@ export default [
       {
         id: 7133,
         title: '人员管理',
-        router: '/member',
+        router: '/member'
       },
       {
         id: 714,
         title: '角色管理',
-        router: '/role',
-      },
-    ],
+        router: '/role'
+      }
+    ]
   },
   {
     id: 746,
@@ -108,14 +108,14 @@ export default [
       {
         id: 713364,
         title: '数据看板',
-        router: '/board',
+        router: '/board'
       },
       {
         id: 7146,
         title: '活动板',
-        router: '',
-      },
-    ],
+        router: ''
+      }
+    ]
   },
   {
     id: 794,
@@ -126,13 +126,13 @@ export default [
       {
         id: 71933,
         title: '小工具',
-        router: '/tool',
+        router: '/tool'
       },
       {
         id: 7914,
         title: '群发短信',
-        router: '',
-      },
-    ],
-  },
+        router: ''
+      }
+    ]
+  }
 ];

@@ -1,8 +1,8 @@
 <!--
  * @Author: liliang
  * @Date: 2022-03-16 08:07:09
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-03-17 08:23:54
+ * @LastEditors: liliang
+ * @LastEditTime: 2022-03-18 20:34:39
  * @FilePath: /score/src/components/library/table-list.vue
  * @Description: 
 -->
@@ -14,14 +14,28 @@
       <template v-for="(item, index) in tableData.tabletitle">
         <el-table-column
           v-if="item.value !== 'operate'"
-          :key="index"
-          :fixed="item.fixed"
+          :key="index + Math.random()"
           :prop="item.value"
           :label="item.label"
           :sortable="item.sortable"
           :align="align"
+          :width="item.width"
         >
         </el-table-column>
+        <!-- <el-table-column
+          v-else-if="item.value === 'colortitle'"
+          :key="index + Math.random()"
+          :prop="item.value"
+          :label="item.label"
+          :align="align"
+          :width="item.width"
+        >
+          <template v-slot="scope">
+            <span style="color: #c00">
+              {{ scope.row.colortitle }}
+            </span>
+          </template>
+        </el-table-column> -->
 
         <el-table-column
           v-else
@@ -32,6 +46,7 @@
           :align="align"
           :width="item.width || operateWidth"
           show-overflow-tooltip
+          :fixed="item.fixed"
         >
           <template v-slot="scope">
             <span
@@ -58,29 +73,29 @@
       tableData: Object,
       operateWidth: {
         type: String,
-        default: '200px',
+        default: '200px'
       },
       align: {
         type: String,
-        default: 'center',
+        default: 'center'
       },
       canSelect: {
         type: Boolean,
-        default: false,
-      },
+        default: false
+      }
     },
     setup: (props, ctx) => {
       const handleOperate = (o: any, v: any) => {
         ctx.emit('operate', {
           operate: o,
-          rowData: v,
+          rowData: v
         });
       };
 
       return {
-        handleOperate,
+        handleOperate
       };
-    },
+    }
   });
 </script>
 

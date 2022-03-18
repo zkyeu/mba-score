@@ -1,8 +1,8 @@
 /*
  * @Author: liliang
  * @Date: 2022-01-25 10:10:09
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-03-16 22:48:38
+ * @LastEditors: liliang
+ * @LastEditTime: 2022-03-18 17:34:07
  * @FilePath: /score/src/router/index.ts
  * @Description: 
  */
@@ -32,8 +32,8 @@ const routes: Array<RouteRecordRaw> = [
             component: () => import('@/views/admin/activity/activity-apply.vue')
           },
           {
-            path: '/activity-search',
-            component: () => import('@/views/admin/activity/activity-search.vue')
+            path: '/activity-diy',
+            component: () => import('@/views/admin/activity/activity-diy.vue')
           },
           {
             path: '/activity-verify',

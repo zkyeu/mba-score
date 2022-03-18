@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-18 08:38:23
- * @LastEditTime: 2022-03-17 19:47:23
+ * @LastEditTime: 2022-03-18 19:37:32
  * @LastEditors: liliang
  * @Description: In User Settings Edit
- * @FilePath: /score/src/views/admin/activity/activity-search.vue
+ * @FilePath: /score/src/views/admin/activity/activity-diy.vue
 -->
 <template>
   <section class="single-page">
@@ -19,7 +19,7 @@
       <el-button type="primary" :icon="Plus" @click="handleClick('create', '')">创建活动</el-button>
     </div>
     <div class="table">
-      <table-list :tableData="tableData.data" :canSelect="true" @operate="handleOperate" />
+      <table-list :tableData="tableData.data" :canSelect="false" @operate="handleOperate" />
     </div>
     <div class="page">
       <pages :total="100" @currentPage="currentPage" />
@@ -148,7 +148,7 @@
   import TableList from '../../../components/library/table-list.vue';
   import Pages from '../../../components/library/pagination.vue';
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
-  import mockData from './mock';
+  import mockData from './mock2';
   import { log } from 'console';
 
   const showLayer = reactive({
@@ -295,6 +295,8 @@
   //   showLayer.value = v.boo;
   //   console.log(v.obj);
   // };
+
+  onMounted(() => {});
 </script>
 
 <style lang="less" scoped>

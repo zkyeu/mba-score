@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-16 21:01:33
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-17 19:21:43
+ * @LastEditTime: 2022-03-18 18:26:55
  * @FilePath: /score/src/views/admin/activity/mock.ts
  * @Description:
  */
@@ -11,19 +11,19 @@ export default {
     {
       value: 'id',
       type: 'input',
-      label: '活动ID',
+      label: '分类ID',
       default: '',
     },
     {
       value: 'nameid',
       type: 'input',
-      label: '活动分类',
+      label: '分类名称',
       default: '',
     },
     {
       value: 'type',
       type: 'select',
-      label: '活动性质',
+      label: '分类等级',
       default: '',
       options: [
         {
@@ -101,11 +101,11 @@ export default {
     tabletitle: [
       {
         value: 'id',
-        label: '活动ID',
+        label: '分类ID',
       },
       {
         value: 'name',
-        label: '活动类别',
+        label: '分类类别',
       },
       {
         value: 'is',
@@ -226,7 +226,7 @@ export default {
         class: '院校级',
         date: '2018-05-03',
         status: '正常',
-        name: '文体活动',
+        name: '文体分类',
         operate: [
           {
             value: 'view',
