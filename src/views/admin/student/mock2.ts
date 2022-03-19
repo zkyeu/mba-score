@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-16 21:01:33
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-19 08:35:03
+ * @LastEditTime: 2022-03-19 12:56:24
  * @FilePath: /mba-score/src/views/admin/student/mock2.ts
  * @Description:
  */
@@ -183,11 +183,13 @@ export default {
       "tabletitle": [
         {
           value: 'snumber',
-          label: '学号'
+          label: '学号',
+          fixed: true
         },
         {
           value: 'name',
-          label: '姓名'
+          label: '姓名',
+          fixed: true
         },
         {
           value: 'sexy',
@@ -216,6 +218,11 @@ export default {
         {
           value: 'status',
           label: '状态'
+        },
+        {
+          value: 'operate',
+          label: '操作',
+          fixed:'right'
         }
       ],
       "tablelist":[
@@ -228,7 +235,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138000",
             "status": "退学",
-            "class": " ZF21083班"
+            "class": " ZF21083班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108554",
@@ -239,7 +261,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138003",
             "status": "退学",
-            "class": " ZF21085班"
+            "class": " ZF21085班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108650",
@@ -250,7 +287,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138006",
             "status": "退学",
-            "class": " ZF21086班"
+            "class": " ZF21086班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108101",
@@ -261,7 +313,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138009",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108102",
@@ -272,7 +339,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138012",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108103",
@@ -283,7 +365,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138015",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108104",
@@ -294,7 +391,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138018",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108105",
@@ -305,7 +417,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138021",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108106",
@@ -316,7 +443,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138024",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108107",
@@ -327,7 +469,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138027",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108108",
@@ -338,7 +495,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138030",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108109",
@@ -349,7 +521,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138033",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108110",
@@ -360,7 +547,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138036",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108111",
@@ -371,7 +573,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138039",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108112",
@@ -382,7 +599,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138042",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108113",
@@ -393,7 +625,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138045",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108114",
@@ -404,7 +651,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138048",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108115",
@@ -415,7 +677,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138051",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108116",
@@ -426,7 +703,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138054",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108117",
@@ -437,7 +729,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138057",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108118",
@@ -448,7 +755,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138060",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108119",
@@ -459,7 +781,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138063",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108120",
@@ -470,7 +807,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138066",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108121",
@@ -481,7 +833,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138069",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108122",
@@ -492,7 +859,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138072",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108123",
@@ -503,7 +885,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138075",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108124",
@@ -514,7 +911,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138078",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108125",
@@ -525,7 +937,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138081",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108126",
@@ -536,7 +963,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138084",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108127",
@@ -547,7 +989,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138087",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108128",
@@ -558,7 +1015,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138090",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108129",
@@ -569,7 +1041,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138093",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108130",
@@ -580,7 +1067,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138096",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108131",
@@ -591,7 +1093,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138099",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108132",
@@ -602,7 +1119,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138102",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108133",
@@ -613,7 +1145,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138105",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108134",
@@ -624,7 +1171,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138108",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108135",
@@ -635,7 +1197,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138111",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108136",
@@ -646,7 +1223,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138114",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108137",
@@ -657,7 +1249,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138117",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108138",
@@ -668,7 +1275,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138120",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108139",
@@ -679,7 +1301,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138123",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108140",
@@ -690,7 +1327,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138126",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108141",
@@ -701,7 +1353,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138129",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108142",
@@ -712,7 +1379,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138132",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108143",
@@ -723,7 +1405,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138135",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108144",
@@ -734,7 +1431,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138138",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108145",
@@ -745,7 +1457,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138141",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108146",
@@ -756,7 +1483,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138144",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108147",
@@ -767,7 +1509,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138147",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108148",
@@ -778,7 +1535,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138150",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108149",
@@ -789,7 +1561,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138153",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108150",
@@ -800,7 +1587,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138156",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108151",
@@ -811,7 +1613,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138159",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108152",
@@ -822,7 +1639,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138162",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108153",
@@ -833,7 +1665,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138165",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108154",
@@ -844,7 +1691,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138168",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108155",
@@ -855,7 +1717,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138171",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108156",
@@ -866,7 +1743,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138174",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108157",
@@ -877,7 +1769,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138177",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108158",
@@ -888,7 +1795,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138180",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108159",
@@ -899,7 +1821,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138183",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108160",
@@ -910,7 +1847,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138186",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108161",
@@ -921,7 +1873,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138189",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108162",
@@ -932,7 +1899,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138192",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108163",
@@ -943,7 +1925,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138195",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108164",
@@ -954,7 +1951,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138198",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108165",
@@ -965,7 +1977,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138201",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108166",
@@ -976,7 +2003,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138204",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108167",
@@ -987,7 +2029,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138207",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108168",
@@ -998,7 +2055,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138210",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108169",
@@ -1009,7 +2081,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138213",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108170",
@@ -1020,7 +2107,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138216",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108171",
@@ -1031,7 +2133,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138219",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108172",
@@ -1042,7 +2159,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138222",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108173",
@@ -1053,7 +2185,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138225",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108174",
@@ -1064,7 +2211,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138228",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108175",
@@ -1075,7 +2237,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138231",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108328",
@@ -1086,7 +2263,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138234",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108510",
@@ -1097,7 +2289,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138237",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         },
         {
             "snumber": "ZF2108536",
@@ -1108,7 +2315,22 @@ export default {
             "mba": "MBA",
             "mobile": "13800138240",
             "status": "正常",
-            "class": " ZF21081班"
+            "class": " ZF21081班",
+            operate: [
+                {
+                  value: 'view',
+                  label: '查看',
+                },
+                {
+                  value: 'edit',
+                  label: '编辑',
+                  
+                },
+                {
+                  value: 'delete',
+                  label: "删除"
+                }
+              ]
         }
     ]
   }
