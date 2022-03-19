@@ -2,8 +2,8 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-19 00:45:09
- * @FilePath: /mba-score/src/router/index.ts
+ * @LastEditTime: 2022-03-19 21:05:51
+ * @FilePath: /score/src/router/index.ts
  */
 
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
@@ -61,8 +61,8 @@ const routes: Array<RouteRecordRaw> = [
             path: '/student',
             component: () => import('@/views/admin/student/student-info.vue')
           },{
-            path: '/student-add',
-            component: () => import('@/views/admin/student/student-add.vue')
+            path: '/student-board',
+            component: () => import('@/views/admin/student/student-board.vue')
           }
         ]
       },

@@ -1,8 +1,8 @@
 /*
  * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-19 00:42:57
- * @FilePath: /mba-score/src/components/admin/left-nav.js
+ * @LastEditTime: 2022-03-19 21:06:09
+ * @FilePath: /score/src/components/admin/left-nav.js
  */
 
 export default [
@@ -26,7 +26,7 @@ export default [
         id: 103,
         title: '学生活动审核',
         router: '/activity-apply'
-      },
+      }
       // {
       //   id: 104,
       //   title: '活动申请',
@@ -47,8 +47,8 @@ export default [
       },
       {
         id: 22,
-        title: '学生添加',
-        router: '/student-add'
+        title: '学生看板',
+        router: '/student-board'
       }
     ]
   },
