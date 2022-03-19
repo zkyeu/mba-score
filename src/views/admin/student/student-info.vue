@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-19 01:51:58
+ * @LastEditTime: 2022-03-19 08:35:43
  * @LastEditors: liliang
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /mba-score/src/views/admin/student/student-info.vue
@@ -373,7 +373,14 @@
   //   console.log(v.obj);
   // };
 
-  onMounted(() => {});
+  onMounted(() => {
+    // let arr = [{ a: 1 }, { b: 2 }];
+    // let is = arr.map((item, index) => {
+    //   let obj = { ...item };
+    //   return obj;
+    // });
+    // console.log(is);
+  });
 </script>
 
 <style lang="less" scoped>
