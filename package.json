@@ -10,6 +10,7 @@
     "@typescript-eslint/eslint-plugin": "^4.28.5",
     "@typescript-eslint/parser": "^4.28.5",
     "axios": "^0.21.1",
+    "echarts": "^5.3.1",
     "element-plus": "^2.1.4",
     "emoji-mart-vue-fast": "^10.2.1",
     "eslint": "^7.31.0",

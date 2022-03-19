@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-16 21:01:33
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-19 12:56:24
+ * @LastEditTime: 2022-03-19 20:33:16
  * @FilePath: /mba-score/src/views/admin/student/mock2.ts
  * @Description:
  */
@@ -181,16 +181,24 @@ export default {
 ],
   "table": {
       "tabletitle": [
+          {
+            value: 'mba',
+            label: '类别'
+        },
+        {
+            value: 'grade',
+            label: '年级'
+          },
+        {
+            value: 'name',
+            label: '姓名'
+          },
+        
         {
           value: 'snumber',
-          label: '学号',
-          fixed: true
+          label: '学号'
         },
-        {
-          value: 'name',
-          label: '姓名',
-          fixed: true
-        },
+        
         {
           value: 'sexy',
           label: '性别'
@@ -199,21 +207,16 @@ export default {
           value: 'banxing',
           label: '班型'
         },
-        {
-          value: 'grade',
-          label: '年级'
-        },
+        
         {
           value: 'class',
           label: '班级'
         },
-        {
-          value: 'mba',
-          label: '类别'
-        },
+        
         {
           value: 'mobile',
-          label: '联系方式'
+          label: '联系方式',
+          width: '150px'
         },
         {
           value: 'status',

@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-19 13:24:21
+ * @LastEditTime: 2022-03-19 20:08:05
  * @LastEditors: liliang
  * @Description: 
  * @FilePath: /mba-score/src/views/admin/student/student-info.vue
@@ -167,23 +167,24 @@
       width="350px"
       draggable
       :before-close="handleClose"
+      custom-class="edit-info-layer"
     >
       <div class="dialog-body">
         <el-form
           ref="ruleFormRef"
-          :model="ruleForm"
+          :model="ruleForm.data"
           :rules="rules"
           label-width="90px"
           size="default"
         >
-          <el-form-item label="学生姓名" prop="name">
-            <el-input v-model="ruleForm.name" placeholder="请输入学生姓名" />
+          <el-form-item label="学生姓名" prop="name" style="width: 278px">
+            <el-input v-model="ruleForm.data.name" placeholder="请输入学生姓名" />
           </el-form-item>
-          <el-form-item label="学号" prop="uniqueNumber">
-            <el-input v-model="ruleForm.uniqueNumber" placeholder="请输入学生学号" />
+          <el-form-item label="学号" prop="snumber" style="width: 278px">
+            <el-input v-model="ruleForm.data.snumber" placeholder="请输入学生学号" />
           </el-form-item>
-          <el-form-item label="类型" prop="studentType">
-            <el-select v-model="ruleForm.studentType" placeholder="选择学生类型">
+          <el-form-item label="类型" prop="mba">
+            <el-select v-model="ruleForm.data.mba" placeholder="选择学生类型">
               <el-option label="全部" value="0" />
               <el-option label="MBA" value="mba" />
               <el-option label="EMBA" value="emba" />
@@ -193,7 +194,7 @@
             </el-select>
           </el-form-item>
           <el-form-item label="年级" prop="grade">
-            <el-select v-model="ruleForm.grade" placeholder="选择学生年级">
+            <el-select v-model="ruleForm.data.grade" placeholder="选择学生年级">
               <el-option label="不区分" value="0" />
               <el-option label="2022" value="2022" />
               <el-option label="2021" value="2021" />
@@ -203,8 +204,8 @@
               <el-option label="其他的自己加" value="24" />
             </el-select>
           </el-form-item>
-          <el-form-item label="班级" prop="grade">
-            <el-select v-model="ruleForm.grade" placeholder="选择班级">
+          <el-form-item label="班级" prop="class">
+            <el-select v-model="ruleForm.data.class" placeholder="选择班级">
               <el-option label="不区分" value="0" />
               <el-option label="21081" value="1" />
               <el-option label="21082" value="2" />
@@ -218,7 +219,7 @@
             </el-select>
           </el-form-item>
           <el-form-item label="学生状态" prop="status">
-            <el-select v-model="ruleForm.status" placeholder="请选择学生状态">
+            <el-select v-model="ruleForm.data.status" placeholder="请选择学生状态">
               <el-option label="全部" value="yx" />
               <el-option label="正常" value="bd" />
               <el-option label="退学" value="b1d" />
@@ -226,7 +227,9 @@
               <el-option label="其他" value="234" />
             </el-select>
           </el-form-item>
-          <el-form-item label="联系方式" prop="status"> </el-form-item>
+          <el-form-item label="联系方式" prop="mobile" style="width: 278px">
+            <el-input v-model="ruleForm.data.mobile" placeholder="请输入联系方式"></el-input>
+          </el-form-item>
           <el-form-item label="学生照片" prop="status"> </el-form-item>
         </el-form>
       </div>
@@ -234,6 +237,60 @@
         <span class="dialog-footer">
           <el-button @click="handleClick('cancel', ruleFormRef)">取消</el-button>
           <el-button type="primary" @click="handleClick('submit', ruleFormRef)">添加</el-button>
+        </span>
+      </template>
+    </el-dialog>
+
+    <!-- 查看 -->
+    <el-dialog
+      v-model="showLayer.view"
+      :title="showLayer.title"
+      width="350px"
+      draggable
+      custom-class="edit-info-layer"
+    >
+      <div class="item-list">
+        <li>
+          <label>学生姓名：</label>
+          <div>{{ ruleForm.data.name }}</div>
+        </li>
+        <li>
+          <label>学号：</label>
+          <div>{{ ruleForm.data.snumber }}</div>
+        </li>
+        <li>
+          <label>类型：</label>
+          <div>{{ ruleForm.data.mba }}</div>
+        </li>
+        <li>
+          <label>年级：</label>
+          <div>{{ ruleForm.data.grade }}级</div>
+        </li>
+        <li>
+          <label>班级：</label>
+          <div>{{ ruleForm.data.grade }}</div>
+        </li>
+        <li>
+          <label>学生状态：</label>
+          <div>{{ ruleForm.data.status }}</div>
+        </li>
+        <li>
+          <label>联系方式：</label>
+          <div>{{ ruleForm.data.mobile }}</div>
+        </li>
+        <li>
+          <label>学生照片：</label>
+          <div>
+            <img
+              src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi-1.wzsky.net%2F2020%2F10%2F25%2F106343bc-1767-4f29-9d15-aa74dd94fb46.png&refer=http%3A%2F%2Fi-1.wzsky.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1650283526&t=cf8b4bbd78344dd337a6509aee8dc1af"
+              style="width: 100px"
+            />
+          </div>
+        </li>
+      </div>
+      <template #footer>
+        <span class="dialog-footer">
+          <el-button @click="handleClick('notview', '')">关闭</el-button>
         </span>
       </template>
     </el-dialog>
@@ -247,7 +304,7 @@
     >
       <div class="body"
         ><el-icon><promotion /></el-icon>
-        <p>确定要删除【】吗？</p>
+        <p>确定要删除【{{ ruleForm.data.name }}】的信息吗？</p>
       </div>
       <template #footer>
         <span class="dialog-footer">
@@ -256,12 +313,6 @@
         </span>
       </template>
     </el-dialog>
-    <template>
-      <!-- 组件 -->
-      <!-- <dialog-layer :show="showLayer" title="创建活动分类" width="450px">
-        <template #dialogBody> </template>
-      </dialog-layer> -->
-    </template>
   </section>
 </template>
 
@@ -293,14 +344,16 @@
   const viewObj = reactive({ data: {} });
   const ruleFormRef = ref<FormInstance>();
   const ruleForm = reactive({
-    studentType: '',
-    grade: '',
-    year: '',
-    belong: '',
-    parentId: '',
-    status: '',
-    desc: '',
-    banxing: ''
+    data: {
+      snumber: '',
+      grade: '',
+      class: '',
+      belong: '',
+      parentId: '',
+      status: '',
+      desc: '',
+      mba: ''
+    }
   });
   const rules = reactive({
     banxing: [
@@ -383,19 +436,15 @@
         resetForm(o);
         showLayer.create = false;
         break;
-      case 'create':
-        showLayer.title = '创建活动分类';
-        showLayer.create = true;
-        break;
       case 'hidden':
         (showLayer as any)[o] = false;
-        viewObj.data = {};
+        // ruleForm.data = {};
         break;
       case 'delete':
-        showLayer.title = '删除分类';
+        showLayer.title = '删除学生';
         ElMessage.success('删除成功');
         showLayer.delete = false;
-        viewObj.data = {};
+        // ruleForm.data = {};
         break;
       case 'importBtn':
         showLayer.title = '学生信息批量导入';
@@ -414,9 +463,16 @@
         window.open('../../../assets/files/学生信息模版.xlsx', '_blank');
         break;
       case 'export':
-      case 'single':
         ElMessage.warning('后面待开发');
-
+        break;
+      case 'single':
+        showLayer.title = '添加学生信息';
+        showLayer.create = true;
+        break;
+      case 'notview':
+        showLayer.title = '';
+        showLayer.view = false;
+        break;
       default:
     }
   };
@@ -428,11 +484,13 @@
 
   // 操作
   const handleOperate = (v: any) => {
+    console.log(v);
+
     let key = v.operate;
-    viewObj.data = v.rowData;
+    ruleForm.data = v.rowData;
     switch (key) {
       case 'view':
-        showLayer.title = '查看活动类别';
+        showLayer.title = '查看学生信息';
         showLayer.view = true;
         break;
       case 'edit':
@@ -441,11 +499,11 @@
         ruleForm.status = v.rowData.status;
         ruleForm.desc = v.rowData.desc;
 
-        showLayer.title = '编辑活动类别';
+        showLayer.title = '编辑学生信息';
         showLayer.create = true;
         break;
       case 'delete':
-        showLayer.title = '删除活动类别';
+        showLayer.title = '删除学生信息';
         showLayer.delete = true;
         break;
       default:
@@ -586,6 +644,31 @@
       }
       .el-dialog__body {
         padding: 0 40px;
+      }
+    }
+
+    :deep(.edit-info-layer) {
+      .item-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        li {
+          display: flex;
+          width: 200px;
+          line-height: 38px;
+
+          label {
+            width: 90px;
+            text-align: right;
+            padding-right: 5px;
+            font-size: 16px;
+          }
+          div {
+            color: #000;
+            font-size: 16px;
+          }
+        }
       }
     }
   }

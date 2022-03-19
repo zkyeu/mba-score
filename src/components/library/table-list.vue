@@ -1,9 +1,9 @@
 <!--
  * @Author: liliang
  * @Date: 2022-03-16 08:07:09
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-03-18 23:19:27
- * @FilePath: /score/src/components/library/table-list.vue
+ * @LastEditors: liliang
+ * @LastEditTime: 2022-03-19 20:33:31
+ * @FilePath: /mba-score/src/components/library/table-list.vue
  * @Description: 
 -->
 
@@ -19,7 +19,8 @@
           :label="item.label"
           :sortable="item.sortable"
           :align="align"
-          :width="item.width"
+          :min-width="item.width"
+          :class-name="item.class"
         >
         </el-table-column>
         <el-table-column
@@ -118,6 +119,9 @@
         cursor: not-allowed;
         color: #aaa;
       }
+    }
+    :deep(.blue) {
+      background: rgb(142, 166, 245);
     }
   }
 </style>
