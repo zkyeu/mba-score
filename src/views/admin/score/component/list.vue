@@ -1,48 +1,23 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-20 15:11:51
+ * @LastEditTime: 2022-03-20 14:27:19
  * @LastEditors: liliang
  * @Description: 
- * @FilePath: /score/src/views/admin/score/score.vue
+ * @FilePath: /score/src/views/admin/score/component/list.vue
 -->
 
 <template>
   <section class="single-page">
-    <div class="bread">
-      <el-breadcrumb :separator-icon="ArrowRight">
-        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-        <el-breadcrumb-item :to="{ path: '/' }">活动学分录入审核</el-breadcrumb-item>
-      </el-breadcrumb>
-    </div>
     <div class="btn">
-      <table-option :optionData="options.data" @optionChange="optionChangeFn" />
-      <el-button type="primary" :icon="Plus" @click="handleClick('importBtn', '')"
-        >批量添加</el-button
-      >
-      <el-button type="primary" :icon="Plus" @click="handleClick('single', '')"
-        >添加单人学分</el-button
-      >
+      <table-option :optionData="options.data" @optionChange="optionChange" />
+      <el-button type="primary" :icon="Plus" @click="handleClick('export', '')">导出查询</el-button>
     </div>
     <div class="table">
-      <div class="select-ope" v-if="selection.length > 2"
-        ><el-button type="success" :icon="Finished" plain @click="handleClick('passall', '')"
-          >批量通过</el-button
-        >
-        <el-button type="danger" :icon="CloseBold" plain @click="handleClick('failall', '')"
-          >批量驳回</el-button
-        ></div
-      >
-      <table-list
-        ref="multipleTableRef"
-        :tableData="tableData.data"
-        :canSelect="true"
-        @operate="handleOperate"
-        @tableSelection="tableSelectionFn"
-      />
+      <table-list :tableData="tableData.data" :canSelect="false" @operate="handleOperate" />
     </div>
     <div class="page">
-      <pages :total="78" @currentPage="currentPage" />
+      <pages :total="100" @currentPage="currentPage" />
     </div>
 
     <!-- 导入/批量 -->
@@ -147,15 +122,6 @@
                     <el-option label="21086" value="6" />
                     <el-option label="20081" value="7" />
                     <el-option label="20082" value="8" />
-                    <el-option label="其他的自己加" value="24" />
-                  </el-select>
-                </el-form-item>
-                <el-form-item label="学分类型" prop="xuefen">
-                  <el-select v-model="ruleForm.xuefen" placeholder="选择学分类型">
-                    <el-option label="不区分" value="0" />
-                    <el-option label="文体学分" value="1" />
-                    <el-option label="志愿者学分" value="2" />
-                    <el-option label="公益学分" value="2" />
                     <el-option label="其他的自己加" value="24" />
                   </el-select>
                 </el-form-item>
@@ -329,21 +295,12 @@
 
 <script lang="ts" setup>
   import { ref, computed, onMounted, reactive } from 'vue';
-  import {
-    ArrowRight,
-    Plus,
-    Promotion,
-    Download,
-    UploadFilled,
-    Finished,
-    CloseBold
-  } from '@element-plus/icons-vue';
-  import TableOption from '../../../components/library/table-options.vue';
-  import TableList from '../../../components/library/table-list.vue';
-  import Pages from '../../../components/library/pagination.vue';
+  import { ArrowRight, Plus, Promotion, Download, UploadFilled } from '@element-plus/icons-vue';
+  import TableOption from '../../../../components/library/table-options.vue';
+  import TableList from '../../../../components/library/table-list.vue';
+  import Pages from '../../../../components/library/pagination.vue';
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
-  import mockData from './mock2';
-  // import aaa from '../../../assets/files/学生信息模版.xlsx'
+  import mockData from '../mock';
 
   const showLayer = reactive({
     import: false,
@@ -371,13 +328,20 @@
       parentId: '',
       status: '',
       desc: '',
-      mba: '',
-      xuefen: ''
+      mba: ''
     }
+  });
+  const rules = reactive({
+    banxing: [
+      {
+        required: false,
+        message: '请选择活动状态',
+        trigger: 'change'
+      }
+    ]
   });
 
   const fileList = ref([]);
-  const selection = ref([]);
 
   // 批量结算取消
   const cancelImport = () => {
@@ -453,7 +417,7 @@
         // ruleForm.data = {};
         break;
       case 'delete':
-        showLayer.title = '删除活动学分';
+        showLayer.title = '删除学生';
         ElMessage.success('删除成功');
         showLayer.delete = false;
         // ruleForm.data = {};
@@ -472,35 +436,26 @@
         showLayer.import = false;
         break;
       case 'downImport':
-        window.open('../../../assets/files/活动学分信息表.xlsx', '_blank');
+        window.open('../../../assets/files/学生信息模版.xlsx', '_blank');
+        break;
+      case 'export':
+        ElMessage.warning('后面待开发');
         break;
       case 'single':
-        showLayer.title = '添加单人学分';
+        showLayer.title = '添加学生信息';
         showLayer.create = true;
         break;
       case 'notview':
         showLayer.title = '';
         showLayer.view = false;
         break;
-      case 'passall':
-      case 'failall':
-        ElMessage.success('批量审核成功');
-        break;
       default:
     }
   };
 
   // 筛选
-  const optionChangeFn = (v: any) => {
+  const optionChange = (v: any) => {
     console.log(v);
-  };
-
-  // 表格选择
-  const tableSelectionFn = (v: any) => {
-    let idArr = v.map((i: any) => {
-      return i.id;
-    });
-    selection.value = idArr;
   };
 
   // 操作
@@ -515,10 +470,10 @@
         showLayer.view = true;
         break;
       case 'edit':
-        ruleForm.data.name = v.rowData.name;
-        ruleForm.data.parentId = '院校级';
-        ruleForm.data.status = v.rowData.status;
-        ruleForm.data.desc = v.rowData.desc;
+        ruleForm.name = v.rowData.name;
+        ruleForm.parentId = '院校级';
+        ruleForm.status = v.rowData.status;
+        ruleForm.desc = v.rowData.desc;
 
         showLayer.title = '编辑学生信息';
         showLayer.create = true;
@@ -536,11 +491,24 @@
     console.log(v);
   };
 
-  onMounted(() => {});
+  // const dialogBtnEvent = (v: any) => {
+  //   console.log('click', v);
+  //   showLayer.value = v.boo;
+  //   console.log(v.obj);
+  // };
+
+  onMounted(() => {
+    // let arr = [{ a: 1 }, { b: 2 }];
+    // let is = arr.map((item, index) => {
+    //   let obj = { ...item };
+    //   return obj;
+    // });
+    // console.log(is);
+  });
 </script>
 
 <style lang="less" scoped>
-  @import url('../../../assets/style/init.less');
+  @import url('../../../../assets/style/init.less');
   .single-page {
     display: block;
     // background: @root-color-f5;
@@ -550,19 +518,25 @@
       padding: 11px;
     }
 
+    .border-card {
+      margin-top: 20px;
+      :deep(.el-tabs) {
+        &.el-tabs--border-card {
+          border: none !important;
+          box-shadow: none !important;
+        }
+        .el-tabs__nav-scroll {
+          border-top: solid 1px #eee;
+        }
+      }
+    }
+
     .btn {
       display: flex;
       justify-content: space-between;
       margin: 15px 0;
       :deep(.el-button) {
         padding: 1px 8px;
-      }
-    }
-    .table {
-      .select-ope {
-        display: flex;
-        justify-content: flex-end;
-        margin-bottom: 10px;
       }
     }
 

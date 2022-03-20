@@ -2,8 +2,8 @@
  * @Author: liliang
  * @Date: 2022-03-16 21:01:33
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-20 11:38:48
- * @FilePath: /score/src/views/admin/score/mock2.ts
+ * @LastEditTime: 2022-03-20 15:25:06
+ * @FilePath: /score/src/views/admin/score/mock.ts
  * @Description:
  */
 export default {
@@ -32,38 +32,7 @@ export default {
       "label": "活动时间",
       "default": []
   },
-    {
-        "value": "caree",
-        "type": "select",
-        "label": "学生类别",
-        "default": "",
-        "options": [
-            {
-                "value": 6,
-                "label": "全部"
-            },
-            {
-                "value": 5,
-                "label": "EMBA"
-            },
-            {
-                "value": 4,
-                "label": "MBA"
-            },
-            {
-                "value": 3,
-                "label": "MEM"
-            },
-            {
-                "value": 2,
-                "label": "MPAcc"
-            },
-            {
-                "value": 1,
-                "label": "其他"
-            }
-        ]
-    },
+   
     {
         "value": "banx",
         "type": "select",
@@ -183,21 +152,44 @@ export default {
                 "label": "其加自己加"
             }
         ]
+    },
+    {
+        "value": "bigtype",
+        "type": "select",
+        "label": "学分类型",
+        "default": "",
+        "options": [
+            {
+                "value": 2,
+                "label": "全部"
+            },
+            {
+                "value": 4,
+                "label": "文体学分"
+            },
+            {
+                "value": 5,
+                "label": "志愿者学分"
+            },
+            {
+                "value": 6,
+                "label": "其加自己加"
+            }
+        ]
     }
 ],
   "table": {
       "tabletitle": [
         {
           value: 'hdname',
-          label: '活动名称'
+          label: '活动名称',
+          width: '200px',
+          align: 'left'
       },{
         value: 'hdtime',
         label: '活动时间'
     },
-          {
-            value: 'mba',
-            label: '学生类别'
-        },
+        
         {
             value: 'grade',
             label: '所在年级'
@@ -221,20 +213,19 @@ export default {
           value: 'class',
           label: '班级'
         },
-        
         {
-          value: 'mobile',
-          label: '联系方式',
-          width: '150px'
+          value: 'score',
+          label: '学分'
         },
         {
-          value: 'hdtime',
-          label: '状态'
+          value: 'scoretype',
+          label: '学分性质'
         },
         {
           value: 'operate',
           label: '操作',
-          fixed:'right'
+          fixed:'right',
+          width:'150px'
         }
       ],
       "tablelist":[
@@ -244,9 +235,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "公益学分",
             "mobile": "13800138009",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -257,10 +248,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -270,9 +257,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "公益学分",
             "mobile": "13800138012",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -283,10 +270,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -296,9 +279,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138015",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -309,10 +292,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -322,9 +301,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138018",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -335,10 +314,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -348,9 +323,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "志愿者学分",
             "mobile": "13800138021",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -361,10 +336,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -374,9 +345,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138024",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -387,10 +358,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -400,9 +367,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138027",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -413,10 +380,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -426,9 +389,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "志愿者学分",
             "mobile": "13800138030",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -439,10 +402,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -452,9 +411,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138033",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -465,10 +424,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -478,9 +433,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138036",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -491,10 +446,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -504,9 +455,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138039",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -517,10 +468,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -530,9 +477,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138042",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -543,10 +490,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -556,9 +499,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "公益学分",
             "mobile": "13800138045",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -569,10 +512,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -582,9 +521,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138048",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -595,10 +534,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -608,9 +543,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138051",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -621,10 +556,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -634,9 +565,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138054",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -647,10 +578,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -660,9 +587,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "志愿者学分",
             "mobile": "13800138057",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -673,10 +600,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -686,9 +609,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138060",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -699,10 +622,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -712,9 +631,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138063",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -725,10 +644,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -738,9 +653,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138066",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -751,10 +666,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -764,9 +675,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138069",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -777,10 +688,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -790,9 +697,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138072",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -803,10 +710,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -816,9 +719,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138075",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -829,10 +732,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -842,9 +741,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138078",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -855,10 +754,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -868,9 +763,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138081",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -881,10 +776,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -894,9 +785,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138084",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -907,10 +798,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -920,9 +807,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138087",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -933,10 +820,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -946,9 +829,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138090",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -959,10 +842,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -972,9 +851,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138093",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -985,10 +864,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -998,9 +873,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138096",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1011,10 +886,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1024,9 +895,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138099",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1037,10 +908,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1050,9 +917,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138102",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1063,10 +930,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1076,9 +939,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138105",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1089,10 +952,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1102,9 +961,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138108",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1115,10 +974,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1128,9 +983,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138111",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1141,10 +996,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1154,9 +1005,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138114",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1167,10 +1018,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1180,9 +1027,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138117",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1193,10 +1040,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1206,9 +1049,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138120",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1219,10 +1062,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1232,9 +1071,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138123",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1245,10 +1084,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1258,9 +1093,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138126",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1271,10 +1106,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1284,9 +1115,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138129",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1297,10 +1128,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1310,9 +1137,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138132",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1323,10 +1150,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1336,9 +1159,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138135",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1349,10 +1172,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1362,9 +1181,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138138",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1375,10 +1194,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1388,9 +1203,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138141",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1401,10 +1216,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1414,9 +1225,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138144",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1427,10 +1238,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1440,9 +1247,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138147",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1453,10 +1260,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1466,9 +1269,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138150",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1479,10 +1282,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1492,9 +1291,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138153",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1505,10 +1304,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1518,9 +1313,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138156",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1531,10 +1326,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1544,9 +1335,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138159",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1557,10 +1348,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1570,9 +1357,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138162",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1583,10 +1370,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1596,9 +1379,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138165",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1609,10 +1392,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1622,9 +1401,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138168",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1635,10 +1414,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1648,9 +1423,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138171",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1661,10 +1436,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1674,9 +1445,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138174",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1687,10 +1458,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1700,9 +1467,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138177",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1713,10 +1480,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1726,9 +1489,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138180",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1739,10 +1502,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1752,9 +1511,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138183",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1765,10 +1524,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1778,9 +1533,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138186",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1791,10 +1546,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1804,9 +1555,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138189",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1817,10 +1568,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1830,9 +1577,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138192",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1843,10 +1590,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1856,9 +1599,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138195",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1869,10 +1612,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1882,9 +1621,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138198",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1895,10 +1634,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1908,9 +1643,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138201",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1921,10 +1656,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1934,9 +1665,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138204",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1947,10 +1678,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1960,9 +1687,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138207",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1973,10 +1700,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -1986,9 +1709,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138210",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -1999,10 +1722,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -2012,9 +1731,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138213",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -2025,10 +1744,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -2038,9 +1753,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138216",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -2051,10 +1766,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -2064,9 +1775,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138219",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -2077,10 +1788,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -2090,9 +1797,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138222",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -2103,10 +1810,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -2116,9 +1819,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138225",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -2129,10 +1832,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -2142,9 +1841,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138228",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -2155,10 +1854,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -2168,9 +1863,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138231",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -2181,10 +1876,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -2194,9 +1885,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138234",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -2207,10 +1898,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -2220,9 +1907,9 @@ export default {
             "hdname": "《举行的活动名字》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138237",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -2233,10 +1920,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         },
@@ -2246,9 +1929,9 @@ export default {
             "hdname":"《活动名称，自己定义》",
             "banxing": "集中I",
             "grade": "2021",
-            "mba": "MBA",
+            "score": "0.1","scoretype": "文体学分",
             "mobile": "13800138240",
-            "hdtime": "2022-03-25",
+            "hdtime": "2022-03-30",
             "class": " ZF21081班",
             operate: [
                 {
@@ -2259,10 +1942,6 @@ export default {
                   value: 'edit',
                   label: '编辑',
                   
-                },
-                {
-                  value: 'delete',
-                  label: "删除"
                 }
               ]
         }

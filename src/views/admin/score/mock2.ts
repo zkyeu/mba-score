@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-16 21:01:33
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-20 11:55:53
+ * @LastEditTime: 2022-03-20 22:03:41
  * @FilePath: /score/src/views/admin/score/mock2.ts
  * @Description:
  */

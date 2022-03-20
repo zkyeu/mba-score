@@ -2,14 +2,20 @@
  * @Author: liliang
  * @Date: 2022-03-16 08:07:09
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-20 11:56:39
+ * @LastEditTime: 2022-03-20 12:48:21
  * @FilePath: /score/src/components/library/table-list.vue
  * @Description: 
 -->
 
 <template>
   <section class="table-list">
-    <el-table :data="tableData.tablelist" style="width: 100%" border>
+    <el-table
+      :ref="ref"
+      :data="tableData.tablelist"
+      style="width: 100%"
+      border
+      @selection-change="handleSelectionChange"
+    >
       <el-table-column type="selection" width="38" v-if="canSelect" />
       <template v-for="(item, index) in tableData.tabletitle">
         <el-table-column
@@ -66,38 +72,40 @@
   </section>
 </template>
 
-<script lang="ts">
-  import { defineComponent } from 'vue';
-  export default defineComponent({
-    name: 'TableList',
-    props: {
-      tableData: Object,
-      operateWidth: {
-        type: String,
-        default: '200px'
-      },
-      align: {
-        type: String,
-        default: 'center'
-      },
-      canSelect: {
-        type: Boolean,
-        default: false
-      }
+<script lang="ts" setup>
+  import { ref } from 'vue';
+  const props = defineProps({
+    tableData: Object,
+    operateWidth: {
+      type: String,
+      default: '200px'
     },
-    setup: (props, ctx) => {
-      const handleOperate = (o: any, v: any) => {
-        ctx.emit('operate', {
-          operate: o,
-          rowData: v
-        });
-      };
-
-      return {
-        handleOperate
-      };
+    align: {
+      type: String,
+      default: 'center'
+    },
+    canSelect: {
+      type: Boolean,
+      default: false
+    },
+    ref: {
+      type: String,
+      default: ''
     }
   });
+
+  const emit = defineEmits(['operate', 'tableSelection']);
+
+  const handleOperate = (o: any, v: any) => {
+    emit('operate', {
+      operate: o,
+      rowData: v
+    });
+  };
+
+  const handleSelectionChange = (val: any) => {
+    emit('tableSelection', val);
+  };
 </script>
 
 <style lang="less" scoped>
