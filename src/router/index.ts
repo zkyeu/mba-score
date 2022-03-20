@@ -2,7 +2,7 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-19 21:05:51
+ * @LastEditTime: 2022-03-20 10:43:08
  * @FilePath: /score/src/router/index.ts
  */
 
@@ -71,8 +71,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/admin/score/view.vue'),
         children: [
           {
-            path: '/score-input',
-            component: () => import('@/views/admin/score/score-input.vue')
+            path: '/score',
+            component: () => import('@/views/admin/score/score.vue')
           },{
             path: '/score-search',
             component: () => import('@/views/admin/score/score-search.vue')

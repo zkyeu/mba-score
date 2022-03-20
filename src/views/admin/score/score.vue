@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-20 11:41:11
+ * @LastEditTime: 2022-03-20 12:16:14
  * @LastEditors: liliang
  * @Description: 
- * @FilePath: /score/src/views/admin/score/score-search.vue
+ * @FilePath: /score/src/views/admin/score/score.vue
 -->
 
 <template>
@@ -23,13 +23,20 @@
       <el-button type="primary" :icon="Plus" @click="handleClick('single', '')"
         >添加单人学分</el-button
       >
-      <el-button type="primary" :icon="Plus" @click="handleClick('export', '')">导出信息</el-button>
     </div>
     <div class="table">
-      <table-list :tableData="tableData.data" :canSelect="false" @operate="handleOperate" />
+      <div class="select-ope"
+        ><el-button type="success" :icon="Finished" plain @click="handleClick('importBtn', '')"
+          >批量通过</el-button
+        >
+        <el-button type="danger" :icon="CloseBold" plain @click="handleClick('single', '')"
+          >批量驳回</el-button
+        ></div
+      >
+      <table-list :tableData="tableData.data" :canSelect="true" @operate="handleOperate" />
     </div>
     <div class="page">
-      <pages :total="100" @currentPage="currentPage" />
+      <pages :total="78" @currentPage="currentPage" />
     </div>
 
     <!-- 导入/批量 -->
@@ -307,12 +314,20 @@
 
 <script lang="ts" setup>
   import { ref, computed, onMounted, reactive } from 'vue';
-  import { ArrowRight, Plus, Promotion, Download, UploadFilled } from '@element-plus/icons-vue';
+  import {
+    ArrowRight,
+    Plus,
+    Promotion,
+    Download,
+    UploadFilled,
+    Finished,
+    CloseBold
+  } from '@element-plus/icons-vue';
   import TableOption from '../../../components/library/table-options.vue';
   import TableList from '../../../components/library/table-list.vue';
   import Pages from '../../../components/library/pagination.vue';
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
-  import mockData from './mock';
+  import mockData from './mock2';
   // import aaa from '../../../assets/files/学生信息模版.xlsx'
 
   const showLayer = reactive({
@@ -537,6 +552,13 @@
       margin: 15px 0;
       :deep(.el-button) {
         padding: 1px 8px;
+      }
+    }
+    .table {
+      .select-ope {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 10px;
       }
     }
 

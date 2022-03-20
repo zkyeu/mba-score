@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-19 21:50:53
+ * @LastEditTime: 2022-03-19 21:52:39
  * @LastEditors: liliang
  * @Description: 
  * @FilePath: /score/src/views/admin/student/student-board.vue

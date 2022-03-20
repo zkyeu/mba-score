@@ -2,8 +2,8 @@
  * @Author: liliang
  * @Date: 2022-03-16 08:07:09
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-19 20:33:31
- * @FilePath: /mba-score/src/components/library/table-list.vue
+ * @LastEditTime: 2022-03-20 11:56:39
+ * @FilePath: /score/src/components/library/table-list.vue
  * @Description: 
 -->
 
@@ -18,7 +18,7 @@
           :prop="item.value"
           :label="item.label"
           :sortable="item.sortable"
-          :align="align"
+          :align="item.align || align"
           :min-width="item.width"
           :class-name="item.class"
         >

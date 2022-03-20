@@ -61,7 +61,7 @@ export default [
       {
         id: 7133,
         title: '学分录入',
-        router: '/score-input'
+        router: '/score'
       },
       {
         id: 714,
