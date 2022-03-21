@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-20 18:35:49
+ * @LastEditTime: 2022-03-21 08:49:38
  * @LastEditors: liliang
  * @Description: 
  * @FilePath: /score/src/views/admin/score/component/process.vue
@@ -13,31 +13,77 @@
       <table-option :optionData="options.data" @optionChange="optionChange" />
       <el-button type="primary" :icon="Plus" @click="handleClick('export', '')">导出</el-button>
     </div>
-    <div>
+    <div class="table">
       <el-table :data="tableData" style="width: 100%">
         <el-table-column prop="uname" label="姓名" align="center" />
         <el-table-column prop="snumber" label="学号" align="center" />
         <el-table-column prop="grade" label="班级" align="center" />
         <el-table-column label="学分完成进度" align="center">
           <el-table-column label="必修" align="center">
-            <el-table-column prop="xiangdao" label="新生入学导向" align="center" />
-            <el-table-column prop="shijian" label="社会实践" align="center" />
-            <el-table-column prop="gongyi" label="社会公益" align="center" />
+            <el-table-column prop="xiangdao" label="新生入学导向" align="center">
+              <template v-slot="scope">
+                <span :class="parseInt(scope.row.xiangdao) >= 0 ? 'ok' : 'nok'">
+                  {{ scope.row.xiangdao }}
+                </span>
+              </template>
+            </el-table-column>
+            <el-table-column prop="shijian" label="社会实践" align="center">
+              <template v-slot="scope">
+                <span :class="parseInt(scope.row.shijian) >= 0 ? 'ok' : 'nok'">
+                  {{ scope.row.shijian }}
+                </span>
+              </template>
+            </el-table-column>
+            <el-table-column prop="gongyi" label="社会公益" align="center">
+              <template v-slot="scope">
+                <span :class="parseInt(scope.row.gongyi) >= 0 ? 'ok' : 'nok'">
+                  {{ scope.row.gongyi }}
+                </span>
+              </template>
+            </el-table-column>
           </el-table-column>
           <el-table-column label="选修" align="center">
-            <el-table-column prop="luntan" label="论坛讲座" align="center" />
-            <el-table-column prop="wenti" label="文体实践" align="center" />
-            <el-table-column prop="guoji" label="国际交流" align="center" />
-            <el-table-column prop="lilun" label="理论提升" align="center" />
+            <el-table-column prop="luntan" label="论坛讲座" align="center">
+              <template v-slot="scope">
+                <span :class="parseInt(scope.row.luntan) >= 0 ? 'ok' : 'nok'">
+                  {{ scope.row.luntan }}
+                </span>
+              </template>
+            </el-table-column>
+            <el-table-column prop="wenti" label="文体实践" align="center">
+              <template v-slot="scope">
+                <span :class="parseInt(scope.row.wenti) >= 0 ? 'ok' : 'nok'">
+                  {{ scope.row.wenti }}
+                </span>
+              </template>
+            </el-table-column>
+            <el-table-column prop="guoji" label="国际交流" align="center">
+              <template v-slot="scope">
+                <span :class="parseInt(scope.row.guoji) >= 0 ? 'ok' : 'nok'">
+                  {{ scope.row.guoji }}
+                </span>
+              </template>
+            </el-table-column>
+            <el-table-column prop="lilun" label="理论提升" align="center">
+              <template v-slot="scope">
+                <span :class="parseInt(scope.row.lilun) >= 0 ? 'ok' : 'nok'">
+                  {{ scope.row.lilun }}
+                </span>
+              </template>
+            </el-table-column>
           </el-table-column>
+        </el-table-column>
+        <el-table-column prop="zongji" label="统计" align="center">
+          <template v-slot="scope">
+            <span :class="parseInt(scope.row.zongji) >= 0 ? '' : 'nok'">
+              {{ scope.row.zongji }}
+            </span>
+          </template>
         </el-table-column>
       </el-table>
     </div>
-    <!-- <div class="table">
-      <table-list :tableData="tableData.data" :canSelect="false" @operate="handleOperate" />
-    </div> -->
     <div class="page">
-      <pages :total="100" @currentPage="currentPage" />
+      <pages :total="20" @currentPage="currentPage" />
     </div>
   </section>
 </template>
@@ -53,10 +99,6 @@
 
   const showLayer = reactive({
     import: false,
-    create: false,
-    view: false,
-    edit: false,
-    delete: false,
     title: ''
   });
   const optionParams = reactive({ obj: {} });
@@ -79,89 +121,7 @@
     console.log(v);
   };
 
-  onMounted(() => {
-    let arr = [
-      {
-        snumber: 'ZF2108223',
-        uname: '沈寿豪'
-      },
-      {
-        snumber: 'ZF2108201',
-        uname: '陈佳'
-      },
-      {
-        snumber: 'ZF2108202',
-        uname: '陈立旋'
-      },
-      {
-        snumber: 'ZF2108203',
-        uname: '成帅'
-      },
-      {
-        snumber: 'ZF2108204',
-        uname: '程方瑞'
-      },
-      {
-        snumber: 'ZF2108205',
-        uname: '程潇毅'
-      },
-      {
-        snumber: 'ZF2108206',
-        uname: '邓裴'
-      },
-      {
-        snumber: 'ZF2108207',
-        uname: '封云潇'
-      },
-      {
-        snumber: 'ZF2108208',
-        uname: '高冀雄'
-      },
-      {
-        snumber: 'ZF2108209',
-        uname: '高强'
-      },
-      {
-        snumber: 'ZF2108210',
-        uname: '郝静娜'
-      },
-      {
-        snumber: 'ZF2108211',
-        uname: '黄志坤'
-      },
-      {
-        snumber: 'ZF2108212',
-        uname: '兰丹子皇'
-      },
-      {
-        snumber: 'ZF2108213',
-        uname: '李坚'
-      },
-      {
-        snumber: 'ZF2108214',
-        uname: '李钊'
-      },
-      {
-        snumber: 'ZF2108215',
-        uname: '李振'
-      }
-    ];
-    let is = arr.map((item, index) => {
-      let obj = {
-        ...item,
-        grade: 'ZF21082班',
-        xiangdao: '1/6',
-        shijian: '0.5',
-        gongyi: '0.3',
-        luntan: '0.5',
-        wenti: '0.3',
-        guoji: '0',
-        lilun: '0.1'
-      };
-      return obj;
-    });
-    console.log(is);
-  });
+  onMounted(() => {});
 </script>
 
 <style lang="less" scoped>
@@ -194,6 +154,15 @@
       margin: 15px 0;
       :deep(.el-button) {
         padding: 1px 8px;
+      }
+    }
+
+    .table {
+      :deep(.ok) {
+        // color: blue;
+      }
+      :deep(.nok) {
+        color: red;
       }
     }
   }

@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-16 21:01:33
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-20 18:39:43
+ * @LastEditTime: 2022-03-21 08:50:33
  * @FilePath: /score/src/views/admin/score/process.ts
  * @Description:
  */
@@ -104,7 +104,7 @@ export default {
       luntan: '-5',
       wenti: '-3',
       guoji: '0',
-      lilun: '-1'
+      lilun: '-1',zongji: -9
     },
     {
       snumber: 'ZF2108201',
@@ -116,7 +116,7 @@ export default {
       luntan: '3',
       wenti: '-3',
       guoji: '0',
-      lilun: '-1'
+      lilun: '-1',zongji: -13
     },
     {
       snumber: 'ZF2108202',
@@ -128,7 +128,7 @@ export default {
       luntan: '-3',
       wenti: '-2',
       guoji: '0',
-      lilun: '-2'
+      lilun: '-2',zongji: -9
     },
     {
       snumber: 'ZF2108203',
@@ -140,7 +140,7 @@ export default {
       luntan: '-5',
       wenti: '2',
       guoji: '0',
-      lilun: '-1'
+      lilun: '-1',zongji: -11
     },
     {
       snumber: 'ZF2108204',
@@ -152,19 +152,19 @@ export default {
       luntan: '-3',
       wenti: '-3',
       guoji: '0',
-      lilun: '-1'
+      lilun: '-1',zongji: -8
     },
     {
       snumber: 'ZF2108205',
       uname: '程潇毅',
       grade: 'ZF21082班',
-      xiangdao: '-1',
-      shijian: '-5',
+      xiangdao: '0',
+      shijian: '1',
       gongyi: '3',
       luntan: '1',
       wenti: '2',
       guoji: '0',
-      lilun: '-1'
+      lilun: 0 ,zongji: 0
     },
     {
       snumber: 'ZF2108206',
@@ -176,19 +176,19 @@ export default {
       luntan: '2',
       wenti: '-3',
       guoji: '0',
-      lilun: '-1'
+      lilun: '-1',zongji: -14
     },
     {
       snumber: 'ZF2108207',
       uname: '封云潇',
       grade: 'ZF21082班',
-      xiangdao: '-2',
-      shijian: '-5',
-      gongyi: '-3',
-      luntan: '-5',
-      wenti: '-2',
+      xiangdao: 0,
+      shijian: 0,
+      gongyi: 0,
+      luntan: 3,
+      wenti: 2,
       guoji: '0',
-      lilun: '-1'
+      lilun: '1',zongji: 0
     },
     {
       snumber: 'ZF2108208',
@@ -200,7 +200,7 @@ export default {
       luntan: '-5',
       wenti: '-3',
       guoji: '0',
-      lilun: '-1'
+      lilun: '-1',zongji: -17
     },
     {
       snumber: 'ZF2108209',
@@ -212,7 +212,7 @@ export default {
       luntan: '-5',
       wenti: '-3',
       guoji: '0',
-      lilun: '-1'
+      lilun: '-1',zongji: -15
     },
     {
       snumber: 'ZF2108210',
@@ -224,7 +224,7 @@ export default {
       luntan: '-5',
       wenti: '-3',
       guoji: '0',
-      lilun: '-1'
+      lilun: '-1',zongji: -17
     },
     {
       snumber: 'ZF2108211',
@@ -236,7 +236,7 @@ export default {
       luntan: '-5',
       wenti: '-1',
       guoji: '0',
-      lilun: '-1'
+      lilun: '-1',zongji: -16
     },
     {
       snumber: 'ZF2108212',
@@ -248,7 +248,7 @@ export default {
       luntan: '-5',
       wenti: '-3',
       guoji: '0',
-      lilun: '-1'
+      lilun: '-1',zongji: -17
     },
     {
       snumber: 'ZF2108213',
@@ -260,7 +260,7 @@ export default {
       luntan: '-5',
       wenti: '-1',
       guoji: '0',
-      lilun: '-1'
+      lilun: '-1',zongji: -12
     },
     {
       snumber: 'ZF2108214',
@@ -272,7 +272,7 @@ export default {
       luntan: '-5',
       wenti: '-3',
       guoji: '0',
-      lilun: '-1'
+      lilun: '-1',zongji: -17
     },
     {
       snumber: 'ZF2108215',
@@ -280,11 +280,11 @@ export default {
       grade: 'ZF21082班',
       xiangdao: '-1',
       shijian: '-2',
-      gongyi: '-3',
+      gongyi: '1',
       luntan: '-5',
-      wenti: '-1',
+      wenti: '0',
       guoji: '0',
-      lilun: '-1'
+      lilun: '-1',zongji: -8
     }
   ]
 }

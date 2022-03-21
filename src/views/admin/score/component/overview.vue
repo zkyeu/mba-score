@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-20 18:16:34
+ * @LastEditTime: 2022-03-21 08:11:43
  * @LastEditors: liliang
  * @Description: 
  * @FilePath: /score/src/views/admin/score/component/overview.vue
@@ -79,89 +79,7 @@
     console.log(v);
   };
 
-  onMounted(() => {
-    let arr = [
-      {
-        snumber: 'ZF2108223',
-        uname: '沈寿豪'
-      },
-      {
-        snumber: 'ZF2108201',
-        uname: '陈佳'
-      },
-      {
-        snumber: 'ZF2108202',
-        uname: '陈立旋'
-      },
-      {
-        snumber: 'ZF2108203',
-        uname: '成帅'
-      },
-      {
-        snumber: 'ZF2108204',
-        uname: '程方瑞'
-      },
-      {
-        snumber: 'ZF2108205',
-        uname: '程潇毅'
-      },
-      {
-        snumber: 'ZF2108206',
-        uname: '邓裴'
-      },
-      {
-        snumber: 'ZF2108207',
-        uname: '封云潇'
-      },
-      {
-        snumber: 'ZF2108208',
-        uname: '高冀雄'
-      },
-      {
-        snumber: 'ZF2108209',
-        uname: '高强'
-      },
-      {
-        snumber: 'ZF2108210',
-        uname: '郝静娜'
-      },
-      {
-        snumber: 'ZF2108211',
-        uname: '黄志坤'
-      },
-      {
-        snumber: 'ZF2108212',
-        uname: '兰丹子皇'
-      },
-      {
-        snumber: 'ZF2108213',
-        uname: '李坚'
-      },
-      {
-        snumber: 'ZF2108214',
-        uname: '李钊'
-      },
-      {
-        snumber: 'ZF2108215',
-        uname: '李振'
-      }
-    ];
-    let is = arr.map((item, index) => {
-      let obj = {
-        ...item,
-        grade: 'ZF21082班',
-        xiangdao: '1/6',
-        shijian: '0.5',
-        gongyi: '0.3',
-        luntan: '0.5',
-        wenti: '0.3',
-        guoji: '0',
-        lilun: '0.1'
-      };
-      return obj;
-    });
-    console.log(is);
-  });
+  onMounted(() => {});
 </script>
 
 <style lang="less" scoped>
