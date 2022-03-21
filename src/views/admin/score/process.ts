@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-16 21:01:33
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-21 08:50:33
+ * @LastEditTime: 2022-03-21 10:19:40
  * @FilePath: /score/src/views/admin/score/process.ts
  * @Description:
  */
@@ -97,7 +97,7 @@ export default {
     {
       snumber: 'ZF2108223',
       uname: '沈寿豪',
-      grade: 'ZF21082班',
+      grade: '2班',
       xiangdao: '-1',
       shijian: '1',
       gongyi: '1',
@@ -109,7 +109,7 @@ export default {
     {
       snumber: 'ZF2108201',
       uname: '陈佳',
-      grade: 'ZF21082班',
+      grade: '2班',
       xiangdao: '-1',
       shijian: '-5',
       gongyi: '-3',
@@ -121,7 +121,7 @@ export default {
     {
       snumber: 'ZF2108202',
       uname: '陈立旋',
-      grade: 'ZF21082班',
+      grade: '2班',
       xiangdao: '-2',
       shijian: '4',
       gongyi: '5',
@@ -133,7 +133,7 @@ export default {
     {
       snumber: 'ZF2108203',
       uname: '成帅',
-      grade: 'ZF21082班',
+      grade: '2班',
       xiangdao: '-1',
       shijian: '-2',
       gongyi: '-3',
@@ -145,7 +145,7 @@ export default {
     {
       snumber: 'ZF2108204',
       uname: '程方瑞',
-      grade: 'ZF21082班',
+      grade: '2班',
       xiangdao: '-1',
       shijian: '1',
       gongyi: '1',
@@ -157,7 +157,7 @@ export default {
     {
       snumber: 'ZF2108205',
       uname: '程潇毅',
-      grade: 'ZF21082班',
+      grade: '2班',
       xiangdao: '0',
       shijian: '1',
       gongyi: '3',
@@ -169,7 +169,7 @@ export default {
     {
       snumber: 'ZF2108206',
       uname: '邓裴',
-      grade: 'ZF21082班',
+      grade: '2班',
       xiangdao: '-1',
       shijian: '-5',
       gongyi: '-3',
@@ -181,7 +181,7 @@ export default {
     {
       snumber: 'ZF2108207',
       uname: '封云潇',
-      grade: 'ZF21082班',
+      grade: '2班',
       xiangdao: 0,
       shijian: 0,
       gongyi: 0,
@@ -193,7 +193,7 @@ export default {
     {
       snumber: 'ZF2108208',
       uname: '高冀雄',
-      grade: 'ZF21082班',
+      grade: '2班',
       xiangdao: '-1',
       shijian: '-5',
       gongyi: '-3',
@@ -205,7 +205,7 @@ export default {
     {
       snumber: 'ZF2108209',
       uname: '高强',
-      grade: 'ZF21082班',
+      grade: '2班',
       xiangdao: '-1',
       shijian: '-5',
       gongyi: '-1',
@@ -217,7 +217,7 @@ export default {
     {
       snumber: 'ZF2108210',
       uname: '郝静娜',
-      grade: 'ZF21082班',
+      grade: '2班',
       xiangdao: '-1',
       shijian: '-5',
       gongyi: '-3',
@@ -229,7 +229,7 @@ export default {
     {
       snumber: 'ZF2108211',
       uname: '黄志坤',
-      grade: 'ZF21082班',
+      grade: '2班',
       xiangdao: '-1',
       shijian: '-5',
       gongyi: '-4',
@@ -241,7 +241,7 @@ export default {
     {
       snumber: 'ZF2108212',
       uname: '兰丹子皇',
-      grade: 'ZF21082班',
+      grade: '2班',
       xiangdao: '-1',
       shijian: '-5',
       gongyi: '-3',
@@ -253,7 +253,7 @@ export default {
     {
       snumber: 'ZF2108213',
       uname: '李坚',
-      grade: 'ZF21082班',
+      grade: '2班',
       xiangdao: '-1',
       shijian: '-3',
       gongyi: '-2',
@@ -265,7 +265,7 @@ export default {
     {
       snumber: 'ZF2108214',
       uname: '李钊',
-      grade: 'ZF21082班',
+      grade: '2班',
       xiangdao: '-1',
       shijian: '-5',
       gongyi: '-3',
@@ -277,7 +277,7 @@ export default {
     {
       snumber: 'ZF2108215',
       uname: '李振',
-      grade: 'ZF21082班',
+      grade: '2班',
       xiangdao: '-1',
       shijian: '-2',
       gongyi: '1',

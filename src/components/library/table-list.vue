@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-16 08:07:09
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-20 12:48:21
+ * @LastEditTime: 2022-03-21 12:44:35
  * @FilePath: /score/src/components/library/table-list.vue
  * @Description: 
 -->
@@ -13,8 +13,9 @@
       :ref="ref"
       :data="tableData.tablelist"
       style="width: 100%"
-      border
+      :border="border"
       @selection-change="handleSelectionChange"
+      :stripe="stripe"
     >
       <el-table-column type="selection" width="38" v-if="canSelect" />
       <template v-for="(item, index) in tableData.tabletitle">
@@ -91,6 +92,14 @@
     ref: {
       type: String,
       default: ''
+    },
+    border: {
+      type: Boolean,
+      default: true
+    },
+    stripe: {
+      type: Boolean,
+      default: false
     }
   });
 

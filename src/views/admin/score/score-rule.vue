@@ -1,16 +1,15 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-18 08:38:23
- * @LastEditTime: 2022-03-16 08:55:29
+ * @LastEditTime: 2022-03-21 10:39:15
  * @LastEditors: liliang
  * @Description: In User Settings Edit
- * @FilePath: /score/src/views/admin/activity/activity.vue
+ * @FilePath: /score/src/views/admin/score/score-rule.vue
 -->
 <template>
   <section class="content"> 学分配置 </section>
 </template>
 
-//
 <script lang="ts">
   //   // 组件引用部分========
   //   import { ref, defineComponent, computed, reactive, onMounted } from 'vue';
