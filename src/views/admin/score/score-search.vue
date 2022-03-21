@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-21 08:32:12
+ * @LastEditTime: 2022-03-21 22:40:27
  * @LastEditors: liliang
  * @Description: 
- * @FilePath: /score/src/views/admin/score/score-search.vue
+ * @FilePath: /mba-score/src/views/admin/score/score-search.vue
 -->
 
 <template>
@@ -44,13 +44,7 @@
       custom-class="delete-layer"
     >
       <div class="body">
-        <el-form
-          ref="ruleFormRef"
-          :model="ruleForm"
-          :rules="rules"
-          label-width="90px"
-          size="default"
-        >
+        <el-form ref="ruleFormRef" :model="ruleForm" label-width="90px" size="default">
           <el-form-item label="学生类型" prop="type">
             <el-select v-model="ruleForm.type" placeholder="选择学生类型">
               <el-option label="全部" value="0" />
@@ -99,8 +93,8 @@
       </div>
       <template #footer>
         <span class="dialog-footer">
-          <el-button @click="handleClick('no')">取消</el-button>
-          <el-button type="primary" @click="handleClick('yes')">确认</el-button>
+          <el-button @click="handleClick('no', '')">取消</el-button>
+          <el-button type="primary" @click="handleClick('yes', '')">确认</el-button>
         </span>
       </template>
     </el-dialog>

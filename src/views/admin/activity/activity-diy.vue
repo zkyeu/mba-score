@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-18 08:38:23
- * @LastEditTime: 2022-03-19 00:01:59
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-03-21 22:30:59
+ * @LastEditors: liliang
  * @Description: In User Settings Edit
- * @FilePath: /score/src/views/admin/activity/activity-diy.vue
+ * @FilePath: /mba-score/src/views/admin/activity/activity-diy.vue
 -->
 <template>
   <section class="single-page">
@@ -254,7 +254,16 @@
   const tableData = reactive({
     data: mockData.table
   });
-  const viewObj = reactive({ data: {} });
+  const viewObj = reactive({
+    data: {
+      status: '',
+      date: '',
+      class: '',
+      is: '',
+      name: '',
+      id: ''
+    }
+  });
   const ruleFormRef = ref<FormInstance>();
   const ruleForm = reactive({
     name: '',
@@ -336,13 +345,13 @@
         break;
       case 'hidden':
         (showLayer as any)[o] = false;
-        viewObj.data = {};
+        // viewObj.data = {};
         break;
       case 'delete':
         showLayer.title = '删除分类';
         ElMessage.success('删除成功');
         showLayer.delete = false;
-        viewObj.data = {};
+        // viewObj.data = {};
         break;
       default:
     }

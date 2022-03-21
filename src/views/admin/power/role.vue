@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-16 09:29:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-21 21:56:00
+ * @LastEditTime: 2022-03-21 22:43:56
  * @FilePath: /mba-score/src/views/admin/power/role.vue
  * @Description: 
 -->
@@ -137,7 +137,8 @@
   const ruleFormRef = ref<FormInstance>();
   const ruleForm = reactive({
     desc: '',
-    pname: ''
+    pname: '',
+    name: ''
   });
   interface Tree {
     id: number;

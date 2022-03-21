@@ -2,7 +2,7 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-21 22:21:51
+ * @LastEditTime: 2022-03-21 22:48:22
  * @FilePath: /mba-score/src/components/admin/left-nav.vue
 -->
 
@@ -86,7 +86,7 @@
   import router from '../../router/index';
   import { key } from '../../store';
   import { Key, Trophy, Soccer, User } from '@element-plus/icons-vue';
-  import navMock from './left-nav';
+  import navMock from './left-nav.js';
 
   const store = useStore(key);
   const leftNavData = computed(() => store.state.leftNav);

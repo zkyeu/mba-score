@@ -11,7 +11,7 @@
     "lib": ["esnext", "dom"], // 编译过程中需要引入的库文件的列表。
     // "strictNullChecks": true 
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/components/admin/left-nav.js"],
   "exclude": [
     "node_modules"
   ]

@@ -2,8 +2,8 @@
  * @Author: liliang
  * @Date: 2022-03-16 09:29:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-21 13:16:12
- * @FilePath: /score/src/views/admin/power/member.vue
+ * @LastEditTime: 2022-03-21 22:33:31
+ * @FilePath: /mba-score/src/views/admin/power/member.vue
  * @Description: 
 -->
 <template>
@@ -16,17 +16,17 @@
     </div>
     <div class="btn">
       <table-option :optionData="options.data" @optionChange="optionChangeFn" />
-      <el-button type="primary" :icon="Plus" @click="handleClick('add')">添加人员</el-button>
+      <el-button type="primary" :icon="Plus" @click="handleClick('add', '')">添加人员</el-button>
     </div>
     <div class="table">
       <div class="select-ope" v-if="selection.length > 1">
-        <el-button type="success" :icon="Finished" plain @click="handleClick('yes')"
+        <el-button type="success" :icon="Finished" plain @click="handleClick('yes', '')"
           >批量启用</el-button
         >
-        <el-button type="warning" :icon="Finished" plain @click="handleClick('no')"
+        <el-button type="warning" :icon="Finished" plain @click="handleClick('no', '')"
           >批量禁用</el-button
         >
-        <el-button type="danger" :icon="CloseBold" plain @click="handleClick('del')"
+        <el-button type="danger" :icon="CloseBold" plain @click="handleClick('del', '')"
           >批量删除</el-button
         ></div
       >
@@ -41,7 +41,7 @@
       />
     </div>
     <div class="page" v-if="total > 10">
-      <pages :total="2" @currentPage="currentPage" />
+      <pages :total="total" @currentPage="currentPage" />
     </div>
 
     <!-- 编辑 -->
@@ -54,13 +54,7 @@
       custom-class="edit-info-layer"
     >
       <div class="dialog-body">
-        <el-form
-          ref="ruleFormRef"
-          :model="ruleForm.data"
-          :rules="rules"
-          label-width="90px"
-          size="default"
-        >
+        <el-form ref="ruleFormRef" :model="ruleForm.data" label-width="90px" size="default">
           <el-form-item label="登录账号" prop="uname" style="width: 278px">
             <el-input v-model="ruleForm.data.uname" placeholder="请输入登录账号" />
           </el-form-item>
@@ -87,7 +81,7 @@
       </div>
       <template #footer>
         <span class="dialog-footer">
-          <el-button @click="handleClick('cancel')">取消</el-button>
+          <el-button @click="handleClick('cancel', '')">取消</el-button>
           <el-button type="primary" @click="handleClick('submit', ruleFormRef)">添加</el-button>
         </span>
       </template>
@@ -106,8 +100,8 @@
       </div>
       <template #footer>
         <span class="dialog-footer">
-          <el-button @click="handleClick('cancel')">取消</el-button>
-          <el-button type="primary" @click="handleClick('confirm')">确认</el-button>
+          <el-button @click="handleClick('cancel', '')">取消</el-button>
+          <el-button type="primary" @click="handleClick('confirm', '')">确认</el-button>
         </span>
       </template>
     </el-dialog>
@@ -131,7 +125,7 @@
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
   import mockData from './mock2';
   // import aaa from '../../../assets/files/学生信息模版.xlsx'
-
+  const total = ref(2);
   const showLayer = reactive({
     create: false,
     edit: false,
@@ -153,7 +147,10 @@
       name: '',
       role: '',
       pwd: '',
-      pwd2: ''
+      pwd2: '',
+      parentId: '',
+      status: '',
+      mba: ''
     }
   });
 
@@ -247,7 +244,7 @@
         ruleForm.data.name = v.rowData.name;
         ruleForm.data.parentId = '院校级';
         ruleForm.data.status = v.rowData.status;
-        ruleForm.data.desc = v.rowData.desc;
+        ruleForm.data.status = v.rowData.desc;
 
         showLayer.title = '编辑学生信息';
         showLayer.create = true;

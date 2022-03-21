@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-20 15:11:51
+ * @LastEditTime: 2022-03-21 22:36:13
  * @LastEditors: liliang
  * @Description: 
- * @FilePath: /score/src/views/admin/score/score.vue
+ * @FilePath: /mba-score/src/views/admin/score/score.vue
 -->
 
 <template>
@@ -98,15 +98,9 @@
           <div class="step">
             <div class="title">第三步：添加基础信息</div>
             <div class="basic-info">
-              <el-form
-                ref="ruleFormRef"
-                :model="ruleForm"
-                :rules="rules"
-                label-width="90px"
-                size="default"
-              >
+              <el-form ref="ruleFormRef" :model="ruleForm" label-width="90px" size="default">
                 <el-form-item label="学生类型" prop="studentType">
-                  <el-select v-model="ruleForm.studentType" placeholder="选择父类">
+                  <el-select v-model="ruleForm.data.studentType" placeholder="选择父类">
                     <el-option label="全部" value="0" />
                     <el-option label="MBA" value="mba" />
                     <el-option label="EMBA" value="emba" />
@@ -116,7 +110,7 @@
                   </el-select>
                 </el-form-item>
                 <el-form-item label="学生年级" prop="year">
-                  <el-select v-model="ruleForm.year" placeholder="选择父类">
+                  <el-select v-model="ruleForm.data.year" placeholder="选择父类">
                     <el-option label="不区分" value="0" />
                     <el-option label="2022" value="2022" />
                     <el-option label="2021" value="2021" />
@@ -127,7 +121,7 @@
                   </el-select>
                 </el-form-item>
                 <el-form-item label="学生班型" prop="banxing">
-                  <el-select v-model="ruleForm.banxing" placeholder="选择学生班型">
+                  <el-select v-model="ruleForm.data.banxing" placeholder="选择学生班型">
                     <el-option label="不区分" value="0" />
                     <el-option label="集中I" value="1" />
                     <el-option label="集中II" value="2" />
@@ -137,7 +131,7 @@
                   </el-select>
                 </el-form-item>
                 <el-form-item label="学生班级" prop="grade">
-                  <el-select v-model="ruleForm.grade" placeholder="选择活动班级">
+                  <el-select v-model="ruleForm.data.grade" placeholder="选择活动班级">
                     <el-option label="不区分" value="0" />
                     <el-option label="21081" value="1" />
                     <el-option label="21082" value="2" />
@@ -151,7 +145,7 @@
                   </el-select>
                 </el-form-item>
                 <el-form-item label="学分类型" prop="xuefen">
-                  <el-select v-model="ruleForm.xuefen" placeholder="选择学分类型">
+                  <el-select v-model="ruleForm.data.xuefen" placeholder="选择学分类型">
                     <el-option label="不区分" value="0" />
                     <el-option label="文体学分" value="1" />
                     <el-option label="志愿者学分" value="2" />
@@ -181,13 +175,7 @@
       custom-class="edit-info-layer"
     >
       <div class="dialog-body">
-        <el-form
-          ref="ruleFormRef"
-          :model="ruleForm.data"
-          :rules="rules"
-          label-width="90px"
-          size="default"
-        >
+        <el-form ref="ruleFormRef" :model="ruleForm.data" label-width="90px" size="default">
           <el-form-item label="学生姓名" prop="name" style="width: 278px">
             <el-input v-model="ruleForm.data.name" placeholder="请输入学生姓名" />
           </el-form-item>
@@ -372,7 +360,12 @@
       status: '',
       desc: '',
       mba: '',
-      xuefen: ''
+      xuefen: '',
+      name: '',
+      mobile: '',
+      studentType: '',
+      year: '',
+      banxing: ''
     }
   });
 

@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-20 14:27:19
+ * @LastEditTime: 2022-03-21 22:35:15
  * @LastEditors: liliang
  * @Description: 
- * @FilePath: /score/src/views/admin/score/component/list.vue
+ * @FilePath: /mba-score/src/views/admin/score/component/list.vue
 -->
 
 <template>
@@ -81,7 +81,7 @@
                 size="default"
               >
                 <el-form-item label="学生类型" prop="studentType">
-                  <el-select v-model="ruleForm.studentType" placeholder="选择父类">
+                  <el-select v-model="ruleForm.data.studentType" placeholder="选择父类">
                     <el-option label="全部" value="0" />
                     <el-option label="MBA" value="mba" />
                     <el-option label="EMBA" value="emba" />
@@ -91,7 +91,7 @@
                   </el-select>
                 </el-form-item>
                 <el-form-item label="学生年级" prop="year">
-                  <el-select v-model="ruleForm.year" placeholder="选择父类">
+                  <el-select v-model="ruleForm.data.year" placeholder="选择父类">
                     <el-option label="不区分" value="0" />
                     <el-option label="2022" value="2022" />
                     <el-option label="2021" value="2021" />
@@ -102,7 +102,7 @@
                   </el-select>
                 </el-form-item>
                 <el-form-item label="学生班型" prop="banxing">
-                  <el-select v-model="ruleForm.banxing" placeholder="选择学生班型">
+                  <el-select v-model="ruleForm.data.banxing" placeholder="选择学生班型">
                     <el-option label="不区分" value="0" />
                     <el-option label="集中I" value="1" />
                     <el-option label="集中II" value="2" />
@@ -112,7 +112,7 @@
                   </el-select>
                 </el-form-item>
                 <el-form-item label="学生班级" prop="grade">
-                  <el-select v-model="ruleForm.grade" placeholder="选择活动班级">
+                  <el-select v-model="ruleForm.data.grade" placeholder="选择活动班级">
                     <el-option label="不区分" value="0" />
                     <el-option label="21081" value="1" />
                     <el-option label="21082" value="2" />
@@ -328,7 +328,12 @@
       parentId: '',
       status: '',
       desc: '',
-      mba: ''
+      mba: '',
+      name: '',
+      studentType: '',
+      banxing: '',
+      year: '',
+      mobile: ''
     }
   });
   const rules = reactive({
@@ -470,10 +475,10 @@
         showLayer.view = true;
         break;
       case 'edit':
-        ruleForm.name = v.rowData.name;
-        ruleForm.parentId = '院校级';
-        ruleForm.status = v.rowData.status;
-        ruleForm.desc = v.rowData.desc;
+        ruleForm.data.name = v.rowData.name;
+        ruleForm.data.parentId = '院校级';
+        ruleForm.data.status = v.rowData.status;
+        ruleForm.data.desc = v.rowData.desc;
 
         showLayer.title = '编辑学生信息';
         showLayer.create = true;

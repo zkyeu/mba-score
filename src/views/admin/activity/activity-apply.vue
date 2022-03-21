@@ -2,7 +2,7 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-19 00:07:30
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-19 00:44:22
+ * @LastEditTime: 2022-03-21 22:43:33
  * @FilePath: /mba-score/src/views/admin/activity/activity-apply.vue
 -->
 
@@ -247,7 +247,23 @@
   const tableData = reactive({
     data: mockData.table
   });
-  const viewObj = reactive({ data: {} });
+  const viewObj = reactive({
+    data: {
+      name: '',
+      uniqueNumber: '',
+      studentType: '',
+      grade: '',
+      year: '',
+      belong: '',
+      parentId: '',
+      status: '',
+      desc: '',
+      is: '',
+      class: '',
+      id: '',
+      date: ''
+    }
+  });
   const ruleFormRef = ref<FormInstance>();
   const ruleForm = reactive({
     name: '',
@@ -329,13 +345,13 @@
         break;
       case 'hidden':
         (showLayer as any)[o] = false;
-        viewObj.data = {};
+        // viewObj.data = {};
         break;
       case 'delete':
         showLayer.title = '删除分类';
         ElMessage.success('删除成功');
         showLayer.delete = false;
-        viewObj.data = {};
+        // viewObj.data = {};
         break;
       default:
     }
