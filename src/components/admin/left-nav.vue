@@ -1,15 +1,15 @@
 <!--
- * @Author: your name
- * @Date: 2021-08-02 20:10:38
- * @LastEditTime: 2022-03-17 21:00:29
+ * @Author: liliang | zkyeu@163.com
+ * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @Description: In User Settings Edit
- * @FilePath: /score/src/components/admin/left-nav.vue
+ * @LastEditTime: 2022-03-21 22:21:51
+ * @FilePath: /mba-score/src/components/admin/left-nav.vue
 -->
+
 <template>
   <section class="left-navs">
     <el-menu
-      :uniqueOpened="true"
+      :uniqueOpened="false"
       default-active="/"
       class="left-nav-menu"
       router
@@ -18,7 +18,6 @@
       @open="handleOpen"
       @close="handleClose"
     >
-      <!-- <template v-for="item in leftNavData"> -->
       <template v-for="item in leftNav.data">
         <el-menu-item
           :index="item.router"
@@ -26,20 +25,20 @@
           v-if="!item.child"
           class="first-class"
         >
-          <el-icon><location /></el-icon>
-          <template #title>{{ item.title }}</template>
+          <el-icon :icon="item.icon"></el-icon>
+          <template #title></template>
         </el-menu-item>
 
-        <el-sub-menu :index="String(item.id + 1000)" :key="String(item.id)" v-else>
+        <el-sub-menu :index="String(item.id)" :key="String(item.id)" v-else>
           <template #title>
-            <el-icon><location /></el-icon>
+            <el-icon><User /></el-icon>
             <span class="first-class">{{ item.title }}</span>
           </template>
           <el-menu-item-group>
-            <template #title>
+            <!-- <template #title>
               <el-icon><location /></el-icon>
               <span>一级菜单</span>
-            </template>
+            </template> -->
             <el-menu-item v-for="sub in item.child" :key="sub.router" :index="sub.router">{{
               sub.title
             }}</el-menu-item>
@@ -86,7 +85,7 @@
   import { useStore } from 'vuex';
   import router from '../../router/index';
   import { key } from '../../store';
-  import { Location, Document, Menu as IconMenu, Setting } from '@element-plus/icons-vue';
+  import { Key, Trophy, Soccer, User } from '@element-plus/icons-vue';
   import navMock from './left-nav';
 
   const store = useStore(key);

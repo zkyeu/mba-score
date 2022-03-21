@@ -2,10 +2,11 @@
  * @Author: liliang
  * @Date: 2022-03-16 09:29:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-21 13:59:14
- * @FilePath: /score/src/views/admin/power/role.vue
+ * @LastEditTime: 2022-03-21 21:56:00
+ * @FilePath: /mba-score/src/views/admin/power/role.vue
  * @Description: 
 -->
+
 <template>
   <section class="single-page">
     <div class="bread">
@@ -15,7 +16,7 @@
       </el-breadcrumb>
     </div>
     <div class="btn">
-      <el-button type="primary" :icon="Plus" @click="handleClick('add')">添加权限组</el-button>
+      <el-button type="primary" :icon="Plus" @click="handleClick('add', '')">添加权限组</el-button>
     </div>
     <div class="table">
       <table-list
@@ -27,53 +28,64 @@
       />
     </div>
     <div class="page" v-if="total > 10">
-      <pages :total="2" @currentPage="currentPage" />
+      <pages :total="total" @currentPage="currentPage" />
     </div>
+
+    <!-- 访问授权 -->
+    <el-dialog
+      v-model="showLayer.auth"
+      :title="showLayer.title"
+      width="760px"
+      custom-class="auth-layer"
+    >
+      <div class="auth-body">
+        <el-tree
+          ref="tree"
+          :data="authData"
+          show-checkbox
+          node-key="id"
+          default-expand-all
+          :expand-on-click-node="false"
+          :props="{ class: customNodeClass }"
+          @getCheckedKeys="getKey(true)"
+          @node-click="handleNodeClick"
+        />
+      </div>
+      <template #footer>
+        <span class="dialog-footer">
+          <el-button @click="handleClick('cancel', '')">取消</el-button>
+          <el-button type="primary" @click="handleClick('confirm', '')">确认</el-button>
+        </span>
+      </template>
+    </el-dialog>
 
     <!-- 编辑 -->
     <el-dialog
       v-model="showLayer.create"
       :title="showLayer.title"
-      width="350px"
+      width="450px"
       draggable
       :before-close="handleClose"
       custom-class="edit-info-layer"
     >
       <div class="dialog-body">
-        <el-form
-          ref="ruleFormRef"
-          :model="ruleForm.data"
-          :rules="rules"
-          label-width="90px"
-          size="default"
-        >
-          <el-form-item label="登录账号" prop="uname" style="width: 278px">
-            <el-input v-model="ruleForm.data.uname" placeholder="请输入登录账号" />
+        <el-form ref="ruleFormRef" :model="ruleForm" label-width="96px" size="default">
+          <el-form-item label="权限组名称" prop="uname" style="width: 380px" required>
+            <el-input v-model="ruleForm.pname" placeholder="请输入登录账号" />
           </el-form-item>
-          <el-form-item label="密码" prop="pwd" style="width: 278px">
-            <el-input v-model="ruleForm.data.pwd" placeholder="请输入登录密码" />
-          </el-form-item>
-          <el-form-item label="密码确认" prop="pwd2" style="width: 278px">
-            <el-input v-model="ruleForm.data.pwd2" placeholder="请再次输入登录密码" />
-          </el-form-item>
-          <el-form-item label="成员姓名" prop="name" style="width: 278px">
-            <el-input v-model="ruleForm.data.name" placeholder="请输入姓名" />
-          </el-form-item>
-          <el-form-item label="成员身份" prop="mba">
-            <el-select v-model="ruleForm.data.mba" placeholder="选择身份">
-              <el-option label="全部" value="0" />
-              <el-option label="主任" value="mba" />
-              <el-option label="副主任" value="emba" />
-              <el-option label="老师" value="mem" />
-              <el-option label="学生" value="mpacc" />
-              <el-option label="其他的自己加" value="24" />
-            </el-select>
+          <el-form-item label="权限组描述" prop="pwd" style="width: 380px">
+            <el-input
+              type="textarea"
+              rows="6"
+              v-model="ruleForm.desc"
+              placeholder="请输入登录密码"
+            />
           </el-form-item>
         </el-form>
       </div>
       <template #footer>
         <span class="dialog-footer">
-          <el-button @click="handleClick('cancel')">取消</el-button>
+          <el-button @click="handleClick('cancel', '')">取消</el-button>
           <el-button type="primary" @click="handleClick('submit', ruleFormRef)">添加</el-button>
         </span>
       </template>
@@ -84,16 +96,16 @@
       v-model="showLayer.delete"
       :title="showLayer.title"
       width="360px"
-      custom-class="delete-layer"
+      custom-class="auth-layer"
     >
       <div class="body"
         ><el-icon><promotion /></el-icon>
-        <p>确定要删除【{{ ruleForm.data.name }}】的信息吗？</p>
+        <p>确定要删除【{{ ruleForm.name }}】的信息吗？</p>
       </div>
       <template #footer>
         <span class="dialog-footer">
-          <el-button @click="handleClick('cancel')">取消</el-button>
-          <el-button type="primary" @click="handleClick('confirm')">确认</el-button>
+          <el-button @click="handleClick('cancel', '')">取消</el-button>
+          <el-button type="primary" @click="handleClick('confirm', '')">确认</el-button>
         </span>
       </template>
     </el-dialog>
@@ -102,22 +114,16 @@
 
 <script lang="ts" setup>
   import { ref, computed, onMounted, reactive } from 'vue';
-  import {
-    ArrowRight,
-    Plus,
-    Promotion,
-    Download,
-    UploadFilled,
-    Finished,
-    CloseBold
-  } from '@element-plus/icons-vue';
-  import TableOption from '../../../components/library/table-options.vue';
+  import { ArrowRight, Plus } from '@element-plus/icons-vue';
   import TableList from '../../../components/library/table-list.vue';
   import Pages from '../../../components/library/pagination.vue';
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
+  import type Node from 'element-plus/es/components/tree/src/model/node';
   import mockData from './mock';
 
+  const myRef = ref(null);
   const showLayer = reactive({
+    auth: false,
     create: false,
     edit: false,
     delete: false,
@@ -126,17 +132,34 @@
   const tableData = reactive({
     data: mockData.table
   });
+  const total = ref(7);
   const viewObj = reactive({ data: {} });
   const ruleFormRef = ref<FormInstance>();
   const ruleForm = reactive({
-    data: {
-      uname: '',
-      name: '',
-      role: '',
-      pwd: '',
-      pwd2: ''
-    }
+    desc: '',
+    pname: ''
   });
+  interface Tree {
+    id: number;
+    label: string;
+    isPenultimate?: boolean;
+    children?: Tree[];
+  }
+
+  const customNodeClass = (data: Tree, node: Node) => {
+    if (data.isPenultimate) {
+      return 'is-penultimate';
+    }
+    return null;
+  };
+  const authData: Tree[] = mockData.authData;
+  const getKey = (v: any) => {
+    console.log(v);
+  };
+
+  const handleNodeClick = (v: any) => {
+    console.log(v);
+  };
 
   // 批量结算取消
   const cancelImport = () => {
@@ -183,10 +206,10 @@
         break;
       case 'add':
         showLayer.create = true;
-        showLayer.title = '添加成员';
+        showLayer.title = '添加权限组';
         break;
       case 'cancel':
-        showLayer.create = false;
+        showLayer.auth = false;
         break;
       case 'delete':
         showLayer.title = '删除成员';
@@ -194,8 +217,12 @@
         showLayer.delete = false;
         break;
       case 'confirm':
-        ElMessage.success('删除成功');
-        showLayer.delete = false;
+        ElMessage.success('设置成功');
+        showLayer.auth = false;
+        break;
+      case 'auth':
+        showLayer.title = '访问授权';
+        showLayer.auth = true;
         break;
 
       default:
@@ -204,14 +231,11 @@
 
   // 操作
   const handleOperate = (v: any) => {
-    console.log(v);
-
     let key = v.operate;
-    ruleForm.data = v.rowData;
     switch (key) {
-      case 'delete':
-        showLayer.title = '删除权限组';
-        showLayer.delete = true;
+      case 'auth':
+        showLayer.title = '访问授权';
+        showLayer.auth = true;
         break;
       default:
         console.log(key);
@@ -222,7 +246,9 @@
     console.log(v);
   };
 
-  onMounted(() => {});
+  onMounted(() => {
+    console.log(myRef.value);
+  });
 </script>
 
 <style lang="less" scoped>
@@ -276,19 +302,27 @@
         }
       }
     }
-    :deep(.delete-layer) {
-      .body {
+    :deep(.auth-layer) {
+      .el-dialog__body {
+        padding: 0 20px;
+        font-size: 14px;
+      }
+      .el-tree {
+        & > div {
+          & > div {
+            &:first-child {
+              color: #333;
+              font-weight: 700;
+              font-size: 16px !important;
+              margin-top: 15px;
+            }
+          }
+        }
+      }
+
+      .el-tree-node.is-expanded.is-penultimate > .el-tree-node__children {
         display: flex;
-        align-items: center;
-        svg {
-          width: 30px !important;
-          height: 30px !important;
-          color: @root-color-b;
-        }
-        p {
-          padding-left: 10px;
-          font-size: 16px;
-        }
+        flex-direction: row;
       }
     }
   }

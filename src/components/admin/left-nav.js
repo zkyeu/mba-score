@@ -1,8 +1,8 @@
 /*
  * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-19 21:06:09
- * @FilePath: /score/src/components/admin/left-nav.js
+ * @LastEditTime: 2022-03-21 22:02:33
+ * @FilePath: /mba-score/src/components/admin/left-nav.js
  */
 
 export default [
@@ -10,7 +10,7 @@ export default [
     id: 1,
     title: '活动系统',
     router: '',
-    icon: 'el-icon-menu',
+    icon: 'Soccer',
     child: [
       {
         id: 101,
@@ -38,7 +38,7 @@ export default [
     id: 2,
     title: '学生系统',
     router: '',
-    icon: 'el-icon-setting',
+    icon: 'User',
     child: [
       {
         id: 21,
@@ -56,7 +56,7 @@ export default [
     id: 7,
     title: '学分系统',
     router: '',
-    icon: 'el-icon-setting',
+    icon: 'Trophy',
     child: [
       {
         id: 7133,
@@ -73,18 +73,18 @@ export default [
         title: '学分规则配置',
         router: '/score-rule'
       },
-      {
-        id: 714,
-        title: '学分活动查询',
-        router: '/score-activity'
-      }
+      // {
+      //   id: 714,
+      //   title: '学分活动查询',
+      //   router: '/score-activity'
+      // }
     ]
   },
   {
     id: 713,
     title: '权限管理',
     router: '/role',
-    icon: 'el-icon-setting',
+    icon: 'Key',
     child: [
       {
         id: 7133,
@@ -98,40 +98,40 @@ export default [
       }
     ]
   },
-  {
-    id: 746,
-    title: '数据看板',
-    router: '/board',
-    icon: 'el-icon-setting',
-    child: [
-      {
-        id: 713364,
-        title: '数据看板',
-        router: '/board'
-      },
-      {
-        id: 7146,
-        title: '活动板',
-        router: ''
-      }
-    ]
-  },
-  {
-    id: 794,
-    title: '小工具',
-    router: '/tool',
-    icon: 'el-icon-setting',
-    child: [
-      {
-        id: 71933,
-        title: '小工具',
-        router: '/tool'
-      },
-      {
-        id: 7914,
-        title: '群发短信',
-        router: ''
-      }
-    ]
-  }
+  // {
+  //   id: 746,
+  //   title: '数据看板',
+  //   router: '/board',
+  //   icon: 'el-icon-setting',
+  //   child: [
+  //     {
+  //       id: 713364,
+  //       title: '数据看板',
+  //       router: '/board'
+  //     },
+  //     {
+  //       id: 7146,
+  //       title: '活动板',
+  //       router: ''
+  //     }
+  //   ]
+  // },
+  // {
+  //   id: 794,
+  //   title: '小工具',
+  //   router: '/tool',
+  //   icon: 'el-icon-setting',
+  //   child: [
+  //     {
+  //       id: 71933,
+  //       title: '小工具',
+  //       router: '/tool'
+  //     },
+  //     {
+  //       id: 7914,
+  //       title: '群发短信',
+  //       router: ''
+  //     }
+  //   ]
+  // }
 ];

@@ -2,8 +2,8 @@
  * @Author: liliang
  * @Date: 2022-03-16 08:07:09
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-21 12:44:35
- * @FilePath: /score/src/components/library/table-list.vue
+ * @LastEditTime: 2022-03-21 21:46:51
+ * @FilePath: /mba-score/src/components/library/table-list.vue
  * @Description: 
 -->
 
@@ -32,7 +32,7 @@
         </el-table-column>
         <el-table-column
           v-else-if="item.value === 'colortitle'"
-          :key="index + item.value"
+          :key="index + Math.random()"
           :prop="item.value"
           :label="item.label"
           :align="align"
@@ -47,7 +47,7 @@
 
         <el-table-column
           v-else
-          :key="index + item.value"
+          :key="index"
           :prop="item.value"
           :label="item.label"
           :sortable="item.sortable"
@@ -76,7 +76,10 @@
 <script lang="ts" setup>
   import { ref } from 'vue';
   const props = defineProps({
-    tableData: Object,
+    tableData: {
+      type: Object,
+      default: []
+    },
     operateWidth: {
       type: String,
       default: '200px'
