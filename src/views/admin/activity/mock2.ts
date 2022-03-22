@@ -2,8 +2,8 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-19 00:44:48
- * @FilePath: /mba-score/src/views/admin/activity/mock2.ts
+ * @LastEditTime: 2022-03-22 21:03:22
+ * @FilePath: /score/src/views/admin/activity/mock2.ts
  */
 
 export default {
@@ -14,6 +14,18 @@ export default {
           "label": "活动ID",
           "default": ""
       },
+      {
+        "value": "daterange",
+        "type": "daterange",
+        "label": "时间",
+        "default": []
+    },
+      {
+        "value": "datetime",
+        "type": "datetimerange",
+        "label": "时间区间",
+        "default": []
+    },
       {
           "value": "caree",
           "type": "select",

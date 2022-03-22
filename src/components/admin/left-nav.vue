@@ -2,8 +2,8 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-21 22:48:22
- * @FilePath: /mba-score/src/components/admin/left-nav.vue
+ * @LastEditTime: 2022-03-22 21:28:14
+ * @FilePath: /score/src/components/admin/left-nav.vue
 -->
 
 <template>
@@ -93,11 +93,12 @@
   const leftNav = reactive({
     data: navMock
   });
-  const therouter = (v: string) => {
-    // activeRouter.value = v;
-    router.push(v);
-    // console.log(router.currentRoute.value.path);
-  };
+  const currentPath = ref('');
+  // const therouter = (v: string) => {
+  //   // activeRouter.value = v;
+  //   router.push(v);
+  //   // console.log(router.currentRoute.value.path);
+  // };
   const handleOpen = (key: any, keyPath: any) => {
     console.log(key, keyPath);
   };
@@ -107,15 +108,14 @@
   };
 
   const sele = (key: any, keyPath: any) => {
-    // console.log(key, keyPath);
+    console.log(key, keyPath);
     // router.push(key);
   };
   onMounted(() => {
-    // console.log(leftNavData.value);
-    const { proxy }: any = getCurrentInstance();
-    router.push(proxy.$router.currentRoute.value.path);
-    // console.log(router.currentRoute.value);
-    // console.log(Proxy);
+    // const { proxy }: any = getCurrentInstance();
+    // router.push(proxy.$router.currentRoute.value.path);
+    router.push(router.currentRoute.value.path);
+    currentPath.value = router.currentRoute.value.path.replace('/', '');
   });
 </script>
 

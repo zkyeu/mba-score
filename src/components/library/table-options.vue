@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-16 08:07:09
- * @LastEditTime: 2022-03-16 22:51:12
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-03-22 21:13:56
+ * @LastEditors: liliang
  * @Description: 
  * @FilePath: /score/src/components/library/table-options.vue
 -->
@@ -24,10 +24,7 @@
       <!-- 时间区间 -->
       <div
         v-if="item.type === 'daterange' || item.type === 'datetimerange'"
-        :class="{
-          'option-daterange': item.type === 'daterange',
-          'option-datetimerange': item.type === 'datetimerange',
-        }"
+        :class="item.type === 'daterange' ? 'option-daterange' : 'option-datetimerange'"
         :key="index"
       >
         <label>{{ item.label }}：</label>
@@ -36,8 +33,8 @@
           :type="item.type"
           align="right"
           range-separator="至"
-          start-placeholder="开始日期"
-          end-placeholder="结束日期"
+          :start-placeholder="item.type === 'daterange' ? '开始日期' : '开始时间'"
+          :end-placeholder="item.type === 'daterange' ? '结束日期' : '结束时间'"
           :format="item.type === 'daterange' ? 'YYYY-MM-DD' : 'YYYY-MM-DD H:mm:ss'"
           :value-format="item.type === 'daterange' ? 'YYYY-MM-DD' : 'YYYY-MM-DD H:mm:ss'"
           @change="optionChange"
@@ -102,7 +99,7 @@
   export default defineComponent({
     name: 'TableOptions',
     props: {
-      optionData: Object,
+      optionData: Object
     },
     setup: (props, ctx) => {
       const dataBox: any = reactive({ data: {} });
@@ -124,9 +121,9 @@
       return {
         dataBox,
         optionChange,
-        initDefault,
+        initDefault
       };
-    },
+    }
   });
 </script>
 
@@ -166,14 +163,14 @@
       border-color: #dde9ff;
     }
     :deep(.el-date-editor--datetimerange) {
-      width: 340px;
+      width: 360px;
     }
     :deep(.el-date-editor--time-select) {
       width: 116px;
     }
     :deep(.el-date-editor--daterange),
     .el-date-editor--timerange {
-      width: 280px;
+      width: 270px;
       .el-range-separator {
         width: 17px;
       }

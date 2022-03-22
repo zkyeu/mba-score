@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-18 08:38:23
- * @LastEditTime: 2022-03-21 22:41:34
+ * @LastEditTime: 2022-03-22 14:18:54
  * @LastEditors: liliang
  * @Description: In User Settings Edit
- * @FilePath: /mba-score/src/views/admin/activity/activity-classify.vue
+ * @FilePath: /score/src/views/admin/activity/activity-classify.vue
 -->
 <template>
   <section class="single-page">
@@ -19,7 +19,7 @@
       <el-button type="primary" :icon="Plus" @click="handleClick('create', '')">创建分类</el-button>
     </div>
     <div class="table">
-      <table-list :tableData="tableData.data" :canSelect="true" @operate="handleOperate" />
+      <table-list :tableData="tableData.data" :canSelect="false" @operate="handleOperate" />
     </div>
     <div class="page">
       <pages :total="100" @currentPage="currentPage" />
