@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-03 17:32:56
- * @LastEditTime: 2022-03-21 23:22:39
+ * @LastEditTime: 2022-03-22 13:50:41
  * @LastEditors: liliang
  * @Description: In User Settings Edit
- * @FilePath: /mba-score/src/views/admin/view.vue
+ * @FilePath: /score/src/views/admin/view.vue
 -->
 <template>
   <section class="content">
@@ -25,11 +25,13 @@
   import { ref, defineComponent, computed, onMounted, reactive } from 'vue';
   import { useStore } from 'vuex';
   import { key } from '../../store';
-  import TableOption from '../../components/library/table-options.vue';
-  import TableList from '../../components/library/table-list.vue';
-  import Pages from '../../components/library/pagination.vue';
+  // import TableOption from '../../components/library/table-options.vue';
+  // import TableList from '../../components/library/table-list.vue';
+  // import Pages from '../../components/library/pagination.vue';
   import * as echarts from 'echarts';
-  import Data from './json.js';
+  import Data from './json';
+  import router from '../../router';
+  import { log } from 'console';
 
   const store = useStore(key);
   const msg = computed(() => store.state.count);
@@ -319,9 +321,22 @@
     });
   };
 
+  const setLS = () => {
+    let LS = window.sessionStorage;
+    let login = LS.getItem('acms');
+    if (!login) {
+      router.push('/log');
+    } else {
+      stuentInfo();
+      right();
+      router.push('/');
+    }
+
+    console.log(login);
+  };
+
   onMounted(() => {
-    stuentInfo();
-    right();
+    setLS();
   });
 </script>
 

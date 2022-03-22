@@ -2,7 +2,7 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-20 10:43:08
+ * @LastEditTime: 2022-03-22 11:23:10
  * @FilePath: /score/src/router/index.ts
  */
 
@@ -136,6 +136,10 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/login',
     component:  () => import('@/views/frontend/login/login.vue')
+  },
+  {
+    path: '/log',
+    component:  () => import('@/views/admin/log.vue')
   },
   {
     path: '/reg',
