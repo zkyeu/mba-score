@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-16 21:01:33
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-19 20:33:16
+ * @LastEditTime: 2022-03-23 08:53:30
  * @FilePath: /mba-score/src/views/admin/student/mock2.ts
  * @Description:
  */
@@ -29,7 +29,7 @@ export default {
     {
         "value": "caree",
         "type": "select",
-        "label": "分类",
+        "label": "专业",
         "default": "",
         "options": [
             {

@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-03 17:32:56
- * @LastEditTime: 2022-03-22 13:50:41
+ * @LastEditTime: 2022-03-23 08:46:32
  * @LastEditors: liliang
  * @Description: In User Settings Edit
- * @FilePath: /score/src/views/admin/view.vue
+ * @FilePath: /mba-score/src/views/admin/view.vue
 -->
 <template>
   <section class="content">
@@ -315,6 +315,10 @@
           lineStyle: {
             color: 'gradient',
             curveness: 0.5
+          },
+          textStyle: {
+            color: '#555',
+            fontSize: 12
           }
         }
       ]
@@ -360,12 +364,12 @@
       display: flex;
       justify-content: space-between;
       #index {
-        width: 700px;
+        width: 800px;
         height: 700px;
       }
       #right {
-        width: 700px;
-        height: 600px;
+        width: 800px;
+        height: 700px;
       }
     }
   }

@@ -29,7 +29,7 @@ export default {
       {
           "value": "caree",
           "type": "select",
-          "label": "学生类别",
+          "label": "专业",
           "default": "",
           "options": [
               {
@@ -379,7 +379,7 @@ export default {
           },
           {
               "value": "mba",
-              "label": "学生类别",
+              "label": "专业",
               width: '90px'
           },
           {

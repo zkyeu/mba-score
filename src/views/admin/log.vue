@@ -2,8 +2,8 @@
  * @Author: liliang
  * @Date: 2022-03-22 11:11:41
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-22 13:55:40
- * @FilePath: /score/src/views/admin/log.vue
+ * @LastEditTime: 2022-03-23 08:40:59
+ * @FilePath: /mba-score/src/views/admin/log.vue
  * @Description: 
 -->
 <template>
@@ -21,6 +21,7 @@
           placeholder="请输入登录密码"
           clearable
           size="large"
+          @keyup.enter="login"
         />
         <div class="log-btn" @click="login">登 录</div>
         <div class="count">默认用户名:<span>admin</span> 密码:<span>mba2108</span></div>

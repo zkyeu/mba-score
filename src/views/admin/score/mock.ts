@@ -2,8 +2,8 @@
  * @Author: liliang
  * @Date: 2022-03-16 21:01:33
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-20 15:25:06
- * @FilePath: /score/src/views/admin/score/mock.ts
+ * @LastEditTime: 2022-03-23 08:53:07
+ * @FilePath: /mba-score/src/views/admin/score/mock.ts
  * @Description:
  */
 export default {
@@ -156,7 +156,7 @@ export default {
     {
         "value": "bigtype",
         "type": "select",
-        "label": "学分类型",
+        "label": "专业",
         "default": "",
         "options": [
             {

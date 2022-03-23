@@ -1,9 +1,9 @@
 /*
  * @Author: liliang
  * @Date: 2022-03-16 21:01:33
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-03-19 00:28:27
- * @FilePath: /score/src/views/admin/activity/mock2.ts
+ * @LastEditors: liliang
+ * @LastEditTime: 2022-03-23 08:51:38
+ * @FilePath: /mba-score/src/views/admin/activity/mock3.ts
  * @Description:
  */
 export default {
@@ -11,7 +11,7 @@ export default {
       {
           "value": "caree",
           "type": "select",
-          "label": "学生类别",
+          "label": "专业",
           "default": "",
           "options": [
               {
@@ -253,7 +253,7 @@ export default {
         //   },
           {
               "value": "mba",
-              "label": "学生类别",
+              "label": "专业",
               width: '90px'
           },
           {
