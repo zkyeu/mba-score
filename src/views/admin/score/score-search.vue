@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-21 22:40:27
+ * @LastEditTime: 2022-03-23 13:35:17
  * @LastEditors: liliang
  * @Description: 
- * @FilePath: /mba-score/src/views/admin/score/score-search.vue
+ * @FilePath: /score/src/views/admin/score/score-search.vue
 -->
 
 <template>
@@ -17,6 +17,9 @@
     </div>
     <div class="border-card">
       <el-tabs type="border-card" @tab-click="tabClick">
+        <el-tab-pane label="学生学分总计">
+          <list-count />
+        </el-tab-pane>
         <el-tab-pane label="学分列表">
           <ListDetail />
         </el-tab-pane>
@@ -105,6 +108,7 @@
   import { ref, computed, onMounted, reactive } from 'vue';
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
   import { ArrowRight, Plus, Promotion, Download, UploadFilled } from '@element-plus/icons-vue';
+  import ListCount from './component/list-count.vue';
   import ListDetail from './component/list.vue';
   import Overview from './component/overview.vue';
   import Process from './component/process.vue';
