@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-21 22:35:15
+ * @LastEditTime: 2022-03-23 14:17:40
  * @LastEditors: liliang
  * @Description: 
- * @FilePath: /mba-score/src/views/admin/score/component/list.vue
+ * @FilePath: /score/src/views/admin/score/component/list.vue
 -->
 
 <template>
@@ -496,16 +496,12 @@
     console.log(v);
   };
 
-  // const dialogBtnEvent = (v: any) => {
-  //   console.log('click', v);
-  //   showLayer.value = v.boo;
-  //   console.log(v.obj);
-  // };
-
   onMounted(() => {
-    // let arr = [{ a: 1 }, { b: 2 }];
+    // let arr = [];
     // let is = arr.map((item, index) => {
     //   let obj = { ...item };
+    //   obj.snumber = 'ZF2108101';
+    //   obj.name = '毕传香';
     //   return obj;
     // });
     // console.log(is);

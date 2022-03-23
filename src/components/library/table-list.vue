@@ -2,8 +2,8 @@
  * @Author: liliang
  * @Date: 2022-03-16 08:07:09
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-21 21:46:51
- * @FilePath: /mba-score/src/components/library/table-list.vue
+ * @LastEditTime: 2022-03-23 19:04:06
+ * @FilePath: /score/src/components/library/table-list.vue
  * @Description: 
 -->
 
@@ -16,12 +16,17 @@
       :border="border"
       @selection-change="handleSelectionChange"
       :stripe="stripe"
+      :row-key="rowKey"
+      :default-expand-all="expand"
     >
-      <el-table-column type="selection" width="38" v-if="canSelect" />
+      <template v-if="canSelect">
+        <el-table-column type="selection" width="38" />
+      </template>
+
       <template v-for="(item, index) in tableData.tabletitle">
         <el-table-column
           v-if="item.value !== 'operate' && item.value !== 'colortitle'"
-          :key="index + item.value"
+          :key="index + Math.random()"
           :prop="item.value"
           :label="item.label"
           :sortable="item.sortable"
@@ -47,7 +52,7 @@
 
         <el-table-column
           v-else
-          :key="index"
+          :key="index + Math.random()"
           :prop="item.value"
           :label="item.label"
           :sortable="item.sortable"
@@ -103,6 +108,14 @@
     stripe: {
       type: Boolean,
       default: false
+    },
+    rowKey: {
+      type: String,
+      default: ''
+    },
+    expand: {
+      type: Boolean,
+      default: false
     }
   });
 
@@ -122,6 +135,9 @@
 
 <style lang="less" scoped>
   .table-list {
+    :deep(.el-table th.gutter) {
+      display: table-cell !important;
+    }
     :deep(.color-title) {
       color: #2483ff;
       font-weight: 500;
