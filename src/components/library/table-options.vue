@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-16 08:07:09
- * @LastEditTime: 2022-03-22 21:13:56
+ * @LastEditTime: 2022-03-23 18:43:10
  * @LastEditors: liliang
  * @Description: 
  * @FilePath: /score/src/components/library/table-options.vue
@@ -19,6 +19,38 @@
           @clear="optionChange"
           @blur="optionChange"
         />
+      </div>
+
+      <!-- 输入区间框 -->
+      <div
+        v-if="item.type === 'inputrange' && item.range.length"
+        class="option-inputrange"
+        :key="index"
+      >
+        <label>{{ item.label }}：</label>
+        <div class="input-range-block">
+          <el-input-number
+            v-model="dataBox.data[item.value + '_start']"
+            :step="0.1"
+            :min="0.1"
+            :max="100"
+            :precision="1"
+            :controls="false"
+            @clear="optionChange"
+            @blur="optionChange"
+          />
+          <span style="padding: 0 5px">至</span>
+          <el-input-number
+            v-model="dataBox.data[item.value + '_end']"
+            :step="0.1"
+            :min="0.1"
+            :max="100"
+            :precision="1"
+            :controls="false"
+            @clear="optionChange"
+            @blur="optionChange"
+          />
+        </div>
       </div>
 
       <!-- 时间区间 -->
@@ -110,7 +142,12 @@
 
       const initDefault = (o: any) => {
         for (const item of o) {
-          dataBox.data[item.value] = item.default;
+          if (item.type === 'inputrange') {
+            dataBox.data[item.value + '_' + item.range[0]] = null;
+            dataBox.data[item.value + '_' + item.range[1]] = null;
+          } else {
+            dataBox.data[item.value] = item.default;
+          }
         }
       };
 
@@ -140,16 +177,15 @@
     flex-wrap: wrap;
 
     label {
-      // min-width: 105px;
       display: inline-block;
       color: #606266;
       word-break: keep-all;
-      // text-align: right;
     }
 
     .option-date,
     .option-daterange,
     .option-datetimerange,
+    .option-inputrange,
     .option-input,
     .option-select {
       @common-option();
@@ -164,6 +200,13 @@
     }
     :deep(.el-date-editor--datetimerange) {
       width: 360px;
+    }
+    :deep(.option-inputrange) {
+      .input-range-block {
+        display: flex;
+        align-items: center;
+        width: 160px;
+      }
     }
     :deep(.el-date-editor--time-select) {
       width: 116px;

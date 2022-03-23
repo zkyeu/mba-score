@@ -2,8 +2,8 @@
  * @Author: liliang
  * @Date: 2022-03-16 08:07:09
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-21 21:46:51
- * @FilePath: /mba-score/src/components/library/table-list.vue
+ * @LastEditTime: 2022-03-23 18:19:24
+ * @FilePath: /score/src/components/library/table-list.vue
  * @Description: 
 -->
 
@@ -16,12 +16,14 @@
       :border="border"
       @selection-change="handleSelectionChange"
       :stripe="stripe"
+      :row-key="rowKey"
+      :default-expand-all="expand"
     >
       <el-table-column type="selection" width="38" v-if="canSelect" />
       <template v-for="(item, index) in tableData.tabletitle">
         <el-table-column
           v-if="item.value !== 'operate' && item.value !== 'colortitle'"
-          :key="index + item.value"
+          :key="index + Math.random()"
           :prop="item.value"
           :label="item.label"
           :sortable="item.sortable"
@@ -36,7 +38,7 @@
           :prop="item.value"
           :label="item.label"
           :align="align"
-          :width="item.width"
+          :min-width="item.width"
         >
           <template v-slot="scope">
             <span class="color-title" @click="handleOperate(item.value, scope.row)">
@@ -47,7 +49,7 @@
 
         <el-table-column
           v-else
-          :key="index"
+          :key="index + Math.random()"
           :prop="item.value"
           :label="item.label"
           :sortable="item.sortable"
@@ -59,7 +61,7 @@
           <template v-slot="scope">
             <span
               v-for="(oper, index) in scope.row.operate"
-              :key="index + oper.value"
+              :key="index + Math.random()"
               class="operation-style"
               :class="oper.disabled ? 'disabled' : ''"
               @click="handleOperate(oper.disabled ? '' : oper.value, scope.row)"
@@ -103,6 +105,14 @@
     stripe: {
       type: Boolean,
       default: false
+    },
+    rowKey: {
+      type: String,
+      default: ''
+    },
+    expand: {
+      type: Boolean,
+      default: false
     }
   });
 
@@ -122,6 +132,9 @@
 
 <style lang="less" scoped>
   .table-list {
+    :deep(.el-table th.gutter) {
+      display: table-cell !important;
+    }
     :deep(.color-title) {
       color: #2483ff;
       font-weight: 500;

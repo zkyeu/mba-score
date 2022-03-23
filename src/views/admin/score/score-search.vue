@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-23 13:35:17
+ * @LastEditTime: 2022-03-23 18:40:27
  * @LastEditors: liliang
  * @Description: 
  * @FilePath: /score/src/views/admin/score/score-search.vue
@@ -18,7 +18,7 @@
     <div class="border-card">
       <el-tabs type="border-card" @tab-click="tabClick">
         <el-tab-pane label="学生学分总计">
-          <list-count />
+          <ListCount />
         </el-tab-pane>
         <el-tab-pane label="学分列表">
           <ListDetail />

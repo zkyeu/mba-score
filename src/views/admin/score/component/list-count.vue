@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-23 14:17:55
+ * @LastEditTime: 2022-03-23 18:48:10
  * @LastEditors: liliang
  * @Description: 
  * @FilePath: /score/src/views/admin/score/component/list-count.vue
@@ -17,7 +17,7 @@
       <table-list :tableData="tableData.data" :canSelect="false" @operate="handleOperate" />
     </div>
     <div class="page">
-      <pages :total="100" @currentPage="currentPage" />
+      <pages :total="total" @currentPage="currentPage" />
     </div>
 
     <!-- 查看 -->
@@ -25,7 +25,6 @@
       v-model="showLayer"
       title="活动学分详情"
       width="900px"
-      draggable
       custom-class="edit-info-layer"
     >
       <div>
@@ -58,6 +57,7 @@
     data: mockData.table,
     detail: mockData.detail
   });
+  const total = ref(mockData.table.tablelist.length);
 
   const handleClose = (done: () => void) => {
     ElMessageBox.confirm('没有保存信息，确定关闭吗?')

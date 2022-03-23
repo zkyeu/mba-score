@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-16 21:01:33
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-23 14:21:32
+ * @LastEditTime: 2022-03-23 18:41:19
  * @FilePath: /score/src/views/admin/score/list-count.ts
  * @Description:
  */
@@ -138,7 +138,8 @@ export default  {
             "value": "range",
             "type": "inputrange",
             "label": "学分分数段",
-            "default": []
+            "default": [],
+            range:['start','end']
         }
     ],
     "table": {

@@ -2,8 +2,8 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-21 20:17:29
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-23 09:09:12
- * @FilePath: /mba-score/src/views/admin/score/score-rule.vue
+ * @LastEditTime: 2022-03-23 18:09:59
+ * @FilePath: /score/src/views/admin/score/score-rule.vue
 -->
 
 <template>
@@ -21,24 +21,14 @@
     </div>
 
     <div class="table">
-      <el-table
-        :data="tableData.data"
-        style="width: 100%; margin-bottom: 20px"
-        row-key="name"
-        border
-        default-expand-all
-      >
-        <el-table-column align="left" prop="name" label="Name" sortable width="180" />
-        <el-table-column align="center" prop="date" label="活动次数" sortable width="180" />
-        <el-table-column align="center" prop="date" label="活动次数" sortable width="180" />
-      </el-table>
-      <!-- <table-list
+      <table-list
         ref="multipleTableRef"
         :tableData="tableData.data"
-        :canSelect="true"
         @operate="handleOperate"
         @tableSelection="tableSelectionFn"
-      /> -->
+        rowKey="id"
+        :expand="true"
+      />
     </div>
     <div class="page" v-if="total > 10">
       <pages :total="total" @currentPage="currentPage" />
@@ -78,41 +68,41 @@
     data: mockData.option
   });
   const tableData = reactive({
-    data: [
-      {
-        id: 1,
-        date: '5',
-        name: '大类名称1'
-      },
-      {
-        id: 2,
-        date: '3',
-        name: '大类名称2'
-      },
-      {
-        id: 3,
-        date: '8',
-        name: '大类名称3',
-        children: [
-          {
-            id: 31,
-            date: '2',
-            name: '小类1'
-          },
-          {
-            id: 32,
-            date: '4',
-            name: '小类2'
-          }
-        ]
-      },
-      {
-        id: 4,
-        date: '5',
-        name: '大类名称4'
-      }
-    ]
-    // data: mockData.table
+    // data: [
+    //   {
+    //     id: 1,
+    //     date: '5',
+    //     name: '大类名称1'
+    //   },
+    //   {
+    //     id: 2,
+    //     date: '3',
+    //     name: '大类名称2'
+    //   },
+    //   {
+    //     id: 3,
+    //     date: '8',
+    //     name: '大类名称3',
+    //     children: [
+    //       {
+    //         id: 31,
+    //         date: '2',
+    //         name: '小类1'
+    //       },
+    //       {
+    //         id: 32,
+    //         date: '4',
+    //         name: '小类2'
+    //       }
+    //     ]
+    //   },
+    //   {
+    //     id: 4,
+    //     date: '5',
+    //     name: '大类名称4'
+    //   }
+    // ]
+    data: mockData.table
   });
   const viewObj = reactive({ data: {} });
   const ruleFormRef = ref<FormInstance>();

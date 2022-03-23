@@ -2,8 +2,8 @@
  * @Author: liliang
  * @Date: 2022-03-16 21:01:33
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-23 09:00:50
- * @FilePath: /mba-score/src/views/admin/score/rule.ts
+ * @LastEditTime: 2022-03-23 18:39:20
+ * @FilePath: /score/src/views/admin/score/rule.ts
  * @Description:
  */
 export default {
@@ -14,6 +14,15 @@ export default {
       "label": "活动名称",
       "default": ""
   },
+  {
+    "value": "hdrange",
+    "type": "inputrange",
+    "label": "活动名称",
+    "default": '',
+    range: [
+        'start', 'end'
+    ]
+},
     {
         "value": "zhuanye",
         "type": "select",
@@ -40,6 +49,219 @@ export default {
     }
 ],
   "table": {
-
+    tabletitle: [
+        {
+            value: 'colortitle',
+            label: '活动分类'
+        },
+        {
+            value: 'less',
+            label: '最少学分阈值'
+        },
+        {
+            value: 'more',
+            label: '最大学分阈值'
+        },
+        {
+            value: 'time',
+            label: '单次活动学分'
+        },
+        {
+            value: 'desc',
+            label: '备注'
+        },
+        {
+            value: 'operate',
+            label: '操作'
+        }
+    ],
+    tablelist: [
+        {
+            id: 1,
+            colortitle: '大类名称',
+            less: '5',
+            more: '10',
+            time: '20',
+            desc: '12312312313123123123',
+            children: [
+                {
+                    id: 12,
+                    colortitle: '小类名称1',
+                    less: '5',
+                    more: '10',
+                    time: '20',
+                    desc: 'aaaaaaa',
+                    operate:[
+                      {
+                          value: 'edit',
+                          label: '修改'
+                      },
+                      {
+                          value: 'delete',
+                          label: '删除'
+                      }
+                    ]
+                  },
+                  {
+                    id: 13,
+                    colortitle: '小类名称213',
+                    less: '5',
+                    more: '10',
+                    time: '20',
+                    desc: '222222',
+                    operate:[
+                      {
+                          value: 'edit',
+                          label: '修改'
+                      },
+                      {
+                          value: 'delete',
+                          label: '删除'
+                      }
+                    ]
+                  },
+              ],
+            operate:[
+              {
+                  value: 'edit',
+                  label: '修改'
+              },
+              {
+                  value: 'delete',
+                  label: '删除'
+              }
+            ]
+          },
+          {
+            id: 2,
+            colortitle: '大类名称',
+            less: '5',
+            more: '10',
+            time: '20',
+            desc: '',
+            operate:[
+              {
+                  value: 'edit',
+                  label: '修改'
+              },
+              {
+                  value: 'delete',
+                  label: '删除'
+              }
+            ],
+            children: [
+                {
+                    id: 12,
+                    colortitle: '小类名称22',
+                    less: '5',
+                    more: '10',
+                    time: '20',
+                    desc: '',
+                    operate:[
+                      {
+                          value: 'edit',
+                          label: '修改'
+                      },
+                      {
+                          value: 'delete',
+                          label: '删除'
+                      }
+                    ]
+                  },
+                  {
+                    id: 13,
+                    colortitle: '小类名称33',
+                    less: '5',
+                    more: '10',
+                    time: '20',
+                    desc: '',
+                    operate:[
+                      {
+                          value: 'edit',
+                          label: '修改'
+                      },
+                      {
+                          value: 'delete',
+                          label: '删除'
+                      }
+                    ]
+                  },
+              ]
+          },
+          {
+            id: 3,
+            colortitle: '大类名称123',
+            less: '5',
+            more: '10',
+            time: '20',
+            desc: '',
+            operate:[
+              {
+                  value: 'edit',
+                  label: '修改'
+              },
+              {
+                  value: 'delete',
+                  label: '删除'
+              }
+            ]
+          },
+          {
+            id: 4,
+            colortitle: '大类名称321',
+            less: '5',
+            more: '10',
+            time: '20',
+            desc: '',
+            operate:[
+              {
+                  value: 'edit',
+                  label: '修改'
+              },
+              {
+                  value: 'delete',
+                  label: '删除'
+              }
+            ],
+            children: [
+                {
+                    id: 112,
+                    colortitle: '2类名称11',
+                    less: '5',
+                    more: '10',
+                    time: '20',
+                    desc: '',
+                    operate:[
+                      {
+                          value: 'edit',
+                          label: '修改'
+                      },
+                      {
+                          value: 'delete',
+                          label: '删除'
+                      }
+                    ]
+                  },
+                  {
+                    id: 132,
+                    colortitle: '3类名称33',
+                    less: '5',
+                    more: '10',
+                    time: '20',
+                    desc: '',
+                    operate:[
+                      {
+                          value: 'edit',
+                          label: '修改'
+                      },
+                      {
+                          value: 'delete',
+                          label: '删除'
+                      }
+                    ]
+                  },
+              ]
+          }
+    ]
   }
 }
