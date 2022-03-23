@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-23 18:48:10
+ * @LastEditTime: 2022-03-23 19:05:30
  * @LastEditors: liliang
  * @Description: 
  * @FilePath: /score/src/views/admin/score/component/list-count.vue
@@ -69,7 +69,7 @@
       });
   };
 
-  const handleClick = (v: any, o: any) => {
+  const handleClick = (v: any) => {
     switch (v) {
       case 'export':
         ElMessage.success('导出成功');
