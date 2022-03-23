@@ -2,8 +2,8 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-21 20:17:29
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-23 18:09:59
- * @FilePath: /score/src/views/admin/score/score-rule.vue
+ * @LastEditTime: 2022-03-23 21:17:59
+ * @FilePath: /mba-score/src/views/admin/score/score-rule.vue
 -->
 
 <template>
@@ -17,7 +17,6 @@
 
     <div class="btn">
       <table-option :optionData="options.data" @optionChange="optionChangeFn" />
-      <el-button type="primary" :icon="Plus" @click="handleClick('single', '')">添加规则</el-button>
     </div>
 
     <div class="table">
@@ -33,6 +32,65 @@
     <div class="page" v-if="total > 10">
       <pages :total="total" @currentPage="currentPage" />
     </div>
+
+    <!-- 编辑 -->
+    <el-dialog
+      v-model="showLayer.edit"
+      :title="showLayer.title"
+      width="350px"
+      draggable
+      custom-class="edit-info-layer"
+    >
+      <div class="dialog-body">
+        <el-form ref="ruleFormRef" :model="ruleForm" label-width="90px" size="default">
+          <el-form-item label="分类名称：" prop="colortitle" style="width: 278px">
+            <div>{{ viewObj.colortitle }}</div>
+          </el-form-item>
+          <el-form-item label="最少阈值：" prop="less" style="width: 278px">
+            <el-input v-model="viewObj.less" placeholder="请输入最少学分阈值"></el-input>
+          </el-form-item>
+          <el-form-item label="最大阈值：" prop="more" style="width: 278px">
+            <el-input v-model="viewObj.more" placeholder="请输入最多学分阈值"></el-input>
+          </el-form-item>
+          <el-form-item label="单次学分：" prop="time" style="width: 278px">
+            <el-input v-model="viewObj.time" placeholder="一次活动所获得学分"></el-input>
+          </el-form-item>
+          <el-form-item label="备注信息：" prop="desc" style="width: 278px">
+            <el-input
+              type="textarea"
+              rows="5"
+              v-model="viewObj.desc"
+              placeholder="请输入备注"
+            ></el-input>
+          </el-form-item>
+        </el-form>
+      </div>
+      <template #footer>
+        <span class="dialog-footer">
+          <el-button @click="handleClick('cancel')">取消</el-button>
+          <el-button type="primary" @click="handleClick('submit')">确认</el-button>
+        </span>
+      </template>
+    </el-dialog>
+
+    <!-- 确认框 -->
+    <el-dialog
+      v-model="showLayer.delete"
+      :title="showLayer.title"
+      width="360px"
+      custom-class="delete-layer"
+    >
+      <div class="body"
+        ><el-icon><promotion /></el-icon>
+        <p>确定要删除【{{ viewObj.colortitle }}】的信息吗？</p>
+      </div>
+      <template #footer>
+        <span class="dialog-footer">
+          <el-button @click="handleClick('cancel')">取消</el-button>
+          <el-button type="primary" @click="handleClick('delete')">确认</el-button>
+        </span>
+      </template>
+    </el-dialog>
   </section>
 </template>
 
@@ -55,9 +113,6 @@
   // import aaa from '../../../assets/files/学生信息模版.xlsx'
 
   const showLayer = reactive({
-    import: false,
-    create: false,
-    view: false,
     edit: false,
     delete: false,
     title: ''
@@ -68,172 +123,37 @@
     data: mockData.option
   });
   const tableData = reactive({
-    // data: [
-    //   {
-    //     id: 1,
-    //     date: '5',
-    //     name: '大类名称1'
-    //   },
-    //   {
-    //     id: 2,
-    //     date: '3',
-    //     name: '大类名称2'
-    //   },
-    //   {
-    //     id: 3,
-    //     date: '8',
-    //     name: '大类名称3',
-    //     children: [
-    //       {
-    //         id: 31,
-    //         date: '2',
-    //         name: '小类1'
-    //       },
-    //       {
-    //         id: 32,
-    //         date: '4',
-    //         name: '小类2'
-    //       }
-    //     ]
-    //   },
-    //   {
-    //     id: 4,
-    //     date: '5',
-    //     name: '大类名称4'
-    //   }
-    // ]
     data: mockData.table
   });
-  const viewObj = reactive({ data: {} });
-  const ruleFormRef = ref<FormInstance>();
+  const viewObj = ref({});
   const ruleForm = reactive({
-    data: {
-      snumber: '',
-      grade: '',
-      class: '',
-      belong: '',
-      parentId: '',
-      status: '',
-      desc: '',
-      mba: '',
-      xuefen: '',
-      name: '',
-      mobile: '',
-      studentType: '',
-      year: '',
-      banxing: ''
-    }
+    colortitle: '',
+    id: '',
+    less: '',
+    more: '',
+    time: '',
+    desc: ''
   });
 
-  const fileList = ref([]);
-  const selection = ref([]);
-
-  // 批量结算取消
-  const cancelImport = () => {
-    // importObj =
-    console.log('123');
+  const submitForm = async () => {
+    showLayer.edit = false;
   };
 
-  // 文件前的回调上传方法
-  const uploadFileMe = (v: any) => {
-    console.log(v);
-    // uploadFileInfo = {
-    //   filename: v.filename,
-    //   size: v.size
-    // };
-  };
-
-  // 文件上传成功返回数据
-  const uploadSuccess = (file: any) => {
-    console.log(file, 'file');
-    // if (file.errMsg === 'OK') {
-    //   this.batchUploadInfo.filename = file.data.bosname;
-    // } else {
-    //   this.$message({
-    //     message: file.errMsg,
-    //     type: 'error'
-    //   });
-    // }
-  };
-
-  const submitForm = async (formEl: FormInstance | undefined) => {
-    if (!formEl) return;
-    await formEl.validate((valid: any, fields: any) => {
-      if (valid) {
-        console.log(ruleForm);
-        console.log('submit!');
-        showLayer.create = false;
-        formEl.resetFields();
-      } else {
-        console.log('error submit!', fields);
-      }
-    });
-  };
-
-  const resetForm = (formEl: FormInstance | undefined) => {
-    if (!formEl) return;
-    formEl.resetFields();
-    showLayer.create = false;
-  };
-
-  const handleClose = (done: () => void) => {
-    ElMessageBox.confirm('没有保存信息，确定关闭吗?')
-      .then(() => {
-        done();
-      })
-      .catch(() => {
-        // catch error
-      });
-  };
-
-  const handleClick = (v: any, o: any) => {
+  const handleClick = (v: any) => {
     switch (v) {
       case 'submit':
-        submitForm(o);
         ElMessage.success('提交成功！');
-        showLayer.create = false;
+        showLayer.edit = false;
         break;
       case 'cancel':
-        resetForm(o);
-        showLayer.create = false;
-        break;
-      case 'hidden':
-        (showLayer as any)[o] = false;
-        // ruleForm.data = {};
+        showLayer.edit = false;
+        showLayer.delete = false;
+        viewObj.value = {};
         break;
       case 'delete':
-        showLayer.title = '删除活动学分';
-        ElMessage.success('删除成功');
+        ElMessage.success('删除成功！');
+        // 重新请求
         showLayer.delete = false;
-        // ruleForm.data = {};
-        break;
-      case 'importBtn':
-        showLayer.title = '活动学分批量导入';
-        showLayer.import = true;
-        break;
-      case 'confirmImport':
-        showLayer.title = '';
-        showLayer.import = false;
-        ElMessage.success('导入成功！');
-        break;
-      case 'disppear':
-        showLayer.title = '';
-        showLayer.import = false;
-        break;
-      case 'downImport':
-        window.open('../../../assets/files/活动学分信息表.xlsx', '_blank');
-        break;
-      case 'single':
-        showLayer.title = '添加单人学分';
-        showLayer.create = true;
-        break;
-      case 'notview':
-        showLayer.title = '';
-        showLayer.view = false;
-        break;
-      case 'passall':
-      case 'failall':
-        ElMessage.success('批量审核成功');
         break;
       default:
     }
@@ -255,25 +175,15 @@
   // 操作
   const handleOperate = (v: any) => {
     console.log(v);
-
     let key = v.operate;
-    ruleForm.data = v.rowData;
+    viewObj.value = v.rowData;
     switch (key) {
-      case 'view':
-        showLayer.title = '查看学生信息';
-        showLayer.view = true;
-        break;
       case 'edit':
-        ruleForm.data.name = v.rowData.name;
-        ruleForm.data.parentId = '院校级';
-        ruleForm.data.status = v.rowData.status;
-        ruleForm.data.desc = v.rowData.desc;
-
-        showLayer.title = '编辑学生信息';
-        showLayer.create = true;
+        showLayer.title = '编辑学分规则';
+        showLayer.edit = true;
         break;
       case 'delete':
-        showLayer.title = '删除学生信息';
+        showLayer.title = '删除活动学分';
         showLayer.delete = true;
         break;
       default:
