@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-16 08:07:09
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-23 18:19:24
+ * @LastEditTime: 2022-03-23 19:04:06
  * @FilePath: /score/src/components/library/table-list.vue
  * @Description: 
 -->
@@ -19,7 +19,10 @@
       :row-key="rowKey"
       :default-expand-all="expand"
     >
-      <el-table-column type="selection" width="38" v-if="canSelect" />
+      <template v-if="canSelect">
+        <el-table-column type="selection" width="38" />
+      </template>
+
       <template v-for="(item, index) in tableData.tabletitle">
         <el-table-column
           v-if="item.value !== 'operate' && item.value !== 'colortitle'"
@@ -38,7 +41,7 @@
           :prop="item.value"
           :label="item.label"
           :align="align"
-          :min-width="item.width"
+          :width="item.width"
         >
           <template v-slot="scope">
             <span class="color-title" @click="handleOperate(item.value, scope.row)">
@@ -61,7 +64,7 @@
           <template v-slot="scope">
             <span
               v-for="(oper, index) in scope.row.operate"
-              :key="index + Math.random()"
+              :key="index + oper.value"
               class="operation-style"
               :class="oper.disabled ? 'disabled' : ''"
               @click="handleOperate(oper.disabled ? '' : oper.value, scope.row)"
