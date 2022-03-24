@@ -1,13 +1,14 @@
 /*
  * @Author: your name
  * @Date: 2021-08-04 10:18:00
- * @LastEditTime: 2022-01-24 14:15:02
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-03-24 19:55:16
+ * @LastEditors: liliang
  * @Description: In User Settings Edit
-; * @FilePath: /vvt/src/utils/util.ts
+ * @FilePath: /score/src/utils/util.ts
  */
 /* eslint-disable import/prefer-default-export */
 import { getCurrentInstance, ComponentInternalInstance } from 'vue';
+import { checkLogin } from './util';
 
 export function useGlobalConfig() {
   const internalInstance: any = getCurrentInstance();
@@ -76,4 +77,11 @@ export function getScrollHeight() {
 
 export function testDevice() {
   return Boolean(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i));
+}
+
+export default {
+  checkLogin: ()=>  {
+    let LS = window.sessionStorage;
+    return LS.getItem('acms');
+  }
 }

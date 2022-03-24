@@ -1,75 +1,65 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-12 11:33:22
- * @LastEditTime: 2022-03-24 10:23:37
+ * @LastEditTime: 2022-03-24 19:29:38
  * @LastEditors: liliang
  * @Description: 前台首页
  * @FilePath: /score/src/views/index.vue
 -->
 
 <template>
-  <section class="main-content">
-    <Headers />
-    <div class="content-layer">
-      <router-view class="content-body" />
+  <div class="web-head">
+    <Header />
+  </div>
+  <div class="web-content">
+    <div class="left-con">
+      <LeftNav />
     </div>
-    <!-- <Footer /> -->
-  </section>
+    <div class="right-con">
+      <router-view class="main-content-right" />
+    </div>
+  </div>
 </template>
 
-<script lang="ts">
-  import Headers from '@/components/front/header.vue';
-  import Footer from '@/components/front/footer.vue';
-  import { defineComponent } from 'vue';
-  import { mapActions } from 'vuex';
-  export default defineComponent({
-    components: { Headers, Footer },
-    methods: {
-      // ...mapActions(['getTypes']),
-    },
-    created() {
-      // const route = this.$route;
-      // console.log(route);
-      // this.getTypes();
-      // console.log('1111111');
-    }
-  });
+<script lang="ts" setup>
+  import Header from '@/components/front/header.vue';
+  import LeftNav from '@/components/admin/left-nav.vue';
 </script>
 
 <style lang="less" scoped>
-  .main-content {
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+  }
+  :deep(.el-table) th.gutter {
+    display: table-cell !important;
+  }
+
+  .web-head {
     display: flex;
-    flex-direction: column;
-    // background: #ececf2;
-
-    .content-layer {
-      display: flex;
-      justify-content: center;
-      flex-direction: row;
-
-      .content-body {
-        margin: 16px 16px 0;
-        // width: 100%;
-        // min-width: 800px;
-        // max-width: 1200px;
-      }
-    }
+    justify-content: space-between;
+    height: 50px;
+    // background: #eee;
   }
-  @media screen and (min-width: 1201px) {
-    .content-body {
-      width: 1200px;
-    }
-  }
-  @media screen and (max-width: 1200px) {
-    .content-body {
-      width: 800px;
-    }
-  }
-  /* 设置了涉猎器宽度不大于1200px时 abc 显示900px宽度 */
 
-  @media screen and (max-width: 800px) {
-    .content-body {
-      width: 700px;
+  .web-content {
+    display: flex;
+
+    .left-con {
+      width: 200px;
+      min-width: 200px;
+      background: #fff;
+      height: calc(100vh - 50px);
+      border-right: #ddd solid 1px;
+    }
+
+    .right-con {
+      height: calc(100vh - 50px);
+      flex: auto;
+      box-sizing: border-box;
+      background: #fff;
+      overflow-y: auto;
+      word-break: break-all;
+      padding: 10px;
     }
   }
 </style>

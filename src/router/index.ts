@@ -2,7 +2,7 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-24 14:19:49
+ * @LastEditTime: 2022-03-24 20:02:14
  * @FilePath: /score/src/router/index.ts
  */
 
@@ -11,25 +11,27 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/', // 后台首页
-    component: () => import('@/views/admin/view.vue')
-  },
-  // 活动系统 start
-  {
-    path: '/activity-classify',
-    component: () => import('@/views/admin/activity/activity-classify.vue')
-  },{
-    path: '/activity-apply',
-    component: () => import('@/views/admin/activity/activity-apply.vue')
-  },
-  {
-    path: '/activity-diy',
-    component: () => import('@/views/admin/activity/activity-diy.vue')
-  },
-  {
-    path: '/activity-verify',
-    component: () => import('@/views/admin/activity/activity-verify.vue')
-  },
-  // 活动系统end
+    component: () => import('@/views/index.vue'),
+    // component: () => import('@/views/admin/view.vue'),
+    children: [
+ // 活动系统 start
+ {
+  path: '/activity-classify',
+  component: () => import('@/views/admin/activity/activity-classify.vue')
+},{
+  path: '/activity-apply',
+  component: () => import('@/views/admin/activity/activity-apply.vue')
+},
+{
+  path: '/activity-diy',
+  component: () => import('@/views/admin/activity/activity-diy.vue')
+},
+{
+  path: '/activity-verify',
+  component: () => import('@/views/admin/activity/activity-verify.vue')
+},
+// 活动系统end
+
 
   // 学生系统start
   {
@@ -68,6 +70,9 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/views/admin/power/role.vue')
   },
    // 权限配置 end
+    ]
+  },
+ 
 
    // 登录注册 start
   {
