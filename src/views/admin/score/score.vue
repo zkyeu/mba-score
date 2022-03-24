@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-21 22:36:13
+ * @LastEditTime: 2022-03-24 15:03:00
  * @LastEditors: liliang
  * @Description: 
- * @FilePath: /mba-score/src/views/admin/score/score.vue
+ * @FilePath: /score/src/views/admin/score/score.vue
 -->
 
 <template>
@@ -331,7 +331,6 @@
   import Pages from '../../../components/library/pagination.vue';
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
   import mockData from './mock2';
-  // import aaa from '../../../assets/files/学生信息模版.xlsx'
 
   const showLayer = reactive({
     import: false,
@@ -465,7 +464,7 @@
         showLayer.import = false;
         break;
       case 'downImport':
-        window.open('../../../assets/files/活动学分信息表.xlsx', '_blank');
+        window.open('./files/活动学分信息表.xlsx', '_blank');
         break;
       case 'single':
         showLayer.title = '添加单人学分';

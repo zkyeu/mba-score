@@ -1,9 +1,12 @@
 <!--
- * @Author: your name
- * @Date: 2021-07-28 15:51:41
- * @LastEditTime: 2022-03-12 22:15:52
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /vvt/README.md
+ * @Author: liliang
+ * @Date: 2022-01-09 16:26:17
+ * @LastEditors: liliang
+ * @LastEditTime: 2022-03-24 14:29:14
+ * @FilePath: /score/README.md
+ * @Description: 
 -->
-# buaa mba score system
+
+# ACMS
+
+### 北航MBA活动学分管理系统 Activity credit management system

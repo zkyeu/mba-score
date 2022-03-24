@@ -324,7 +324,6 @@
   import Pages from '../../../components/library/pagination.vue';
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
   import mockData from './mock2';
-  // import aaa from '../../../assets/files/学生信息模版.xlsx'
 
   const showLayer = reactive({
     import: false,
@@ -465,7 +464,7 @@
         showLayer.import = false;
         break;
       case 'downImport':
-        window.open('../../../assets/files/学生信息模版.xlsx', '_blank');
+        window.open('./files/学生信息模版.xlsx', '_blank');
         break;
       case 'export':
         ElMessage.warning('后面待开发');

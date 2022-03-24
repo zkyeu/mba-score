@@ -109,7 +109,6 @@
   import Pages from '../../../components/library/pagination.vue';
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
   import mockData from './rule';
-  // import aaa from '../../../assets/files/学生信息模版.xlsx'
 
   const showLayer = reactive({
     edit: false,

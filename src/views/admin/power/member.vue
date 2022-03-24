@@ -2,8 +2,8 @@
  * @Author: liliang
  * @Date: 2022-03-16 09:29:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-21 22:33:31
- * @FilePath: /mba-score/src/views/admin/power/member.vue
+ * @LastEditTime: 2022-03-24 15:03:38
+ * @FilePath: /score/src/views/admin/power/member.vue
  * @Description: 
 -->
 <template>
@@ -124,7 +124,7 @@
   import Pages from '../../../components/library/pagination.vue';
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
   import mockData from './mock2';
-  // import aaa from '../../../assets/files/学生信息模版.xlsx'
+
   const total = ref(2);
   const showLayer = reactive({
     create: false,

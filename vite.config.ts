@@ -1,10 +1,10 @@
 /*
  * @Author: your name
  * @Date: 2021-07-28 15:51:41
- * @LastEditTime: 2022-03-07 21:29:56
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-03-24 18:55:58
+ * @LastEditors: liliang
  * @Description: In User Settings Edit
- * @FilePath: /vvt/vite.config.ts
+ * @FilePath: /score/vite.config.ts
  */
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
@@ -13,7 +13,7 @@ import svgicon from 'vite-plugin-svgicon';
 
 const proxy = {
 //  target: 'http://localhost:3000/'
-  target: 'https://www.sotm.cn/'
+  target: 'https://www.114tm.cn/'
 }
 export default defineConfig({
   plugins: [vue(), svgicon({
@@ -57,6 +57,8 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: 'dist',
+    assetsDir: 'static',
     target: 'es2015',
     // sourcemap: 'inline',
     rollupOptions: {
@@ -65,15 +67,19 @@ export default defineConfig({
           vendor: ['vue', 'vuex', 'vue-router'],
           elementPlus: ['element-plus'],
           axios: ['axios']
-        }
+        },
+        chunkFileNames: 'static/js/[name]-[hash].js',
+        entryFileNames: 'static/js/[name]-[hash].js',
+        assetFileNames: 'static/[ext]/[name]-[hash].[ext]'
       }
     },
     terserOptions: {
       compress: {
         keep_infinity: true,
-        drop_console: true
+        drop_console: true,
+        drop_debugger: true
       }
     },
-    chunkSizeWarningLimit: 800
+    chunkSizeWarningLimit: 300
   }
 });
