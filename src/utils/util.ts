@@ -1,14 +1,13 @@
 /*
  * @Author: your name
  * @Date: 2021-08-04 10:18:00
- * @LastEditTime: 2022-03-24 19:55:16
+ * @LastEditTime: 2022-03-24 20:07:43
  * @LastEditors: liliang
  * @Description: In User Settings Edit
  * @FilePath: /score/src/utils/util.ts
  */
 /* eslint-disable import/prefer-default-export */
 import { getCurrentInstance, ComponentInternalInstance } from 'vue';
-import { checkLogin } from './util';
 
 export function useGlobalConfig() {
   const internalInstance: any = getCurrentInstance();
