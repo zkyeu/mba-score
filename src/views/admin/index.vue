@@ -1,14 +1,14 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-02 20:10:05
- * @LastEditTime: 2022-03-17 20:45:05
+ * @LastEditTime: 2022-03-24 11:05:38
  * @LastEditors: liliang
  * @Description: 后台首页
  * @FilePath: /score/src/views/admin/index.vue
 -->
 <template>
   <section class="main-content">
-    <Header />
+    <Headers />
     <div class="content-layer">
       <LeftNav />
       <router-view class="main-content-right" />
@@ -18,9 +18,9 @@
 
 <script lang="ts">
   import LeftNav from '@/components/admin/left-nav.vue';
-  import Header from '@/components/admin/header.vue';
+  import Headers from '@/components/admin/header.vue';
   export default {
-    components: { Header, LeftNav }
+    components: { Headers, LeftNav }
   };
 </script>
 

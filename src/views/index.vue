@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-12 11:33:22
- * @LastEditTime: 2022-01-20 14:30:30
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-03-24 10:23:37
+ * @LastEditors: liliang
  * @Description: 前台首页
- * @FilePath: /vvt/src/views/index.vue
+ * @FilePath: /score/src/views/index.vue
 -->
 
 <template>
@@ -28,11 +28,11 @@
       // ...mapActions(['getTypes']),
     },
     created() {
-      const route = this.$route;
+      // const route = this.$route;
       // console.log(route);
       // this.getTypes();
       // console.log('1111111');
-    },
+    }
   });
 </script>
 

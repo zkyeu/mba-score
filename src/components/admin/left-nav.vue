@@ -2,7 +2,7 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-22 21:28:14
+ * @LastEditTime: 2022-03-24 13:30:37
  * @FilePath: /score/src/components/admin/left-nav.vue
 -->
 
@@ -81,7 +81,7 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref, defineComponent, computed, onMounted, getCurrentInstance, reactive } from 'vue';
+  import { ref, computed, onMounted, getCurrentInstance, reactive } from 'vue';
   import { useStore } from 'vuex';
   import router from '../../router/index';
   import { key } from '../../store';
@@ -94,11 +94,7 @@
     data: navMock
   });
   const currentPath = ref('');
-  // const therouter = (v: string) => {
-  //   // activeRouter.value = v;
-  //   router.push(v);
-  //   // console.log(router.currentRoute.value.path);
-  // };
+
   const handleOpen = (key: any, keyPath: any) => {
     console.log(key, keyPath);
   };
@@ -126,7 +122,7 @@
     height: calc(100vh - 60px);
     padding-top: 10px;
     overflow-y: auto;
-    border-right: solid 1px #e6e6e6;
+    // border-right: solid 1px #e6e6e6;
 
     &:deep(.left-nav-menu) {
       width: 200px;
