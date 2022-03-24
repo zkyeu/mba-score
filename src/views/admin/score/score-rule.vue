@@ -2,7 +2,7 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-21 20:17:29
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-23 21:17:59
+ * @LastEditTime: 2022-03-23 21:20:59
  * @FilePath: /mba-score/src/views/admin/score/score-rule.vue
 -->
 
@@ -24,7 +24,6 @@
         ref="multipleTableRef"
         :tableData="tableData.data"
         @operate="handleOperate"
-        @tableSelection="tableSelectionFn"
         rowKey="id"
         :expand="true"
       />
@@ -125,7 +124,7 @@
   const tableData = reactive({
     data: mockData.table
   });
-  const viewObj = ref({});
+  const viewObj: any = ref({});
   const ruleForm = reactive({
     colortitle: '',
     id: '',
@@ -162,14 +161,6 @@
   // 筛选
   const optionChangeFn = (v: any) => {
     console.log(v);
-  };
-
-  // 表格选择
-  const tableSelectionFn = (v: any) => {
-    let idArr = v.map((i: any) => {
-      return i.id;
-    });
-    selection.value = idArr;
   };
 
   // 操作

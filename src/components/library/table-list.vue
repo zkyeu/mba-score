@@ -26,7 +26,7 @@
       <template v-for="(item, index) in tableData.tabletitle">
         <el-table-column
           v-if="item.value !== 'operate' && item.value !== 'colortitle'"
-          :key="index + Math.random()"
+          :key="index"
           :prop="item.value"
           :label="item.label"
           :sortable="item.sortable"
@@ -37,7 +37,7 @@
         </el-table-column>
         <el-table-column
           v-else-if="item.value === 'colortitle'"
-          :key="index + Math.random()"
+          :key="index + item.value"
           :prop="item.value"
           :label="item.label"
           :align="align"
@@ -52,7 +52,7 @@
 
         <el-table-column
           v-else
-          :key="index + Math.random()"
+          :key="index + item.value"
           :prop="item.value"
           :label="item.label"
           :sortable="item.sortable"
@@ -135,9 +135,9 @@
 
 <style lang="less" scoped>
   .table-list {
-    :deep(.el-table th.gutter) {
-      display: table-cell !important;
-    }
+    // :deep(.el-table th.gutter) {
+    //   display: table-cell !important;
+    // }
     :deep(.color-title) {
       color: #2483ff;
       font-weight: 500;
