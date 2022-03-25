@@ -1,14 +1,16 @@
 /*
  * @Author: your name
  * @Date: 2021-07-28 15:51:41
- * @LastEditTime: 2022-02-25 18:22:05
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-03-25 14:31:08
+ * @LastEditors: liliang
  * @Description: In User Settings Edit
- * @FilePath: /vvt/src/main.ts
+ * @FilePath: /score/src/main.ts
  */
 import { createApp } from 'vue'
 import ElementPlus from 'element-plus';
 import 'element-plus/theme-chalk/index.css'
+import './assets/style/init.less';
+import './assets/style/diy.less';
 import zhCn from 'element-plus/lib/locale/lang/zh-cn'
 import App from './App.vue'
 import { store, key } from './store'

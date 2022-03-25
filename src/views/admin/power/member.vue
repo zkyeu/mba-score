@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-16 09:29:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-24 15:03:38
+ * @LastEditTime: 2022-03-25 15:06:35
  * @FilePath: /score/src/views/admin/power/member.vue
  * @Description: 
 -->
@@ -266,24 +266,10 @@
 </script>
 
 <style lang="less" scoped>
-  @import url('../../../assets/style/init.less');
+  @import url('../../../assets/style/diy.less');
   .single-page {
     display: block;
-    // background: @root-color-f5;
 
-    .bread {
-      background: @root-color-f5;
-      padding: 11px;
-    }
-
-    .btn {
-      display: flex;
-      justify-content: space-between;
-      margin: 15px 0;
-      :deep(.el-button) {
-        padding: 1px 8px;
-      }
-    }
     .table {
       .select-ope {
         display: flex;
@@ -323,6 +309,7 @@
         }
       }
     }
+
     :deep(.delete-layer) {
       .body {
         display: flex;

@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-12 11:33:22
- * @LastEditTime: 2022-03-24 19:29:38
+ * @LastEditTime: 2022-03-25 13:44:41
  * @LastEditors: liliang
  * @Description: 前台首页
  * @FilePath: /score/src/views/index.vue
@@ -37,29 +37,28 @@
   .web-head {
     display: flex;
     justify-content: space-between;
-    height: 50px;
-    // background: #eee;
+    height: 72px;
   }
 
   .web-content {
     display: flex;
+    height: calc(100vh - 72px);
 
     .left-con {
       width: 200px;
       min-width: 200px;
       background: #fff;
-      height: calc(100vh - 50px);
-      border-right: #ddd solid 1px;
+      height: calc(100vh - 72px);
+      overflow-y: auto;
     }
 
     .right-con {
-      height: calc(100vh - 50px);
+      height: calc(100vh - 72px - 16px);
       flex: auto;
       box-sizing: border-box;
-      background: #fff;
       overflow-y: auto;
       word-break: break-all;
-      padding: 10px;
+      margin: 16px 16px 0;
     }
   }
 </style>

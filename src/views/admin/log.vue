@@ -2,8 +2,8 @@
  * @Author: liliang
  * @Date: 2022-03-22 11:11:41
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-23 08:40:59
- * @FilePath: /mba-score/src/views/admin/log.vue
+ * @LastEditTime: 2022-03-25 12:08:52
+ * @FilePath: /score/src/views/admin/log.vue
  * @Description: 
 -->
 <template>
@@ -106,7 +106,7 @@
         }
 
         .log-btn {
-          background: #2483ff;
+          background: #028bff;
           font-size: 16px;
           color: #fff;
           text-align: center;

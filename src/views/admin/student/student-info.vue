@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-21 22:27:50
+ * @LastEditTime: 2022-03-25 15:02:18
  * @LastEditors: liliang
  * @Description: 
- * @FilePath: /mba-score/src/views/admin/student/student-info.vue
+ * @FilePath: /score/src/views/admin/student/student-info.vue
 -->
 
 <template>
@@ -536,23 +536,13 @@
 </script>
 
 <style lang="less" scoped>
-  @import url('../../../assets/style/init.less');
+  @import url('../../../assets/style/diy.less');
   .single-page {
     display: block;
-    // background: @root-color-f5;
 
     .bread {
       background: @root-color-f5;
       padding: 11px;
-    }
-
-    .btn {
-      display: flex;
-      justify-content: space-between;
-      margin: 15px 0;
-      :deep(.el-button) {
-        padding: 1px 8px;
-      }
     }
 
     :deep(.create-layer) {

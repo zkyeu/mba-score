@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-24 09:50:07
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-24 20:01:09
+ * @LastEditTime: 2022-03-25 14:28:06
  * @FilePath: /score/src/App.vue
  * @Description: 
 -->
@@ -27,4 +27,21 @@
 </script>
 <style lang="less">
   @import url('./assets/style/init.less');
+  @common-style: {
+    background: #fff;
+    border-radius: 2px;
+  };
+  .btn {
+    padding: 16px 16px 0;
+    @common-style();
+  }
+  .table {
+    padding: 16px;
+    @common-style();
+  }
+
+  .page {
+    padding: 0 16px;
+    @common-style();
+  }
 </style>

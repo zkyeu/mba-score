@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-23 18:40:27
+ * @LastEditTime: 2022-03-25 15:13:39
  * @LastEditors: liliang
  * @Description: 
  * @FilePath: /score/src/views/admin/score/score-search.vue
@@ -151,7 +151,7 @@
 </script>
 
 <style lang="less" scoped>
-  @import url('../../../assets/style/init.less');
+  @import url('../../../assets/style/diy.less');
   .single-page {
     display: block;
     // background: @root-color-f5;

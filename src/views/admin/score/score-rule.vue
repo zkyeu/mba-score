@@ -2,8 +2,8 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-21 20:17:29
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-23 21:20:59
- * @FilePath: /mba-score/src/views/admin/score/score-rule.vue
+ * @LastEditTime: 2022-03-25 15:12:36
+ * @FilePath: /score/src/views/admin/score/score-rule.vue
 -->
 
 <template>
@@ -189,24 +189,11 @@
 </script>
 
 <style lang="less" scoped>
-  @import url('../../../assets/style/init.less');
+  @import url('../../../assets/style/diy.less');
   .single-page {
     display: block;
     // background: @root-color-f5;
 
-    .bread {
-      background: @root-color-f5;
-      padding: 11px;
-    }
-
-    .btn {
-      display: flex;
-      justify-content: space-between;
-      margin: 15px 0;
-      :deep(.el-button) {
-        padding: 1px 8px;
-      }
-    }
     .table {
       .select-ope {
         display: flex;

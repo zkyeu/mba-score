@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-18 08:38:23
- * @LastEditTime: 2022-03-22 14:18:54
+ * @LastEditTime: 2022-03-25 15:02:00
  * @LastEditors: liliang
  * @Description: In User Settings Edit
  * @FilePath: /score/src/views/admin/activity/activity-classify.vue
@@ -312,24 +312,10 @@
 </script>
 
 <style lang="less" scoped>
-  @import url('../../../assets/style/init.less');
+  @import url('../../../assets/style/diy.less');
+
   .single-page {
     display: block;
-    // background: @root-color-f5;
-
-    .bread {
-      background: @root-color-f5;
-      padding: 11px;
-    }
-
-    .btn {
-      display: flex;
-      justify-content: space-between;
-      margin: 15px 0;
-      :deep(.el-button) {
-        padding: 1px 8px;
-      }
-    }
 
     :deep(.create-layer) {
       .el-dialog__body {

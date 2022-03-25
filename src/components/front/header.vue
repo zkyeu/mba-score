@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-02 20:47:46
- * @LastEditTime: 2022-03-24 13:44:44
+ * @LastEditTime: 2022-03-25 10:23:12
  * @LastEditors: liliang
  * @Description: In User Settings Edit
  * @FilePath: /score/src/components/front/header.vue
@@ -15,7 +15,7 @@
 
     <div class="right-block">
       <div class="user-center">
-        <icon :data="photo"></icon>
+        <img src="../../assets/imgs/photo.png" />
       </div>
     </div>
   </div>
@@ -25,7 +25,6 @@
   import router from '../../router';
   import { useStore } from 'vuex';
   import { key } from '../../store';
-  import photo from 'assets/svg/origin/user.svg';
 
   const store = useStore(key);
   const home = () => {
@@ -34,31 +33,43 @@
 </script>
 
 <style lang="less" scoped>
-  .logo {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    position: relative;
-    img {
-      width: 220px;
-      margin-right: 10px;
-      &:hover {
-        position: absolute;
-        width: 300px;
-        top: 0;
-        left: 0;
-        background: #fff;
-      }
-    }
-  }
   .layer-header {
     display: flex;
     justify-content: space-between;
     width: 100%;
     padding: 0 20px;
-    height: 50px;
-    background-color: #014ca7;
+    height: 72px;
+    background: url('../../assets/imgs/header-banner.png') no-repeat;
+    background-position: top;
+    background-size: 1440px 72px;
+    background-color: #028bff;
     z-index: 999;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+
+      img {
+        width: 240px;
+        margin-right: 10px;
+        &:hover {
+          position: absolute;
+          width: 300px;
+          top: 0;
+          left: 0;
+          background: #fff;
+        }
+      }
+
+      h1 {
+        border-left: 2px #fff solid;
+        padding: 1px 10px;
+        color: #fefefe;
+        font-size: 16px;
+      }
+    }
   }
   .right-block {
     display: flex;
@@ -72,28 +83,10 @@
       overflow: hidden;
       cursor: pointer;
       color: #ddd;
-      svg {
-        width: 32px;
-        height: 32px;
+      img {
+        width: 34px;
+        // height: 32px;
       }
-    }
-  }
-
-  .ys {
-    font-weight: 600;
-    font-size: 18px;
-    background: -webkit-linear-gradient(45deg, #f8a27a, #f8a27a, #f3e498, #fff, #d38b8b);
-    color: transparent;
-    -webkit-background-clip: text;
-    animation: ran 60s linear infinite;
-  }
-
-  @keyframes ran {
-    from {
-      backgroud-position: 0 0;
-    }
-    to {
-      background-position: 1000px 0;
     }
   }
 

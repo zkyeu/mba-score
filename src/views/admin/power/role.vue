@@ -2,8 +2,8 @@
  * @Author: liliang
  * @Date: 2022-03-16 09:29:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-21 22:43:56
- * @FilePath: /mba-score/src/views/admin/power/role.vue
+ * @LastEditTime: 2022-03-25 15:10:56
+ * @FilePath: /score/src/views/admin/power/role.vue
  * @Description: 
 -->
 
@@ -15,7 +15,7 @@
         <el-breadcrumb-item :to="{ path: '/' }">活动学分录入审核</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
-    <div class="btn">
+    <div class="add-role">
       <el-button type="primary" :icon="Plus" @click="handleClick('add', '')">添加权限组</el-button>
     </div>
     <div class="table">
@@ -248,28 +248,21 @@
   };
 
   onMounted(() => {
-    console.log(myRef.value);
+    // console.log(myRef.value);
   });
 </script>
 
 <style lang="less" scoped>
-  @import url('../../../assets/style/init.less');
+  @import url('../../../assets/style/diy.less');
   .single-page {
     display: block;
-    // background: @root-color-f5;
 
-    .bread {
-      background: @root-color-f5;
-      padding: 11px;
-    }
-
-    .btn {
+    .add-role {
       display: flex;
       justify-content: flex-end;
-      margin: 15px 0;
-      :deep(.el-button) {
-        padding: 1px 8px;
-      }
+      padding: 10px 16px;
+      background: #fff;
+      margin-bottom: 16px;
     }
 
     :deep(.create-layer) {
@@ -303,6 +296,7 @@
         }
       }
     }
+
     :deep(.auth-layer) {
       .el-dialog__body {
         padding: 0 20px;

@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-18 08:38:23
- * @LastEditTime: 2022-03-21 22:30:59
+ * @LastEditTime: 2022-03-25 14:25:48
  * @LastEditors: liliang
  * @Description: In User Settings Edit
- * @FilePath: /mba-score/src/views/admin/activity/activity-diy.vue
+ * @FilePath: /score/src/views/admin/activity/activity-diy.vue
 -->
 <template>
   <section class="single-page">
@@ -404,23 +404,9 @@
 
 <style lang="less" scoped>
   @import url('../../../assets/style/init.less');
+
   .single-page {
     display: block;
-    // background: @root-color-f5;
-
-    .bread {
-      background: @root-color-f5;
-      padding: 11px;
-    }
-
-    .btn {
-      display: flex;
-      justify-content: space-between;
-      margin: 15px 0;
-      :deep(.el-button) {
-        padding: 1px 8px;
-      }
-    }
 
     :deep(.create-layer) {
       .el-dialog__body {

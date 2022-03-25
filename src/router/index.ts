@@ -2,79 +2,75 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-24 20:12:56
+ * @LastEditTime: 2022-03-25 15:03:57
  * @FilePath: /score/src/router/index.ts
  */
 
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
 const routes: Array<RouteRecordRaw> = [
+  // 后台首页
   {
-    path: '/', // 后台首页
+    path: '/', 
     component: () => import('@/views/index.vue'),
-    // component: () => import('@/views/admin/view.vue'),
     children: [
- // 活动系统 start
- {
-  path: '/activity-classify',
-  component: () => import('@/views/admin/activity/activity-classify.vue')
-},{
-  path: '/activity-apply',
-  component: () => import('@/views/admin/activity/activity-apply.vue')
-},
-{
-  path: '/activity-diy',
-  component: () => import('@/views/admin/activity/activity-diy.vue')
-},
-{
-  path: '/activity-verify',
-  component: () => import('@/views/admin/activity/activity-verify.vue')
-},
-// 活动系统end
+      {
+        path: '/',
+        component: () => import('@/views/admin/view.vue')
+      },
+      // 活动系统 start
+      {
+        path: '/activity-classify',
+        component: () => import('@/views/admin/activity/activity-classify.vue')
+      },{
+        path: '/activity-apply',
+        component: () => import('@/views/admin/activity/activity-apply.vue')
+      },
+      {
+        path: '/activity-diy',
+        component: () => import('@/views/admin/activity/activity-diy.vue')
+      },
+      // 活动系统end
+      // 学生系统start
+      {
+        path: '/student',
+        component: () => import('@/views/admin/student/student-info.vue')
+      },{
+        path: '/student-board',
+        component: () => import('@/views/admin/student/student-board.vue')
+      },
+      // 学生系统 end
 
+      // 学分系统 start
+      {
+        path: '/score',
+        component: () => import('@/views/admin/score/score.vue')
+      },{
+        path: '/score-search',
+        component: () => import('@/views/admin/score/score-search.vue')
+      },
+      {
+        path: '/score-rule',
+        component: () => import('@/views/admin/score/score-rule.vue')
+      },{
+        path: '/score-activity',
+        component: () => import('@/views/admin/score/score-activity.vue')
+      },
+      // 学分系统 end
 
-  // 学生系统start
-  {
-    path: '/student',
-    component: () => import('@/views/admin/student/student-info.vue')
-  },{
-    path: '/student-board',
-    component: () => import('@/views/admin/student/student-board.vue')
-  },
-  // 学生系统 end
-
-  // 学分系统 start
-  {
-    path: '/score',
-    component: () => import('@/views/admin/score/score.vue')
-  },{
-    path: '/score-search',
-    component: () => import('@/views/admin/score/score-search.vue')
-  },
-  {
-    path: '/score-rule',
-    component: () => import('@/views/admin/score/score-rule.vue')
-  },{
-    path: '/score-activity',
-    component: () => import('@/views/admin/score/score-activity.vue')
-  },
-  // 学分系统 end
-
-   // 权限配置 start
-  {
-    path: '/member',
-    component: () => import('@/views/admin/power/member.vue')
-  },
-  {
-    path: '/role',
-    component: () => import('@/views/admin/power/role.vue')
-  },
-   // 权限配置 end
+      // 权限配置 start
+      {
+        path: '/member',
+        component: () => import('@/views/admin/power/member.vue')
+      },
+      {
+        path: '/role',
+        component: () => import('@/views/admin/power/role.vue')
+      },
+      // 权限配置 end
     ]
   },
- 
-
-   // 登录注册 start
+  // 登录注册 start
   {
     path: '/login',
     component:  () => import('@/views/frontend/login/login.vue')
@@ -87,7 +83,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/reg',
     component:  () => import('@/views/frontend/login/reg.vue')
   }
-   // 登录注册 end
+  // 登录注册 end
 ];
 
 const router = createRouter({

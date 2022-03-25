@@ -139,14 +139,14 @@
     //   display: table-cell !important;
     // }
     :deep(.color-title) {
-      color: #2483ff;
+      color: #028bff;
       font-weight: 500;
       cursor: pointer;
       text-align: left;
     }
     :deep(.operation-style) {
       padding: 3px 8px;
-      color: #2483ff;
+      color: #028bff;
       &:hover {
         cursor: pointer;
         font-weight: 700;

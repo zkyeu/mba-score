@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-02 20:10:05
- * @LastEditTime: 2022-03-24 11:05:38
+ * @LastEditTime: 2022-03-25 13:35:00
  * @LastEditors: liliang
  * @Description: 后台首页
  * @FilePath: /score/src/views/admin/index.vue
@@ -33,12 +33,10 @@
       flex-direction: row;
 
       .main-content-right {
-        background: #fff;
-        // margin: 10px 10px 2px;
-        // width: calc(100vw - 201px);
+        background: #f00;
         flex: 1;
         min-width: 600px;
-        height: calc(100vh - 62px);
+        height: calc(100vh - 72px - (16 * 6) px);
         overflow-y: auto;
         &::-webkit-scrollbar {
           width: 3px;
