@@ -2,7 +2,7 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-25 13:46:08
+ * @LastEditTime: 2022-03-25 17:35:42
  * @FilePath: /score/src/components/admin/left-nav.vue
 -->
 
@@ -14,6 +14,7 @@
       class="left-nav-menu"
       router
       active-text-color="#028bff"
+      :default-openeds="['1', '2', '7', '713']"
     >
       <template v-for="item in leftNav">
         <el-menu-item
@@ -25,10 +26,12 @@
           <el-icon :icon="item.icon"></el-icon>
           <template #title></template>
         </el-menu-item>
-
         <el-sub-menu :index="String(item.id)" :key="String(item.id)" v-else>
           <template #title>
-            <el-icon><User /></el-icon>
+            <el-icon v-if="item.icon === 'User'"><User /></el-icon>
+            <el-icon v-if="item.icon === 'Key'"><Key /></el-icon>
+            <el-icon v-if="item.icon === 'Trophy'"><Trophy /></el-icon>
+            <el-icon v-if="item.icon === 'Soccer'"><Soccer /></el-icon>
             <span class="first-class">{{ item.title }}</span>
           </template>
           <el-menu-item-group>
@@ -96,7 +99,7 @@
         padding: 0;
         &.is-active {
           background: #e6f7ff !important;
-          border-right: #028bff solid 1px;
+          border-right: #028bff solid 3px;
         }
       }
 

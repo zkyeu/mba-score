@@ -2,14 +2,51 @@
  * @Author: liliang
  * @Date: 2022-03-23 10:10:14
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-24 19:59:23
+ * @LastEditTime: 2022-03-25 22:15:37
  * @FilePath: /score/src/views/admin/view.vue
  * @Description: 
 -->
 
 <template>
-  <section class="content">
-    <div class="big-title">MBA学生活动学分管理系统</div>
+  <section class="default-view">
+    <div class="block-square">
+      <li>
+        <div class="left"><avatar class="icon" /></div>
+        <div class="right">
+          <p>学生数量</p>
+          <p>{{ Util.currency(blockData.students, '', 0) }}</p>
+        </div>
+      </li>
+      <li>
+        <div class="left"><pie-chart class="icon" /></div>
+        <div class="right">
+          <p>活动累计</p>
+          <p>{{ Util.currency(blockData.activitys, '', 0) }}</p>
+        </div>
+      </li>
+      <li>
+        <div class="left"><notification class="icon" /></div>
+        <div class="right">
+          <p>活动人次</p>
+          <p>{{ Util.currency(blockData.pertime, '', 0) }}</p>
+        </div>
+      </li>
+      <li>
+        <div class="left"><notebook class="icon" /></div>
+        <div class="right">
+          <p>学分总计</p>
+          <p>{{ Util.currency(blockData.score, '', 0) }}</p>
+        </div>
+      </li>
+    </div>
+
+    <!-- <el-button type="primary" icon="Edit">编辑</el-button>
+        <el-button size="mini" type="primary" class="#f00" icon="More" title="详情" />
+        <el-icon>
+          <delete />
+        </el-icon> -->
+
+    <!-- <div class="big-title">MBA学生活动学分管理系统</div> -->
     <div class="echart">
       <div id="index"></div>
       <div id="right"></div>
@@ -19,11 +56,18 @@
 
 <script lang="ts" setup>
   // 组件引用部分========
-  import { onMounted } from 'vue';
+  import { onMounted, reactive, ref } from 'vue';
   import * as echarts from 'echarts';
   import Data from './json';
   import router from '../../router';
   import Util from '../../utils/util';
+
+  const blockData = reactive({
+    students: 1245,
+    activitys: 234,
+    pertime: 98765,
+    score: 98340
+  });
 
   const stuentInfo = () => {
     var myChart = echarts.init((document as any).getElementById('index'));
@@ -119,7 +163,8 @@
     myChart.hideLoading();
     myChart.setOption({
       title: {
-        text: '学分活动图谱'
+        text: '学分活动图谱',
+        x: 'center'
       },
       tooltip: {
         trigger: 'item',
@@ -162,8 +207,63 @@
 </script>
 
 <style lang="less" scoped>
-  .content {
+  .default-view {
     display: block;
+
+    .block-square {
+      display: flex;
+      // justify-content: space-around;
+      flex-wrap: wrap;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        min-width: 180px;
+        width: 22%;
+        margin-right: 4%;
+        box-shadow: 4px 4px 40px rgb(0 0 0 / 5%);
+        border-color: rgba(0, 0, 0, 0.05);
+        &:last-child {
+          margin-right: 0;
+        }
+        background: #fff;
+        .icon {
+          width: 40px;
+          color: #028bff;
+        }
+        &:hover {
+          box-shadow: 0 0 10px rgba(0, 0, 0, 20%);
+        }
+      }
+
+      .left {
+        width: 70px;
+        height: 70px;
+        // background: #eb461d;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+      }
+      .right {
+        flex: auto;
+        // background: #ddd;
+        padding-right: 16px;
+        p {
+          text-align: right;
+          font-size: 20px;
+          color: #8c8c8c;
+          line-height: 35px;
+
+          &:last-child {
+            color: #666;
+            font-weight: 700;
+            line-height: 30px;
+            font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei,
+              Arial, sans-serif;
+          }
+        }
+      }
+    }
 
     .big-title {
       display: flex;
@@ -180,13 +280,17 @@
     .echart {
       display: flex;
       justify-content: space-between;
+      margin-top: 20px;
       #index {
-        width: 800px;
+        background: #fff;
+        width: 700px;
         height: 700px;
+        margin-right: 16px;
       }
       #right {
         width: 800px;
         height: 700px;
+        background: #fff;
       }
     }
   }

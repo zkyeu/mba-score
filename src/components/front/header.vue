@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-02 20:47:46
- * @LastEditTime: 2022-03-25 10:23:12
+ * @LastEditTime: 2022-03-25 16:19:23
  * @LastEditors: liliang
  * @Description: In User Settings Edit
  * @FilePath: /score/src/components/front/header.vue
@@ -14,21 +14,43 @@
     </div>
 
     <div class="right-block">
-      <div class="user-center">
+      <div class="user-center" ref="buttonRef">
         <img src="../../assets/imgs/photo.png" />
       </div>
+      <el-popover
+        ref="popoverRef"
+        :virtual-ref="buttonRef"
+        trigger="hover"
+        virtual-triggering
+        width="120px"
+      >
+        <div class="u-layer">
+          <li @click="cpw">修改密码</li>
+          <li @click="logout">退出登录</li>
+        </div>
+      </el-popover>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+  import { ref } from 'vue';
+  import { ElMessage } from 'element-plus';
   import router from '../../router';
   import { useStore } from 'vuex';
   import { key } from '../../store';
-
+  const buttonRef = ref();
   const store = useStore(key);
   const home = () => {
     router.push('/');
+  };
+
+  const logout = () => {
+    ElMessage.warning('后面开发');
+  };
+
+  const cpw = () => {
+    ElMessage.warning('后面开发改密码');
   };
 </script>
 
@@ -85,26 +107,28 @@
       color: #ddd;
       img {
         width: 34px;
-        // height: 32px;
       }
     }
   }
+</style>
 
-  // @media screen and (min-width: 1201px) {
-  //   .content-body {
-  //     width: 1200px;
-  //   }
-  // }
-  // @media screen and (max-width: 1200px) {
-  //   .content-body {
-  //     width: 800px;
-  //   }
-  // }
-  // /* 设置了涉猎器宽度不大于1200px时 abc 显示900px宽度 */
-
-  // @media screen and (max-width: 800px) {
-  //   .content-body {
-  //     width: 700px;
-  //   }
-  // }
+<style lang="less">
+  .u-layer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    // width: 100px;
+    height: 100px;
+    padding: 10px;
+    li {
+      width: 85%;
+      cursor: pointer;
+      padding: 10px;
+      text-align: center;
+      &:hover {
+        background: #f5f5f5;
+        font-weight: 700;
+      }
+    }
+  }
 </style>

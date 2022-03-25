@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-08-04 10:18:00
- * @LastEditTime: 2022-03-24 20:07:43
+ * @LastEditTime: 2022-03-25 21:49:07
  * @LastEditors: liliang
  * @Description: In User Settings Edit
  * @FilePath: /score/src/utils/util.ts
@@ -82,5 +82,32 @@ export default {
   checkLogin: ()=>  {
     let LS = window.sessionStorage;
     return LS.getItem('acms');
+  },
+  /**
+ * [currency 金额格式化函数]
+ * @param  {[type]} value    [传进来的值]
+ * @param  {[type]} currency [货币符号]
+ * @param  {[type]} decimals [小数位数]
+ */
+  currency: (value: any, currency: any, decimals: any) => {
+    value = parseFloat(value)
+    if (!isFinite(value) || (!value && value !== 0)) return ''
+    currency = currency != null ? currency : '$'
+    decimals = decimals != null ? decimals : 2
+    var stringified = Math.abs(value).toFixed(decimals)
+    var _int = decimals
+      ? stringified.slice(0, -1 - decimals)
+      : stringified
+    var i = _int.length % 3
+    var head = i > 0
+      ? (_int.slice(0, i) + (_int.length > 3 ? ',' : ''))
+      : ''
+    var _float = decimals
+      ? stringified.slice(-1 - decimals)
+      : '';
+    var sign = value < 0 ? '-' : '';
+    let digitsRE = /(\d{3})(?=\d)/g
+    return sign + currency + head + _int.slice(i).replace(digitsRE, '$1,') + _float
   }
 }
+

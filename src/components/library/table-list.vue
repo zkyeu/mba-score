@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-16 08:07:09
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-23 19:04:06
+ * @LastEditTime: 2022-03-25 15:34:30
  * @FilePath: /score/src/components/library/table-list.vue
  * @Description: 
 -->
@@ -18,6 +18,7 @@
       :stripe="stripe"
       :row-key="rowKey"
       :default-expand-all="expand"
+      :header-cell-style="{ background: '#f7f8fb', color: '#333' }"
     >
       <template v-if="canSelect">
         <el-table-column type="selection" width="38" />

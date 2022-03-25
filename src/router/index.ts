@@ -2,7 +2,7 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-25 15:03:57
+ * @LastEditTime: 2022-03-25 17:43:44
  * @FilePath: /score/src/router/index.ts
  */
 
@@ -18,6 +18,10 @@ const routes: Array<RouteRecordRaw> = [
         path: '/',
         component: () => import('@/views/admin/view.vue')
       },
+      // {
+      //   path: '/',
+      //   component: () => import('@/views/admin/test.vue')
+      // },
       // 活动系统 start
       {
         path: '/activity-classify',

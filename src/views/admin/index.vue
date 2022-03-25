@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-02 20:10:05
- * @LastEditTime: 2022-03-25 13:35:00
+ * @LastEditTime: 2022-03-25 17:17:27
  * @LastEditors: liliang
  * @Description: 后台首页
  * @FilePath: /score/src/views/admin/index.vue
@@ -11,7 +11,11 @@
     <Headers />
     <div class="content-layer">
       <LeftNav />
-      <router-view class="main-content-right" />
+      <transition name="el-fade-in-linear">
+        <keep-alive :include="cachedViews">
+          <router-view class="main-content-right" />
+        </keep-alive>
+      </transition>
     </div>
   </section>
 </template>

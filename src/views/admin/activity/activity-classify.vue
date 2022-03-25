@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-18 08:38:23
- * @LastEditTime: 2022-03-25 15:02:00
+ * @LastEditTime: 2022-03-25 17:24:25
  * @LastEditors: liliang
  * @Description: In User Settings Edit
  * @FilePath: /score/src/views/admin/activity/activity-classify.vue
@@ -316,6 +316,7 @@
 
   .single-page {
     display: block;
+    transition: all 0.5s;
 
     :deep(.create-layer) {
       .el-dialog__body {

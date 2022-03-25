@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-18 08:38:23
- * @LastEditTime: 2022-03-25 14:25:48
+ * @LastEditTime: 2022-03-25 17:26:36
  * @LastEditors: liliang
  * @Description: In User Settings Edit
  * @FilePath: /score/src/views/admin/activity/activity-diy.vue
@@ -403,10 +403,11 @@
 </script>
 
 <style lang="less" scoped>
-  @import url('../../../assets/style/init.less');
+  @import url('../../../assets/style/diy.less');
 
   .single-page {
     display: block;
+    transition: all 0.5s;
 
     :deep(.create-layer) {
       .el-dialog__body {
