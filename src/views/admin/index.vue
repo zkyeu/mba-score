@@ -11,11 +11,7 @@
     <Headers />
     <div class="content-layer">
       <LeftNav />
-      <transition name="el-fade-in-linear">
-        <keep-alive :include="cachedViews">
-          <router-view class="main-content-right" />
-        </keep-alive>
-      </transition>
+      <router-view class="main-content-right" />
     </div>
   </section>
 </template>
