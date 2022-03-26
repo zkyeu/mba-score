@@ -2,7 +2,7 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-19 00:07:30
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-25 17:29:27
+ * @LastEditTime: 2022-03-26 17:29:04
  * @FilePath: /score/src/views/admin/activity/activity-apply.vue
 -->
 
@@ -230,7 +230,7 @@
   import TableList from '../../../components/library/table-list.vue';
   import Pages from '../../../components/library/pagination.vue';
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
-  import mockData from './mock3';
+  import mockData from './activityApply';
   import { log } from 'console';
 
   const showLayer = reactive({

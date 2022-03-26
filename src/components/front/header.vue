@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-02 20:47:46
- * @LastEditTime: 2022-03-25 16:19:23
+ * @LastEditTime: 2022-03-26 18:21:35
  * @LastEditors: liliang
  * @Description: In User Settings Edit
  * @FilePath: /score/src/components/front/header.vue
@@ -14,6 +14,10 @@
     </div>
 
     <div class="right-block">
+      <div class="message" v-if="true" @click="handleClick('message')">
+        <el-icon><message /></el-icon>
+        <span>9</span>
+      </div>
       <div class="user-center" ref="buttonRef">
         <img src="../../assets/imgs/photo.png" />
       </div>
@@ -25,8 +29,8 @@
         width="120px"
       >
         <div class="u-layer">
-          <li @click="cpw">修改密码</li>
-          <li @click="logout">退出登录</li>
+          <li @click="handleClick('cpw')">修改密码</li>
+          <li @click="handleClick('logout')">退出登录</li>
         </div>
       </el-popover>
     </div>
@@ -45,12 +49,19 @@
     router.push('/');
   };
 
-  const logout = () => {
-    ElMessage.warning('后面开发');
-  };
-
-  const cpw = () => {
-    ElMessage.warning('后面开发改密码');
+  const handleClick = (v: any) => {
+    switch (v) {
+      case 'message':
+        ElMessage.warning('后面开发消息功能');
+        break;
+      case 'logout':
+        ElMessage.warning('后面开发');
+        break;
+      case 'cpw':
+        ElMessage.warning('后面开发改密码');
+        break;
+      default:
+    }
   };
 </script>
 
@@ -96,6 +107,36 @@
   .right-block {
     display: flex;
     align-items: center;
+
+    .message {
+      position: relative;
+      top: 5px;
+      cursor: pointer;
+      i {
+        width: 50px;
+        height: 30px;
+        margin-right: 16px;
+        color: #fff;
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+      }
+      span {
+        display: block;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        color: #fff;
+        border-radius: 10px;
+        font-size: 10px !important;
+        position: absolute;
+        top: -5px;
+        right: 16px;
+        background: #d00;
+      }
+    }
 
     .user-center {
       width: 34px;

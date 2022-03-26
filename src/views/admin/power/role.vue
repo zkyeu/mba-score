@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-16 09:29:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-25 15:10:56
+ * @LastEditTime: 2022-03-26 17:35:12
  * @FilePath: /score/src/views/admin/power/role.vue
  * @Description: 
 -->
@@ -119,7 +119,7 @@
   import Pages from '../../../components/library/pagination.vue';
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
   import type Node from 'element-plus/es/components/tree/src/model/node';
-  import mockData from './mock';
+  import mockData from './members';
 
   const myRef = ref(null);
   const showLayer = reactive({

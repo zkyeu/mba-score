@@ -2,28 +2,22 @@
  * @Author: liliang
  * @Date: 2022-03-16 21:01:33
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-18 18:26:55
+ * @LastEditTime: 2022-03-26 09:25:16
  * @FilePath: /score/src/views/admin/activity/mock.ts
  * @Description:
  */
 export default {
   option: [
     {
-      value: 'id',
-      type: 'input',
-      label: '分类ID',
-      default: '',
-    },
-    {
       value: 'nameid',
       type: 'input',
-      label: '分类名称',
+      label: '类别',
       default: '',
     },
     {
       value: 'type',
       type: 'select',
-      label: '分类等级',
+      label: '级别',
       default: '',
       options: [
         {
@@ -52,26 +46,26 @@ export default {
         },
       ],
     },
-    {
-      value: 'type_a',
-      type: 'select',
-      label: '必修',
-      default: '',
-      options: [
-        {
-          value: 2,
-          label: '全部',
-        },
-        {
-          value: '一级分类',
-          label: '一级分类',
-        },
-        {
-          value: '二级分类',
-          label: '二级分类',
-        },
-      ],
-    },
+    // {
+    //   value: 'type_a',
+    //   type: 'select',
+    //   label: '必修',
+    //   default: '',
+    //   options: [
+    //     {
+    //       value: 2,
+    //       label: '全部',
+    //     },
+    //     {
+    //       value: '必修',
+    //       label: '必修',
+    //     },
+    //     {
+    //       value: '选修',
+    //       label: '选修',
+    //     },
+    //   ],
+    // },
     {
       value: 'status',
       type: 'select',
@@ -100,17 +94,13 @@ export default {
   table: {
     tabletitle: [
       {
-        value: 'id',
-        label: '分类ID',
-      },
-      {
         value: 'name',
-        label: '分类类别',
-      },
-      {
-        value: 'is',
         label: '类别',
       },
+      // {
+      //   value: 'is',
+      //   label: '小类别',
+      // },
       {
         value: 'class',
         label: '级别',

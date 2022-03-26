@@ -2,7 +2,7 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-25 17:35:42
+ * @LastEditTime: 2022-03-26 19:31:12
  * @FilePath: /score/src/components/admin/left-nav.vue
 -->
 
@@ -32,6 +32,7 @@
             <el-icon v-if="item.icon === 'Key'"><Key /></el-icon>
             <el-icon v-if="item.icon === 'Trophy'"><Trophy /></el-icon>
             <el-icon v-if="item.icon === 'Soccer'"><Soccer /></el-icon>
+            <el-icon v-if="item.icon === 'Operation'"><Operation /></el-icon>
             <span class="first-class">{{ item.title }}</span>
           </template>
           <el-menu-item-group>
@@ -50,7 +51,6 @@
   import { useStore } from 'vuex';
   import router from '../../router/index';
   import { key } from '../../store';
-  import { Key, Trophy, Soccer, User } from '@element-plus/icons-vue';
   import navData from './left-nav.js';
 
   const store = useStore(key);

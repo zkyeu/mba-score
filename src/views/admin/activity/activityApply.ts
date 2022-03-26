@@ -2,8 +2,8 @@
  * @Author: liliang
  * @Date: 2022-03-16 21:01:33
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-23 08:51:38
- * @FilePath: /mba-score/src/views/admin/activity/mock3.ts
+ * @LastEditTime: 2022-03-26 09:35:07
+ * @FilePath: /score/src/views/admin/activity/mock3.ts
  * @Description:
  */
 export default {
@@ -68,34 +68,34 @@ export default {
             }
         ]
     },
-      {
-          "value": "year",
-          "type": "select",
-          "label": "班级",
-          "default": "",
-          "options": [
-              {
-                  "value": 6,
-                  "label": "全部"
-              },
-              {
-                  "value": 5,
-                  "label": "21081"
-              },
-              {
-                  "value": 4,
-                  "label": "21082"
-              },
-              {
-                  "value": 3,
-                  "label": "21083"
-              },
-              {
-                  "value": 1,
-                  "label": "其他"
-              }
-          ]
-      },
+    //   {
+    //       "value": "year",
+    //       "type": "select",
+    //       "label": "班级",
+    //       "default": "",
+    //       "options": [
+    //           {
+    //               "value": 6,
+    //               "label": "全部"
+    //           },
+    //           {
+    //               "value": 5,
+    //               "label": "21081"
+    //           },
+    //           {
+    //               "value": 4,
+    //               "label": "21082"
+    //           },
+    //           {
+    //               "value": 3,
+    //               "label": "21083"
+    //           },
+    //           {
+    //               "value": 1,
+    //               "label": "其他"
+    //           }
+    //       ]
+    //   },
       {
           "value": "big",
           "type": "select",
@@ -261,11 +261,11 @@ export default {
               "label": "年级",
               width: '80px'
           },
-          {
-              "value": "period",
-              "label": "班级",
-              width: '120px'
-          },
+        //   {
+        //       "value": "period",
+        //       "label": "班级",
+        //       width: '120px'
+        //   },
           {
               "value": "colortitle",
               "label": "活动名称",

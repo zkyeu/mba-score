@@ -2,42 +2,63 @@
  * @Author: liliang
  * @Date: 2022-03-23 10:10:14
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-25 22:15:37
+ * @LastEditTime: 2022-03-26 18:33:20
  * @FilePath: /score/src/views/admin/view.vue
- * @Description: 
+ * @Description: 网站首页打开预览页面
 -->
 
 <template>
-  <section class="default-view">
+  <section class="single-page">
     <div class="block-square">
       <li>
         <div class="left"><avatar class="icon" /></div>
         <div class="right">
           <p>学生数量</p>
-          <p>{{ Util.currency(blockData.students, '', 0) }}</p>
+          <p>{{ Util.currency(defaultData.blockData.students, '', 0) }}</p>
         </div>
       </li>
       <li>
         <div class="left"><pie-chart class="icon" /></div>
         <div class="right">
           <p>活动累计</p>
-          <p>{{ Util.currency(blockData.activitys, '', 0) }}</p>
+          <p>{{ Util.currency(defaultData.blockData.activitys, '', 0) }}</p>
         </div>
       </li>
       <li>
         <div class="left"><notification class="icon" /></div>
         <div class="right">
           <p>活动人次</p>
-          <p>{{ Util.currency(blockData.pertime, '', 0) }}</p>
+          <p>{{ Util.currency(defaultData.blockData.pertime, '', 0) }}</p>
         </div>
       </li>
       <li>
         <div class="left"><notebook class="icon" /></div>
         <div class="right">
           <p>学分总计</p>
-          <p>{{ Util.currency(blockData.score, '', 0) }}</p>
+          <p>{{ Util.currency(defaultData.blockData.score, '', 2) }}</p>
         </div>
       </li>
+    </div>
+
+    <div class="block-square news-item">
+      <div class="left">
+        <h1>
+          <span>
+            <el-icon><alarm-clock /></el-icon>最近活动
+          </span>
+          <span>更多</span>
+        </h1>
+        <div class="list">
+          <div v-for="(item, index) in defaultData.hdlist" :key="index">
+            <p class="title">
+              <span>✈</span>
+              {{ item.title }}
+            </p>
+            <p class="date"> {{ item.date }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="right" id="overview"></div>
     </div>
 
     <!-- <el-button type="primary" icon="Edit">编辑</el-button>
@@ -61,13 +82,35 @@
   import Data from './json';
   import router from '../../router';
   import Util from '../../utils/util';
+  import mockData from './default';
+  const defaultData = ref(mockData);
+  const blockData = ref(mockData.blockData);
 
-  const blockData = reactive({
-    students: 1245,
-    activitys: 234,
-    pertime: 98765,
-    score: 98340
-  });
+  const overView = () => {
+    var myChart = echarts.init((document as any).getElementById('overview'));
+    myChart.setOption({
+      title: {
+        text: '近3年学生活动学分概览',
+        x: 'center',
+        y: 'bottom'
+      },
+      legend: {},
+      tooltip: {},
+      dataset: {
+        source: [
+          ['product', '2020', '2021', '2022'],
+          ['活动次数', 43, 56, 11],
+          ['学分数量', 37, 62, 46],
+          ['平均分', 9, 12.7, 6]
+        ]
+      },
+      xAxis: { type: 'category' },
+      yAxis: {},
+      // Declare several bar series, each will be mapped
+      // to a column of dataset.source by default.
+      series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }]
+    });
+  };
 
   const stuentInfo = () => {
     var myChart = echarts.init((document as any).getElementById('index'));
@@ -195,6 +238,7 @@
     if (!v) {
       router.push('/log');
     } else {
+      overView();
       stuentInfo();
       right();
       router.push('/');
@@ -207,13 +251,13 @@
 </script>
 
 <style lang="less" scoped>
-  .default-view {
+  .single-page {
     display: block;
 
     .block-square {
       display: flex;
-      // justify-content: space-around;
       flex-wrap: wrap;
+      margin-bottom: 16px;
 
       li {
         display: flex;
@@ -222,7 +266,8 @@
         width: 22%;
         margin-right: 4%;
         box-shadow: 4px 4px 40px rgb(0 0 0 / 5%);
-        border-color: rgba(0, 0, 0, 0.05);
+        border: #fff 1px solid;
+        box-sizing: border-box;
         &:last-child {
           margin-right: 0;
         }
@@ -233,34 +278,106 @@
         }
         &:hover {
           box-shadow: 0 0 10px rgba(0, 0, 0, 20%);
+          background: #f5f5f5;
+        }
+        .left {
+          width: 70px;
+          height: 70px;
+          display: flex;
+          justify-content: center;
+          align-content: center;
+        }
+        .right {
+          flex: auto;
+          padding-right: 16px;
+          p {
+            text-align: right;
+            font-size: 16px;
+            color: #8c8c8c;
+            line-height: 35px;
+
+            &:last-child {
+              font-size: 20px;
+              color: #666;
+              font-weight: 700;
+              line-height: 30px;
+              font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei,
+                Arial, sans-serif;
+            }
+          }
         }
       }
+    }
 
+    .news-item {
+      .left,
+      .right {
+        width: calc(50% - 8px);
+        height: 205px;
+        background: #fff;
+
+        h1 {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 12px 16px 0;
+          span {
+            display: flex;
+            align-items: center;
+            i {
+              margin-right: 6px;
+            }
+          }
+        }
+      }
       .left {
-        width: 70px;
-        height: 70px;
-        // background: #eb461d;
-        display: flex;
-        justify-content: center;
-        align-content: center;
+        margin-right: 16px;
+
+        .list {
+          padding: 10px 16px;
+          div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            line-height: 28px;
+            .title {
+              min-width: 300px;
+              max-width: calc(100% - 90px);
+              display: block;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              color: #555;
+              &:hover {
+                color: #028bff;
+                cursor: pointer;
+                span {
+                  color: #028bff;
+                  transform: rotate(-45deg);
+                  transition: transform 1s linear;
+                }
+              }
+              span {
+                font-size: 20px;
+                margin-right: 8px;
+                display: inline-block;
+                width: 10px;
+                height: 22px;
+              }
+            }
+            .date {
+              width: 90px;
+              text-align: right;
+              // background: #c00;
+              color: #888;
+            }
+          }
+        }
       }
       .right {
-        flex: auto;
-        // background: #ddd;
-        padding-right: 16px;
-        p {
-          text-align: right;
-          font-size: 20px;
-          color: #8c8c8c;
-          line-height: 35px;
-
-          &:last-child {
-            color: #666;
-            font-weight: 700;
-            line-height: 30px;
-            font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei,
-              Arial, sans-serif;
-          }
+        #overview {
+          width: 100%;
+          height: 205px;
         }
       }
     }
@@ -283,12 +400,12 @@
       margin-top: 20px;
       #index {
         background: #fff;
-        width: 700px;
+        width: calc(40% - 8px);
         height: 700px;
         margin-right: 16px;
       }
       #right {
-        width: 800px;
+        width: calc(60% - 8px);
         height: 700px;
         background: #fff;
       }

@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-16 08:07:09
- * @LastEditTime: 2022-03-23 18:43:10
+ * @LastEditTime: 2022-03-26 17:40:05
  * @LastEditors: liliang
  * @Description: 
  * @FilePath: /score/src/components/library/table-options.vue
@@ -141,7 +141,10 @@
       };
 
       const initDefault = (o: any) => {
+        if (!o) return;
         for (const item of o) {
+          console.log(o);
+
           if (item.type === 'inputrange') {
             dataBox.data[item.value + '_' + item.range[0]] = null;
             dataBox.data[item.value + '_' + item.range[1]] = null;

@@ -2,7 +2,7 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-22 21:03:22
+ * @LastEditTime: 2022-03-26 09:28:59
  * @FilePath: /score/src/views/admin/activity/mock2.ts
  */
 
@@ -11,7 +11,7 @@ export default {
       {
           "value": "id",
           "type": "input",
-          "label": "活动ID",
+          "label": "存档编码",
           "default": ""
       },
       {
@@ -20,12 +20,12 @@ export default {
         "label": "时间",
         "default": []
     },
-      {
-        "value": "datetime",
-        "type": "datetimerange",
-        "label": "时间区间",
-        "default": []
-    },
+    //   {
+    //     "value": "datetime",
+    //     "type": "datetimerange",
+    //     "label": "时间区间",
+    //     "default": []
+    // },
       {
           "value": "caree",
           "type": "select",
@@ -182,62 +182,62 @@ export default {
               }
           ]
       },
-      {
-          "value": "big",
-          "type": "select",
-          "label": "二级分类",
-          "default": "",
-          "options": [
-              {
-                  "value": 2,
-                  "label": "全部"
-              },
-              {
-                  "value": 3,
-                  "label": "新生拓展活动"
-              },
-              {
-                  "value": 4,
-                  "label": "新生年会"
-              },
-              {
-                  "value": 5,
-                  "label": "新生晚会"
-              },
-              {
-                  "value": 6,
-                  "label": "读书活动"
-              },
-              {
-                  "value": 63,
-                  "label": "知行论坛"
-              },
-              {
-                  "value": 630,
-                  "label": "纳建会"
-              },
-              {
-                  "value": 630,
-                  "label": "院长时间"
-              },
-              {
-                  "value": 30,
-                  "label": "文体活动"
-              },
-              {
-                  "value": 310,
-                  "label": "案例大赛"
-              },
-              {
-                  "value": 304,
-                  "label": "创业大赛"
-              },
-              {
-                  "value": 3034,
-                  "label": "其他"
-              }
-          ]
-      },
+    //   {
+    //       "value": "big",
+    //       "type": "select",
+    //       "label": "二级分类",
+    //       "default": "",
+    //       "options": [
+    //           {
+    //               "value": 2,
+    //               "label": "全部"
+    //           },
+    //           {
+    //               "value": 3,
+    //               "label": "新生拓展活动"
+    //           },
+    //           {
+    //               "value": 4,
+    //               "label": "新生年会"
+    //           },
+    //           {
+    //               "value": 5,
+    //               "label": "新生晚会"
+    //           },
+    //           {
+    //               "value": 6,
+    //               "label": "读书活动"
+    //           },
+    //           {
+    //               "value": 63,
+    //               "label": "知行论坛"
+    //           },
+    //           {
+    //               "value": 630,
+    //               "label": "纳建会"
+    //           },
+    //           {
+    //               "value": 630,
+    //               "label": "院长时间"
+    //           },
+    //           {
+    //               "value": 30,
+    //               "label": "文体活动"
+    //           },
+    //           {
+    //               "value": 310,
+    //               "label": "案例大赛"
+    //           },
+    //           {
+    //               "value": 304,
+    //               "label": "创业大赛"
+    //           },
+    //           {
+    //               "value": 3034,
+    //               "label": "其他"
+    //           }
+    //       ]
+    //   },
       {
           "value": "type",
           "type": "select",
@@ -373,7 +373,7 @@ export default {
         //   },
           {
               "value": "rname",
-              "label": "活动存档编号",
+              "label": "活动存档编码",
               width: '170px'
             
           },

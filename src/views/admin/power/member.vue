@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-16 09:29:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-25 15:06:35
+ * @LastEditTime: 2022-03-26 17:51:01
  * @FilePath: /score/src/views/admin/power/member.vue
  * @Description: 
 -->
@@ -124,6 +124,7 @@
   import Pages from '../../../components/library/pagination.vue';
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
   import mockData from './mock2';
+  // import mockData from './member';
 
   const total = ref(2);
   const showLayer = reactive({

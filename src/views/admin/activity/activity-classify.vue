@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-18 08:38:23
- * @LastEditTime: 2022-03-25 17:24:25
+ * @LastEditTime: 2022-03-26 17:27:23
  * @LastEditors: liliang
  * @Description: In User Settings Edit
  * @FilePath: /score/src/views/admin/activity/activity-classify.vue
@@ -148,8 +148,7 @@
   import TableList from '../../../components/library/table-list.vue';
   import Pages from '../../../components/library/pagination.vue';
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
-  import mockData from './mock';
-  import { log } from 'console';
+  import mockData from './activityClassify';
 
   const showLayer = reactive({
     create: false,

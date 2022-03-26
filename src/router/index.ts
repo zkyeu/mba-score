@@ -2,7 +2,7 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-25 17:43:44
+ * @LastEditTime: 2022-03-26 20:23:06
  * @FilePath: /score/src/router/index.ts
  */
 
@@ -72,6 +72,26 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/admin/power/role.vue')
       },
       // 权限配置 end
+
+      // 个人中心 start
+      {
+        path: '/uc',
+        component: () => import('@/views/admin/ucenter/uc.vue')
+      },
+      {
+        path: '/as',
+        component: () => import('@/views/admin/ucenter/as.vue')
+      },
+      {
+        path: '/ss',
+        component: () => import('@/views/admin/ucenter/ss.vue')
+      }
+      ,
+      {
+        path: '/ms',
+        component: () => import('@/views/admin/ucenter/ms.vue')
+      }
+      // 个人中心 end
     ]
   },
   // 登录注册 start
