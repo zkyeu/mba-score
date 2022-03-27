@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-16 08:07:09
- * @LastEditTime: 2022-03-26 17:40:05
+ * @LastEditTime: 2022-03-27 15:36:38
  * @LastEditors: liliang
  * @Description: 
- * @FilePath: /score/src/components/library/table-options.vue
+ * @FilePath: /mba-score/src/components/library/table-options.vue
 -->
 <template>
   <section class="lib-option-list">
@@ -143,7 +143,7 @@
       const initDefault = (o: any) => {
         if (!o) return;
         for (const item of o) {
-          console.log(o);
+          // console.log(o);
 
           if (item.type === 'inputrange') {
             dataBox.data[item.value + '_' + item.range[0]] = null;

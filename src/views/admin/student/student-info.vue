@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-25 15:02:18
+ * @LastEditTime: 2022-03-27 18:27:36
  * @LastEditors: liliang
  * @Description: 
- * @FilePath: /score/src/views/admin/student/student-info.vue
+ * @FilePath: /mba-score/src/views/admin/student/student-info.vue
 -->
 
 <template>
@@ -317,13 +317,14 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref, computed, onMounted, reactive } from 'vue';
+  import { ref, onBeforeMount, onMounted, reactive } from 'vue';
   import { ArrowRight, Plus, Promotion, Download, UploadFilled } from '@element-plus/icons-vue';
   import TableOption from '../../../components/library/table-options.vue';
   import TableList from '../../../components/library/table-list.vue';
   import Pages from '../../../components/library/pagination.vue';
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
-  import mockData from './mock2';
+  import mockData from '../mockData/studentInfo.json';
+  import $http from '../../../api';
 
   const showLayer = reactive({
     import: false,
@@ -333,7 +334,11 @@
     delete: false,
     title: ''
   });
-  const optionParams = reactive({ obj: {} });
+  const pageData = ref({});
+  const optionParams = ref({
+    pn: 1,
+    rn: 10
+  });
   const options = reactive({
     data: mockData.option
   });
@@ -483,7 +488,8 @@
 
   // 筛选
   const optionChange = (v: any) => {
-    console.log(v);
+    optionParams.value = Object.assign(optionParams.value, v);
+    getPageData();
   };
 
   // 操作
@@ -516,22 +522,28 @@
   };
   // 页码变化
   const currentPage = (v: any) => {
-    console.log(v);
+    optionParams.value = Object.assign(optionParams.value, v);
+    getPageData();
   };
 
-  // const dialogBtnEvent = (v: any) => {
-  //   console.log('click', v);
-  //   showLayer.value = v.boo;
-  //   console.log(v.obj);
-  // };
+  const getPageData = () => {
+    $http
+      .getstudentinfo({
+        data: optionParams.value
+      })
+      .then((res: any) => {
+        console.log(res);
+      })
+      .catch((err: any) => {
+        console.log(err);
+      })
+      .finally(() => {
+        pageData.value = mockData;
+      });
+  };
 
-  onMounted(() => {
-    // let arr = [{ a: 1 }, { b: 2 }];
-    // let is = arr.map((item, index) => {
-    //   let obj = { ...item };
-    //   return obj;
-    // });
-    // console.log(is);
+  onBeforeMount(() => {
+    getPageData();
   });
 </script>
 

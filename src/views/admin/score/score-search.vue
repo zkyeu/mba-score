@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-25 15:13:39
+ * @LastEditTime: 2022-03-27 18:13:21
  * @LastEditors: liliang
  * @Description: 
- * @FilePath: /score/src/views/admin/score/score-search.vue
+ * @FilePath: /mba-score/src/views/admin/score/score-search.vue
 -->
 
 <template>
@@ -109,7 +109,7 @@
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
   import { ArrowRight, Plus, Promotion, Download, UploadFilled } from '@element-plus/icons-vue';
   import ListCount from './component/list-count.vue';
-  import ListDetail from './component/list.vue';
+  import ListDetail from './component/list-detail.vue';
   import Overview from './component/overview.vue';
   import Process from './component/process.vue';
   import Count from './component/count.vue';

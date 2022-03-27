@@ -1,0 +1,298 @@
+{
+  "option": [
+      {
+          "value": "hdid",
+          "type": "input",
+          "label": "活动名称",
+          "default": ""
+      },
+      {
+          "value": "id",
+          "type": "input",
+          "label": "学生姓名",
+          "default": ""
+      },
+      {
+          "value": "ids",
+          "type": "input",
+          "label": "学号",
+          "default": ""
+      },
+      {
+          "value": "hdtime",
+          "type": "daterange",
+          "label": "活动时间",
+          "default": []
+      },
+      {
+          "value": "year",
+          "type": "select",
+          "label": "年级",
+          "default": "",
+          "options": [
+              {
+                  "value": 6,
+                  "label": "全部"
+              },
+              {
+                  "value": 5,
+                  "label": "2021"
+              },
+              {
+                  "value": 4,
+                  "label": "2020"
+              },
+              {
+                  "value": 3,
+                  "label": "2019"
+              },
+              {
+                  "value": 2,
+                  "label": "2018"
+              },
+              {
+                  "value": 1,
+                  "label": "更早"
+              }
+          ]
+      },
+      {
+          "value": "xueqi",
+          "type": "select",
+          "label": "班级",
+          "default": "",
+          "options": [
+              {
+                  "value": 6,
+                  "label": "全部"
+              },
+              {
+                  "value": 5,
+                  "label": "ZF21081"
+              },
+              {
+                  "value": 4,
+                  "label": "ZF21082"
+              },
+              {
+                  "value": 33,
+                  "label": "ZF21083"
+              },
+              {
+                  "value": 145,
+                  "label": "其他自己添加"
+              }
+          ]
+      }
+  ],
+  "table": [
+      {
+          "snumber": "ZF2108223",
+          "uname": "沈寿豪",
+          "grade": "2班",
+          "xiangdao": "-1",
+          "shijian": "1",
+          "gongyi": "1",
+          "luntan": "-5",
+          "wenti": "-3",
+          "guoji": "0",
+          "lilun": "-1",
+          "zongji": -9
+      },
+      {
+          "snumber": "ZF2108201",
+          "uname": "陈佳",
+          "grade": "2班",
+          "xiangdao": "-1",
+          "shijian": "-5",
+          "gongyi": "-3",
+          "luntan": "3",
+          "wenti": "-3",
+          "guoji": "0",
+          "lilun": "-1",
+          "zongji": -13
+      },
+      {
+          "snumber": "ZF2108202",
+          "uname": "陈立旋",
+          "grade": "2班",
+          "xiangdao": "-2",
+          "shijian": "4",
+          "gongyi": "5",
+          "luntan": "-3",
+          "wenti": "-2",
+          "guoji": "0",
+          "lilun": "-2",
+          "zongji": -9
+      },
+      {
+          "snumber": "ZF2108203",
+          "uname": "成帅",
+          "grade": "2班",
+          "xiangdao": "-1",
+          "shijian": "-2",
+          "gongyi": "-3",
+          "luntan": "-5",
+          "wenti": "2",
+          "guoji": "0",
+          "lilun": "-1",
+          "zongji": -11
+      },
+      {
+          "snumber": "ZF2108204",
+          "uname": "程方瑞",
+          "grade": "2班",
+          "xiangdao": "-1",
+          "shijian": "1",
+          "gongyi": "1",
+          "luntan": "-3",
+          "wenti": "-3",
+          "guoji": "0",
+          "lilun": "-1",
+          "zongji": -8
+      },
+      {
+          "snumber": "ZF2108205",
+          "uname": "程潇毅",
+          "grade": "2班",
+          "xiangdao": "0",
+          "shijian": "1",
+          "gongyi": "3",
+          "luntan": "1",
+          "wenti": "2",
+          "guoji": "0",
+          "lilun": 0,
+          "zongji": 0
+      },
+      {
+          "snumber": "ZF2108206",
+          "uname": "邓裴",
+          "grade": "2班",
+          "xiangdao": "-1",
+          "shijian": "-5",
+          "gongyi": "-3",
+          "luntan": "2",
+          "wenti": "-3",
+          "guoji": "0",
+          "lilun": "-1",
+          "zongji": -14
+      },
+      {
+          "snumber": "ZF2108207",
+          "uname": "封云潇",
+          "grade": "2班",
+          "xiangdao": 0,
+          "shijian": 0,
+          "gongyi": 0,
+          "luntan": 3,
+          "wenti": 2,
+          "guoji": "0",
+          "lilun": "1",
+          "zongji": 0
+      },
+      {
+          "snumber": "ZF2108208",
+          "uname": "高冀雄",
+          "grade": "2班",
+          "xiangdao": "-1",
+          "shijian": "-5",
+          "gongyi": "-3",
+          "luntan": "-5",
+          "wenti": "-3",
+          "guoji": "0",
+          "lilun": "-1",
+          "zongji": -17
+      },
+      {
+          "snumber": "ZF2108209",
+          "uname": "高强",
+          "grade": "2班",
+          "xiangdao": "-1",
+          "shijian": "-5",
+          "gongyi": "-1",
+          "luntan": "-5",
+          "wenti": "-3",
+          "guoji": "0",
+          "lilun": "-1",
+          "zongji": -15
+      },
+      {
+          "snumber": "ZF2108210",
+          "uname": "郝静娜",
+          "grade": "2班",
+          "xiangdao": "-1",
+          "shijian": "-5",
+          "gongyi": "-3",
+          "luntan": "-5",
+          "wenti": "-3",
+          "guoji": "0",
+          "lilun": "-1",
+          "zongji": -17
+      },
+      {
+          "snumber": "ZF2108211",
+          "uname": "黄志坤",
+          "grade": "2班",
+          "xiangdao": "-1",
+          "shijian": "-5",
+          "gongyi": "-4",
+          "luntan": "-5",
+          "wenti": "-1",
+          "guoji": "0",
+          "lilun": "-1",
+          "zongji": -16
+      },
+      {
+          "snumber": "ZF2108212",
+          "uname": "兰丹子皇",
+          "grade": "2班",
+          "xiangdao": "-1",
+          "shijian": "-5",
+          "gongyi": "-3",
+          "luntan": "-5",
+          "wenti": "-3",
+          "guoji": "0",
+          "lilun": "-1",
+          "zongji": -17
+      },
+      {
+          "snumber": "ZF2108213",
+          "uname": "李坚",
+          "grade": "2班",
+          "xiangdao": "-1",
+          "shijian": "-3",
+          "gongyi": "-2",
+          "luntan": "-5",
+          "wenti": "-1",
+          "guoji": "0",
+          "lilun": "-1",
+          "zongji": -12
+      },
+      {
+          "snumber": "ZF2108214",
+          "uname": "李钊",
+          "grade": "2班",
+          "xiangdao": "-1",
+          "shijian": "-5",
+          "gongyi": "-3",
+          "luntan": "-5",
+          "wenti": "-3",
+          "guoji": "0",
+          "lilun": "-1",
+          "zongji": -17
+      },
+      {
+          "snumber": "ZF2108215",
+          "uname": "李振",
+          "grade": "2班",
+          "xiangdao": "-1",
+          "shijian": "-2",
+          "gongyi": "1",
+          "luntan": "-5",
+          "wenti": "0",
+          "guoji": "0",
+          "lilun": "-1",
+          "zongji": -8
+      }
+  ]
+}

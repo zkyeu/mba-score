@@ -2,8 +2,8 @@
  * @Author: liliang
  * @Date: 2022-03-23 10:10:14
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-27 13:48:32
- * @FilePath: /score/src/views/admin/default.vue
+ * @LastEditTime: 2022-03-27 15:14:53
+ * @FilePath: /mba-score/src/views/admin/default.vue
  * @Description: 网站首页打开预览页面
 -->
 
@@ -85,9 +85,12 @@
       title: {
         text: '近3年学生活动学分概览',
         x: 'center',
-        y: 'bottom'
+        y: 'bottom',
+        padding: [20, 0, 0, 0]
       },
-      legend: {},
+      legend: {
+        padding: [10, 0, 0, 0]
+      },
       tooltip: {},
       dataset: {
         source: [
@@ -107,63 +110,41 @@
 
   const stuentInfo = () => {
     var myChart = echarts.init((document as any).getElementById('index'));
-    myChart.on('updateAxisPointer', function (event: any) {
-      const xAxisInfo = event.axesInfo[0];
-      if (xAxisInfo) {
-        const dimension = xAxisInfo.value + 1;
-        myChart.setOption({
-          series: {
-            id: 'pie',
-            label: {
-              formatter: '{b}: {@[' + dimension + ']} ({d}%)'
-            },
-            encode: {
-              value: dimension,
-              tooltip: dimension
-            }
-          }
-        });
-      }
-    });
     myChart.setOption({
       title: {
-        text: 'MBA2021级活动学分统计表',
-        show: true,
-        x: 'center'
+        text: '班级成员数',
+        subtext: 'MBA2021级',
+        left: 'center'
       },
-      // legend: {},
       tooltip: {
-        trigger: 'axis',
-        showContent: true
+        trigger: 'item'
       },
-      dataset: {
-        source: [
-          ['月份', '2021.9', '2021.10', '2021.11', '2021.12', '2022.1', '2022.2'],
-          ['论坛活动', 56, 82, 88, 70, 59, 85],
-          ['文体学分', 51, 51, 55, 53, 73, 68],
-          ['社会公益', 10, 12, 69, 16, 25, 32],
-          ['读书活动', 25, 37, 41, 38, 53, 49]
-        ]
+      legend: {
+        // orient: 'vertical',
+        // left: 'left'
+        bottom: 'bottom'
       },
-      xAxis: { type: 'category' },
-      yAxis: { gridIndex: 0 },
-      grid: { top: '50%' },
       series: [
         {
+          name: '2021级',
           type: 'pie',
-          id: 'pie',
-          radius: '30%',
-          center: ['50%', '25%'],
+          radius: '65%',
+
+          data: [
+            { value: 78, name: 'ZF21081班' },
+            { value: 47, name: 'ZF21082班' },
+            { value: 54, name: 'ZF21083班' },
+            { value: 56, name: 'ZF21084班' },
+            { value: 56, name: 'ZF21085班' },
+            { value: 58, name: 'ZF21086班' }
+          ],
+
           emphasis: {
-            focus: 'self'
-          },
-          label: {
-            formatter: '{b}: {@2012} ({d}%)'
-          },
-          encode: {
-            itemName: 'product',
-            value: '2021.9',
-            tooltip: '2021.9'
+            itemStyle: {
+              shadowBlur: 10,
+              shadowOffsetX: 0,
+              shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
           }
         }
       ]
@@ -179,7 +160,9 @@
         // x: 'center',
         // y: 'bottom'
       },
-      legend: {},
+      legend: {
+        padding: [20, 0, 0, 0]
+      },
       tooltip: {
         trigger: 'axis',
         showContent: true
@@ -233,9 +216,8 @@
   };
 
   const getDefaultData = () => {
-    console.log(1);
     $http
-      .getuserinfo()
+      .defaultView()
       .then((res: any) => {
         console.log(res);
       })
@@ -392,12 +374,12 @@
       #index {
         background: #fff;
         width: calc(40% - 8px);
-        height: 700px;
+        height: 400px;
         margin-right: 16px;
       }
       #right {
         width: calc(60% - 8px);
-        height: 700px;
+        height: 400px;
         background: #fff;
       }
     }

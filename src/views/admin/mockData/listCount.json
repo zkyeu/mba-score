@@ -1,12 +1,4 @@
-/*
- * @Author: liliang
- * @Date: 2022-03-16 21:01:33
- * @LastEditors: liliang
- * @LastEditTime: 2022-03-23 18:41:19
- * @FilePath: /score/src/views/admin/score/list-count.ts
- * @Description:
- */
-export default  {
+ {
     "option": [
         {
             "value": "zhuanye",
@@ -139,7 +131,7 @@ export default  {
             "type": "inputrange",
             "label": "学分分数段",
             "default": [],
-            range:['start','end']
+            "range":["start","end"]
         }
     ],
     "table": {
@@ -734,14 +726,6 @@ export default  {
                 "value": "snumber",
                 "label": "学号"
             },
-            // {
-            //     "value": "banxing",
-            //     "label": "班型"
-            // },
-            // {
-            //     "value": "class",
-            //     "label": "班级"
-            // },
             {
                 "value": "score",
                 "label": "学分"

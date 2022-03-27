@@ -2,8 +2,8 @@
  * @Author: liliang
  * @Date: 2022-03-16 09:29:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-26 17:51:01
- * @FilePath: /score/src/views/admin/power/member.vue
+ * @LastEditTime: 2022-03-27 18:25:59
+ * @FilePath: /mba-score/src/views/admin/power/member.vue
  * @Description: 
 -->
 <template>
@@ -109,7 +109,7 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref, computed, onMounted, reactive } from 'vue';
+  import { ref, computed, onBeforeMount, reactive } from 'vue';
   import {
     ArrowRight,
     Plus,
@@ -123,8 +123,8 @@
   import TableList from '../../../components/library/table-list.vue';
   import Pages from '../../../components/library/pagination.vue';
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
-  import mockData from './mock2';
-  // import mockData from './member';
+  import mockData from '../mockData/member.json';
+  import $http from '../../../api';
 
   const total = ref(2);
   const showLayer = reactive({
@@ -133,7 +133,11 @@
     delete: false,
     title: ''
   });
-  const optionParams = reactive({ obj: {} });
+  const pageData = ref({});
+  const optionParams = ref({
+    pn: 1,
+    rn: 10
+  });
   const options = reactive({
     data: mockData.option
   });
@@ -260,10 +264,29 @@
   };
   // 页码变化
   const currentPage = (v: any) => {
-    console.log(v);
+    optionParams.value = Object.assign(optionParams.value, v);
+    getPageData();
   };
 
-  onMounted(() => {});
+  const getPageData = () => {
+    $http
+      .getpowermember({
+        data: optionParams.value
+      })
+      .then((res: any) => {
+        console.log(res);
+      })
+      .catch((err: any) => {
+        console.log(err);
+      })
+      .finally(() => {
+        pageData.value = mockData;
+      });
+  };
+
+  onBeforeMount(() => {
+    getPageData();
+  });
 </script>
 
 <style lang="less" scoped>

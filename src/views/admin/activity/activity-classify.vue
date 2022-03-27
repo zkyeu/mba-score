@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-18 08:38:23
- * @LastEditTime: 2022-03-26 17:27:23
+ * @LastEditTime: 2022-03-27 17:23:52
  * @LastEditors: liliang
  * @Description: In User Settings Edit
- * @FilePath: /score/src/views/admin/activity/activity-classify.vue
+ * @FilePath: /mba-score/src/views/admin/activity/activity-classify.vue
 -->
 <template>
   <section class="single-page">
@@ -142,13 +142,14 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref, computed, onMounted, reactive } from 'vue';
+  import { ref, onBeforeMount, reactive } from 'vue';
   import { ArrowRight, Plus, Promotion } from '@element-plus/icons-vue';
   import TableOption from '../../../components/library/table-options.vue';
   import TableList from '../../../components/library/table-list.vue';
   import Pages from '../../../components/library/pagination.vue';
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
-  import mockData from './activityClassify';
+  import mockData from '../mockData/activityClassify.json';
+  import $http from '../../../api';
 
   const showLayer = reactive({
     create: false,
@@ -157,7 +158,11 @@
     delete: false,
     title: ''
   });
-  const optionParams = reactive({ obj: {} });
+  const optionParams = ref({
+    pn: 1,
+    rn: 10
+  });
+  const pageData = ref({});
   const options = reactive({
     data: mockData.option
   });
@@ -267,7 +272,8 @@
 
   // 筛选
   const optionChange = (v: any) => {
-    console.log(v);
+    optionParams.value = Object.assign(optionParams.value, v);
+    getPageData();
   };
 
   // 操作
@@ -300,14 +306,29 @@
   };
   // 页码变化
   const currentPage = (v: any) => {
-    console.log(v);
+    optionParams.value = Object.assign(optionParams.value, v);
+    getPageData();
   };
 
-  // const dialogBtnEvent = (v: any) => {
-  //   console.log('click', v);
-  //   showLayer.value = v.boo;
-  //   console.log(v.obj);
-  // };
+  const getPageData = () => {
+    $http
+      .getactivityclassify({
+        data: optionParams.value
+      })
+      .then((res: any) => {
+        console.log(res);
+      })
+      .catch((err: any) => {
+        console.log(err);
+      })
+      .finally(() => {
+        pageData.value = mockData;
+      });
+  };
+
+  onBeforeMount(() => {
+    getPageData();
+  });
 </script>
 
 <style lang="less" scoped>

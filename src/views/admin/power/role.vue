@@ -2,8 +2,8 @@
  * @Author: liliang
  * @Date: 2022-03-16 09:29:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-26 17:35:12
- * @FilePath: /score/src/views/admin/power/role.vue
+ * @LastEditTime: 2022-03-27 18:26:40
+ * @FilePath: /mba-score/src/views/admin/power/role.vue
  * @Description: 
 -->
 
@@ -113,13 +113,14 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref, computed, onMounted, reactive } from 'vue';
+  import { ref, computed, onBeforeMount, reactive } from 'vue';
   import { ArrowRight, Plus } from '@element-plus/icons-vue';
   import TableList from '../../../components/library/table-list.vue';
   import Pages from '../../../components/library/pagination.vue';
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
   import type Node from 'element-plus/es/components/tree/src/model/node';
-  import mockData from './members';
+  import mockData from '../mockData/roles.json';
+  import $http from '../../../api';
 
   const myRef = ref(null);
   const showLayer = reactive({
@@ -129,8 +130,13 @@
     delete: false,
     title: ''
   });
+  const pageData = ref({});
   const tableData = reactive({
     data: mockData.table
+  });
+  const optionParams = ref({
+    pn: 1,
+    rn: 10
   });
   const total = ref(7);
   const viewObj = reactive({ data: {} });
@@ -244,11 +250,28 @@
   };
   // 页码变化
   const currentPage = (v: any) => {
-    console.log(v);
+    optionParams.value = Object.assign(optionParams.value, v);
+    getPageData();
   };
 
-  onMounted(() => {
-    // console.log(myRef.value);
+  const getPageData = () => {
+    $http
+      .getpowerrole({
+        data: optionParams.value
+      })
+      .then((res: any) => {
+        console.log(res);
+      })
+      .catch((err: any) => {
+        console.log(err);
+      })
+      .finally(() => {
+        pageData.value = mockData;
+      });
+  };
+
+  onBeforeMount(() => {
+    getPageData();
   });
 </script>
 

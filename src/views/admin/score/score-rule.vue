@@ -2,8 +2,8 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-21 20:17:29
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-25 15:12:36
- * @FilePath: /score/src/views/admin/score/score-rule.vue
+ * @LastEditTime: 2022-03-27 18:18:39
+ * @FilePath: /mba-score/src/views/admin/score/score-rule.vue
 -->
 
 <template>
@@ -94,7 +94,7 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref, computed, onMounted, reactive } from 'vue';
+  import { ref, computed, onBeforeMount, reactive } from 'vue';
   import {
     ArrowRight,
     Plus,
@@ -108,15 +108,20 @@
   import TableList from '../../../components/library/table-list.vue';
   import Pages from '../../../components/library/pagination.vue';
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
-  import mockData from './rule';
+  import mockData from '../mockData/scoreRule.json';
+  import $http from '../../../api';
 
   const showLayer = reactive({
     edit: false,
     delete: false,
     title: ''
   });
+  const pageData = ref({});
   const total = ref(7);
-  const optionParams = reactive({ obj: {} });
+  const optionParams = ref({
+    pn: 1,
+    rn: 10
+  });
   const options = reactive({
     data: mockData.option
   });
@@ -182,10 +187,29 @@
   };
   // 页码变化
   const currentPage = (v: any) => {
-    console.log(v);
+    optionParams.value = Object.assign(optionParams.value, v);
+    getPageData();
   };
 
-  onMounted(() => {});
+  const getPageData = () => {
+    $http
+      .getactivityclassify({
+        data: optionParams.value
+      })
+      .then((res: any) => {
+        console.log(res);
+      })
+      .catch((err: any) => {
+        console.log(err);
+      })
+      .finally(() => {
+        pageData.value = mockData;
+      });
+  };
+
+  onBeforeMount(() => {
+    getPageData();
+  });
 </script>
 
 <style lang="less" scoped>
