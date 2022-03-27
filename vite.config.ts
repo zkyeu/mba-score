@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-07-28 15:51:41
- * @LastEditTime: 2022-03-24 18:55:58
+ * @LastEditTime: 2022-03-27 13:31:42
  * @LastEditors: liliang
  * @Description: In User Settings Edit
  * @FilePath: /score/vite.config.ts
@@ -28,7 +28,8 @@ export default defineConfig({
       utils: path.resolve(__dirname, './src/utils'),
       assets: path.resolve(__dirname, "./src/assets"),
       store: path.resolve(__dirname, "./src/store"),
-      router: path.resolve(__dirname, './src/router')
+      router: path.resolve(__dirname, './src/router'),
+      api: path.resolve(__dirname, './src/api'),
     }
   },
   server: {

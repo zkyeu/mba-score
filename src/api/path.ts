@@ -1,15 +1,15 @@
 /*
  * @Author: your name
  * @Date: 2021-08-03 17:45:46
- * @LastEditTime: 2022-01-28 20:49:04
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-03-27 13:41:54
+ * @LastEditors: liliang
  * @Description: In User Settings Edit
- * @FilePath: /vvt/src/api/path.ts
+ * @FilePath: /score/src/api/path.ts
  */
 const apiList = {
   get: {
-    getuserinfo: '/commander/user/getuserinfo', // 用户信息
-    gettasklist: '/commander/util/gettasklist', // 任务列表
+    getuserinfo: '/score/getuserinfo', // 用户信息
+    defaultView: '/score/defaultView', // 后台默认页面数据
     getwechatuser: '/apiv1/getwechatuser',
     getarticle: '/apiv1/get/article',
     gettypes: '/apiv1/get/gettypes',

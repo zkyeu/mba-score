@@ -1,23 +1,11 @@
-/*
- * @Author: liliang
- * @Date: 2022-03-26 11:03:03
- * @LastEditors: liliang
- * @LastEditTime: 2022-03-26 18:38:38
- * @FilePath: /score/src/views/admin/default.ts
- * @Description: 网站首页打开预览页面数据
- */
-
-export default {
-    // 豆腐块
-  blockData: {
-    students: 12345,
-    activitys: 234567,
-    pertime: 9876543,
-    score: 98776340.87
-  },
-
-  // 活动列表
-  hdlist: [
+{
+    "blockData": {
+        "students": 12345,
+        "activitys": 234567,
+        "pertime": 9876543,
+        "score": 98776340.87
+    },
+    "hdlist": [
         {
             "id": 12,
             "title": "5·14新生晚会活动",

@@ -2,14 +2,14 @@
  * @Author: liliang
  * @Date: 2022-03-23 10:10:14
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-26 18:33:20
- * @FilePath: /score/src/views/admin/view.vue
+ * @LastEditTime: 2022-03-27 13:48:32
+ * @FilePath: /score/src/views/admin/default.vue
  * @Description: 网站首页打开预览页面
 -->
 
 <template>
   <section class="single-page">
-    <div class="block-square">
+    <div class="block-square" v-if="defaultData.blockData">
       <li>
         <div class="left"><avatar class="icon" /></div>
         <div class="right">
@@ -39,7 +39,6 @@
         </div>
       </li>
     </div>
-
     <div class="block-square news-item">
       <div class="left">
         <h1>
@@ -61,13 +60,6 @@
       <div class="right" id="overview"></div>
     </div>
 
-    <!-- <el-button type="primary" icon="Edit">编辑</el-button>
-        <el-button size="mini" type="primary" class="#f00" icon="More" title="详情" />
-        <el-icon>
-          <delete />
-        </el-icon> -->
-
-    <!-- <div class="big-title">MBA学生活动学分管理系统</div> -->
     <div class="echart">
       <div id="index"></div>
       <div id="right"></div>
@@ -77,14 +69,15 @@
 
 <script lang="ts" setup>
   // 组件引用部分========
-  import { onMounted, reactive, ref } from 'vue';
+  import { ref, onBeforeMount } from 'vue';
   import * as echarts from 'echarts';
   import Data from './json';
   import router from '../../router';
   import Util from '../../utils/util';
-  import mockData from './default';
-  const defaultData = ref(mockData);
-  const blockData = ref(mockData.blockData);
+  import mockData from './mockData/default.json';
+  import $http from '../../api';
+
+  const defaultData = ref({});
 
   const overView = () => {
     var myChart = echarts.init((document as any).getElementById('overview'));
@@ -145,7 +138,7 @@
       },
       dataset: {
         source: [
-          ['product', '2021.9', '2021.10', '2021.11', '2021.12', '2022.1', '2022.2'],
+          ['月份', '2021.9', '2021.10', '2021.11', '2021.12', '2022.1', '2022.2'],
           ['论坛活动', 56, 82, 88, 70, 59, 85],
           ['文体学分', 51, 51, 55, 53, 73, 68],
           ['社会公益', 10, 12, 69, 16, 25, 32],
@@ -156,30 +149,6 @@
       yAxis: { gridIndex: 0 },
       grid: { top: '50%' },
       series: [
-        {
-          type: 'line',
-          smooth: true,
-          seriesLayoutBy: 'row',
-          emphasis: { focus: 'series' }
-        },
-        {
-          type: 'line',
-          smooth: true,
-          seriesLayoutBy: 'row',
-          emphasis: { focus: 'series' }
-        },
-        {
-          type: 'line',
-          smooth: true,
-          seriesLayoutBy: 'row',
-          emphasis: { focus: 'series' }
-        },
-        {
-          type: 'line',
-          smooth: true,
-          seriesLayoutBy: 'row',
-          emphasis: { focus: 'series' }
-        },
         {
           type: 'pie',
           id: 'pie',
@@ -203,32 +172,50 @@
 
   const right = () => {
     var myChart = echarts.init((document as any).getElementById('right'));
-    myChart.hideLoading();
     myChart.setOption({
       title: {
-        text: '学分活动图谱',
-        x: 'center'
+        // text: 'MBA2021级活动学分统计表',
+        // show: true,
+        // x: 'center',
+        // y: 'bottom'
       },
+      legend: {},
       tooltip: {
-        trigger: 'item',
-        triggerOn: 'mousemove'
+        trigger: 'axis',
+        showContent: true
       },
+      dataset: {
+        source: [
+          ['product', '2021.9', '2021.10', '2021.11', '2021.12', '2022.1', '2022.2'],
+          ['论坛活动', 56, 82, 88, 70, 59, 85],
+          ['文体学分', 51, 51, 55, 53, 73, 68],
+          ['社会公益', 10, 12, 69, 16, 25, 32],
+          ['读书活动', 25, 37, 41, 38, 53, 49]
+        ]
+      },
+      xAxis: { type: 'category' },
+      yAxis: { gridIndex: 0 },
+      grid: { top: '15%' },
       series: [
         {
-          type: 'sankey',
-          data: Data.nodes,
-          links: Data.links,
-          emphasis: {
-            focus: 'adjacency'
-          },
-          lineStyle: {
-            color: 'gradient',
-            curveness: 0.5
-          },
-          textStyle: {
-            color: '#555',
-            fontSize: 12
-          }
+          type: 'line',
+          smooth: true,
+          seriesLayoutBy: 'row'
+        },
+        {
+          type: 'line',
+          smooth: true,
+          seriesLayoutBy: 'row'
+        },
+        {
+          type: 'line',
+          smooth: true,
+          seriesLayoutBy: 'row'
+        },
+        {
+          type: 'line',
+          smooth: true,
+          seriesLayoutBy: 'row'
         }
       ]
     });
@@ -245,8 +232,24 @@
     }
   };
 
-  onMounted(() => {
-    setLS(Boolean(Util.checkLogin()));
+  const getDefaultData = () => {
+    console.log(1);
+    $http
+      .getuserinfo()
+      .then((res: any) => {
+        console.log(res);
+      })
+      .catch((err: any) => {
+        console.log(err);
+      })
+      .finally(() => {
+        defaultData.value = mockData;
+        setLS(Boolean(Util.checkLogin()));
+      });
+  };
+
+  onBeforeMount(() => {
+    getDefaultData();
   });
 </script>
 
@@ -382,18 +385,6 @@
       }
     }
 
-    .big-title {
-      display: flex;
-      justify-content: center;
-      font-size: 40px;
-      padding: 30px;
-      font-weight: 700;
-      background: -webkit-linear-gradient(45deg, #eb461d, #1024db, #1b6d33, #552bd3, #7d8a0c);
-      color: transparent;
-      -webkit-background-clip: text;
-      animation: dongtai 10s linear infinite;
-    }
-
     .echart {
       display: flex;
       justify-content: space-between;
@@ -409,15 +400,6 @@
         height: 700px;
         background: #fff;
       }
-    }
-  }
-
-  @keyframes dongtai {
-    from {
-      backgroud-position: 0 0;
-    }
-    to {
-      background-position: 1200px 0;
     }
   }
 </style>
