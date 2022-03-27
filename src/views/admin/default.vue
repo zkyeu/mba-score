@@ -2,14 +2,14 @@
  * @Author: liliang
  * @Date: 2022-03-23 10:10:14
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-27 15:14:53
- * @FilePath: /mba-score/src/views/admin/default.vue
+ * @LastEditTime: 2022-03-27 21:47:42
+ * @FilePath: /score/src/views/admin/default.vue
  * @Description: 网站首页打开预览页面
 -->
 
 <template>
   <section class="single-page">
-    <div class="block-square" v-if="defaultData.blockData">
+    <div class="block-square" v-if="JSON.stringify(defaultData.blockData) !== '{}'">
       <li>
         <div class="left"><avatar class="icon" /></div>
         <div class="right">
@@ -77,7 +77,7 @@
   import mockData from './mockData/default.json';
   import $http from '../../api';
 
-  const defaultData = ref({});
+  const defaultData: any = ref({});
 
   const overView = () => {
     var myChart = echarts.init((document as any).getElementById('overview'));

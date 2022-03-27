@@ -2,8 +2,8 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-21 20:17:29
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-27 18:18:39
- * @FilePath: /mba-score/src/views/admin/score/score-rule.vue
+ * @LastEditTime: 2022-03-27 21:28:49
+ * @FilePath: /score/src/views/admin/score/score-rule.vue
 -->
 
 <template>
@@ -193,7 +193,7 @@
 
   const getPageData = () => {
     $http
-      .getactivityclassify({
+      .getscorerule({
         data: optionParams.value
       })
       .then((res: any) => {

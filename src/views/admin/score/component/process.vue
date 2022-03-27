@@ -130,7 +130,7 @@
 
   const getPageData = () => {
     $http
-      .getactivityclassify({
+      .getprocess({
         data: optionParams.value
       })
       .then((res: any) => {

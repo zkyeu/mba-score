@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-16 08:07:09
- * @LastEditTime: 2022-03-27 21:39:25
+ * @LastEditTime: 2022-03-27 15:36:38
  * @LastEditors: liliang
  * @Description: 
- * @FilePath: /score/src/components/library/table-options.vue
+ * @FilePath: /mba-score/src/components/library/table-options.vue
 -->
 <template>
   <section class="lib-option-list">
@@ -126,37 +126,50 @@
   </section>
 </template>
 
-<script lang="ts" setup>
-  import { onBeforeMount, reactive } from 'vue';
-  const props = defineProps({
-    optionData: {
-      type: Object,
-      default: {}
+<script lang="ts">
+  import { ref, defineComponent, reactive, onMounted } from 'vue';
+  // const props = defineProps({
+  //   optionData: {
+  //     type: Object,
+  //     default: {}
+  //   }
+  // });
+  export default defineComponent({
+    name: 'TableOptions',
+    props: {
+      optionData: Object
+    },
+    setup: (props, ctx) => {
+      const dataBox: any = reactive({ data: {} });
+
+      const optionChange = () => {
+        ctx.emit('optionChange', dataBox.data);
+      };
+
+      const initDefault = (o: any) => {
+        if (!o) return;
+        for (const item of o) {
+          // console.log(o);
+
+          if (item.type === 'inputrange') {
+            dataBox.data[item.value + '_' + item.range[0]] = null;
+            dataBox.data[item.value + '_' + item.range[1]] = null;
+          } else {
+            dataBox.data[item.value] = item.default;
+          }
+        }
+      };
+
+      onMounted(() => {
+        initDefault(props.optionData);
+      });
+
+      return {
+        dataBox,
+        optionChange,
+        initDefault
+      };
     }
-  });
-
-  const emit = defineEmits(['optionChange']);
-  const dataBox: any = reactive({ data: {} });
-
-  const optionChange = () => {
-    emit('optionChange', dataBox.data);
-  };
-  const initDefault = (o: any) => {
-    if (!o) return;
-    for (const item of o) {
-      // console.log(o);
-
-      if (item.type === 'inputrange') {
-        dataBox.data[item.value + '_' + item.range[0]] = null;
-        dataBox.data[item.value + '_' + item.range[1]] = null;
-      } else {
-        dataBox.data[item.value] = item.default;
-      }
-    }
-  };
-
-  onBeforeMount(() => {
-    initDefault(props.optionData);
   });
 </script>
 

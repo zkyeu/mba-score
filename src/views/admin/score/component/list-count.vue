@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-27 17:40:28
+ * @LastEditTime: 2022-03-27 21:26:29
  * @LastEditors: liliang
  * @Description: 
- * @FilePath: /mba-score/src/views/admin/score/component/list-count.vue
+ * @FilePath: /score/src/views/admin/score/component/list-count.vue
 -->
 
 <template>
@@ -113,7 +113,7 @@
 
   const getPageData = () => {
     $http
-      .getactivityclassify({
+      .getlistcount({
         data: optionParams.value
       })
       .then((res: any) => {

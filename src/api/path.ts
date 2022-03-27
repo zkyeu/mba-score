@@ -1,10 +1,10 @@
 /*
  * @Author: your name
  * @Date: 2021-08-03 17:45:46
- * @LastEditTime: 2022-03-27 18:28:57
+ * @LastEditTime: 2022-03-27 21:27:47
  * @LastEditors: liliang
  * @Description: In User Settings Edit
- * @FilePath: /mba-score/src/api/path.ts
+ * @FilePath: /score/src/api/path.ts
  */
 const apiList = {
   get: {
@@ -15,10 +15,15 @@ const apiList = {
     getactivityclassify: '/score/getactivityclassify',
     getactivityapply: '/score/getactivityapply',
     getactivitydiy: '/score/getactivitydiy',
-    getarticlelist: '/apiv1/get/articlelist',
-    getpowermember: '/apiv1/get/getpowermember',
-    getpowerrole: '/apiv1/get/getpowerrole',
-    getstudentinfo: '/apiv1/get/getstudentinfo',
+    getarticlelist: '/score/articlelist',
+    getpowermember: '/score/getpowermember',
+    getpowerrole: '/score/getpowerrole',
+    getstudentinfo: '/score/getstudentinfo',
+    getlistcount: '/score/getlistcount',
+    getlistdetail: '/score/getlistdetail',
+    getoverview: '/score/getoverview',
+    getprocess: '/score/getprocess',
+    getscorerule: '/score/getscorerule',
     regist: '/apiv1/regist',
     login: '/apiv1/login',
    

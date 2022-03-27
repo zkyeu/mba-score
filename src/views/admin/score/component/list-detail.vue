@@ -505,7 +505,7 @@
 
   const getPageData = () => {
     $http
-      .getactivityclassify({
+      .getlistdetail({
         data: optionParams.value
       })
       .then((res: any) => {

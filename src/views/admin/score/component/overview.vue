@@ -88,7 +88,7 @@
 
   const getPageData = () => {
     $http
-      .getactivityclassify({
+      .getoverview({
         data: optionParams.value
       })
       .then((res: any) => {

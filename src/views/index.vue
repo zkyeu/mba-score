@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-12 11:33:22
- * @LastEditTime: 2022-03-25 13:44:41
+ * @LastEditTime: 2022-03-27 21:45:22
  * @LastEditors: liliang
  * @Description: 前台首页
  * @FilePath: /score/src/views/index.vue
@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts" setup>
-  import Header from '@/components/front/header.vue';
+  import Header from '@/components/admin/header.vue';
   import LeftNav from '@/components/admin/left-nav.vue';
 </script>
 

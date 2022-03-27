@@ -1,12 +1,11 @@
 <!--
- * @Author: liliang
- * @Date: 2022-01-09 16:26:17
+ * @Author: your name
+ * @Date: 2021-08-02 20:47:46
+ * @LastEditTime: 2022-03-26 18:21:35
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-27 21:44:25
- * @FilePath: /score/src/components/admin/header.vue
- * @Description: 
+ * @Description: In User Settings Edit
+ * @FilePath: /score/src/components/front/header.vue
 -->
-
 <template>
   <div class="layer-header">
     <div class="logo" @click="home">
