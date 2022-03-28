@@ -2,8 +2,8 @@
  * @Author: liliang
  * @Date: 2022-03-23 10:10:14
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-24 19:59:23
- * @FilePath: /score/src/views/admin/view.vue
+ * @LastEditTime: 2022-03-28 09:01:55
+ * @FilePath: /score/src/views/admin/echart.vue
  * @Description: 
 -->
 
