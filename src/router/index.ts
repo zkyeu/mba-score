@@ -2,137 +2,100 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-22 11:23:10
+ * @LastEditTime: 2022-03-27 21:57:45
  * @FilePath: /score/src/router/index.ts
  */
 
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import Home from '@/views/admin/index.vue';
-import index from '@/views/index.vue';
 
 const routes: Array<RouteRecordRaw> = [
+  // 后台首页
   {
-    path: '/',
-    component: Home,
+    path: '/', 
+    component: () => import('@/views/index.vue'),
     children: [
       {
-        path: '/', // 后台首页
-        component: () => import('@/views/admin/view.vue')
+        path: '/',
+        component: () => import('@/views/admin/default.vue')
+        // component: () => import('@/views/admin/echart.vue')
       },
-      { // 活动系统
-        path: 'activity',
-        component: () => import('@/views/admin/activity/view.vue'),
-        children: [
-          {
-            path: '/activity-classify',
-            component: () => import('@/views/admin/activity/activity-classify.vue')
-          },{
-            path: '/activity-apply',
-            component: () => import('@/views/admin/activity/activity-apply.vue')
-          },
-          {
-            path: '/activity-diy',
-            component: () => import('@/views/admin/activity/activity-diy.vue')
-          },
-          {
-            path: '/activity-verify',
-            component: () => import('@/views/admin/activity/activity-verify.vue')
-          },
+      // {
+      //   path: '/',
+      //   component: () => import('@/views/admin/test.vue')
+      // },
+      // 活动系统 start
+      {
+        path: '/activity-classify',
+        component: () => import('@/views/admin/activity/activity-classify.vue')
+      },{
+        path: '/activity-apply',
+        component: () => import('@/views/admin/activity/activity-apply.vue')
+      },
+      {
+        path: '/activity-diy',
+        component: () => import('@/views/admin/activity/activity-diy.vue')
+      },
+      // 活动系统end
+      // 学生系统start
+      {
+        path: '/student',
+        component: () => import('@/views/admin/student/student-info.vue')
+      },{
+        path: '/student-board',
+        component: () => import('@/views/admin/student/student-board.vue')
+      },
+      // 学生系统 end
 
-          // {
-          //   path: '/admin/diy/basic',
-          //   component: () => import('@/views/admin/diy/basic.vue')
-          // },
-          // {
-          //   path: '/admin/diy/type',
-          //   component: () => import('@/views/admin/diy/type.vue')
-          // },
-          // {
-          //   path: '/admin/diy/tag',
-          //   component: () => import('@/views/admin/diy/tag.vue')
-          // },
-        ]
+      // 学分系统 start
+      {
+        path: '/score',
+        component: () => import('@/views/admin/score/score.vue')
+      },{
+        path: '/score-search',
+        component: () => import('@/views/admin/score/score-search.vue')
       },
-      { // 学生系统
-        path: 'student',
-        component: () => import('@/views/admin/student/view.vue'),
-        children: [
-          {
-            path: '/student',
-            component: () => import('@/views/admin/student/student-info.vue')
-          },{
-            path: '/student-board',
-            component: () => import('@/views/admin/student/student-board.vue')
-          }
-        ]
+      {
+        path: '/score-rule',
+        component: () => import('@/views/admin/score/score-rule.vue')
+      },{
+        path: '/score-activity',
+        component: () => import('@/views/admin/score/score-activity.vue')
       },
-      { // 学分系统
-        path: 'score',
-        component: () => import('@/views/admin/score/view.vue'),
-        children: [
-          {
-            path: '/score',
-            component: () => import('@/views/admin/score/score.vue')
-          },{
-            path: '/score-search',
-            component: () => import('@/views/admin/score/score-search.vue')
-          },
-          {
-            path: '/score-rule',
-            component: () => import('@/views/admin/score/score-rule.vue')
-          },{
-            path: '/score-activity',
-            component: () => import('@/views/admin/score/score-activity.vue')
-          }
-        ]
-      },
-      { // 权限配置
-        path: 'powers',
-        component: () => import('@/views/admin/power/view.vue'),
-        children: [
-          {
-            path: '/member',
-            component: () => import('@/views/admin/power/member.vue')
-          },
-          {
-            path: '/role',
-            component: () => import('@/views/admin/power/role.vue')
-          }
+      // 学分系统 end
 
-        ]
+      // 权限配置 start
+      {
+        path: '/member',
+        component: () => import('@/views/admin/power/member.vue')
       },
-      { // 数据看班
-        path: 'board',
-        component:  () => import('@/views/admin/board/view.vue'),
-        children: [
-          {
-            path: '/board',
-            component: () => import('@/views/admin/board/index.vue')
-          },
-          {
-            path: '/other',
-            component: () => import('@/views/admin/board/index.vue')
-          }
-    
-        ]
+      {
+        path: '/role',
+        component: () => import('@/views/admin/power/role.vue')
       },
-      { // 小工具
-        path: 'tool',
-        component:  () => import('@/views/admin/tool/view.vue'),
-        children: [
-          {
-            path: '/tool',
-            component: () => import('@/views/admin/tool/index.vue')
-          },
-          {
-            path: '/other',
-            component: () => import('@/views/admin/tool/index.vue')
-          }
-    
-        ]
+      // 权限配置 end
+
+      // 个人中心 start
+      {
+        path: '/uc',
+        component: () => import('@/views/admin/ucenter/uc.vue')
       },
+      {
+        path: '/as',
+        component: () => import('@/views/admin/ucenter/as.vue')
+      },
+      {
+        path: '/ss',
+        component: () => import('@/views/admin/ucenter/ss.vue')
+      }
+      ,
+      {
+        path: '/ms',
+        component: () => import('@/views/admin/ucenter/ms.vue')
+      }
+      // 个人中心 end
     ]
   },
+  // 登录注册 start
   {
     path: '/login',
     component:  () => import('@/views/frontend/login/login.vue')
@@ -145,6 +108,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/reg',
     component:  () => import('@/views/frontend/login/reg.vue')
   }
+  // 登录注册 end
 ];
 
 const router = createRouter({
@@ -153,5 +117,11 @@ const router = createRouter({
   history: createWebHistory('/'),
   routes,
 });
+
+// router.beforeEach((to, from) => {
+//   // ...
+//   // 返回 false 以取消导航
+//   return false
+// })
 
 export default router;

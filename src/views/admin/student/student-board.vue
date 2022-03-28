@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-19 21:52:39
+ * @LastEditTime: 2022-03-27 17:38:33
  * @LastEditors: liliang
  * @Description: 
- * @FilePath: /score/src/views/admin/student/student-board.vue
+ * @FilePath: /mba-score/src/views/admin/student/student-board.vue
 -->
 
 <template>
@@ -31,7 +31,6 @@
   import TableList from '../../../components/library/table-list.vue';
   import Pages from '../../../components/library/pagination.vue';
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
-  import mockData from './mock2';
   import * as echarts from 'echarts';
 
   const handleClick = (v: any, o: any) => {

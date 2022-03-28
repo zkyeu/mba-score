@@ -1,0 +1,48 @@
+@import './init.less';
+
+@common-style: {
+  background: #fff;
+  border-radius: 2px;
+};
+
+.bread {
+  background: @root-color-f5;
+  padding: 11px;
+}
+
+:deep(.el-button) {
+  padding: 1px 8px;
+}
+
+.btn {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+  padding: 16px 16px 0;
+  @common-style();
+}
+
+.table {
+  padding: 16px;
+  @common-style();
+}
+
+.page {
+  padding: 0 16px;
+  @common-style();
+}
+
+.single-page {
+  min-width: 880px;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: fadeRoute;
+  @keyframes fadeRoute {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

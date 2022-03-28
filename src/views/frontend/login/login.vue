@@ -87,8 +87,8 @@
   const ruleForm = reactive({
     data: {
       userName: '',
-      pwd: '',
-    },
+      pwd: ''
+    }
   });
   // 切换导航
   // TODO 目前没做
@@ -118,7 +118,7 @@
       .login({
         type: loginType.value,
         userName: userName,
-        password: password,
+        password: password
       })
       .then((res: any) => {
         if (res.errNo === 0) {
@@ -147,7 +147,7 @@
   const fetchCode = () => {
     $http
       .login({
-        type: 'code',
+        type: 'code'
       })
       .then((res: any) => {
         if (res.errNo === 0) {
@@ -288,7 +288,7 @@
           text-align: center;
           color: #999;
           span {
-            color: #2483ff;
+            color: #028bff;
             cursor: pointer;
             &:hover {
               color: #016efc;

@@ -1,14 +1,14 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-02 20:10:05
- * @LastEditTime: 2022-03-17 20:45:05
+ * @LastEditTime: 2022-03-25 17:17:27
  * @LastEditors: liliang
  * @Description: 后台首页
  * @FilePath: /score/src/views/admin/index.vue
 -->
 <template>
   <section class="main-content">
-    <Header />
+    <Headers />
     <div class="content-layer">
       <LeftNav />
       <router-view class="main-content-right" />
@@ -18,9 +18,9 @@
 
 <script lang="ts">
   import LeftNav from '@/components/admin/left-nav.vue';
-  import Header from '@/components/admin/header.vue';
+  import Headers from '@/components/admin/header.vue';
   export default {
-    components: { Header, LeftNav }
+    components: { Headers, LeftNav }
   };
 </script>
 
@@ -33,12 +33,10 @@
       flex-direction: row;
 
       .main-content-right {
-        background: #fff;
-        // margin: 10px 10px 2px;
-        // width: calc(100vw - 201px);
+        background: #f00;
         flex: 1;
         min-width: 600px;
-        height: calc(100vh - 62px);
+        height: calc(100vh - 72px - (16 * 6) px);
         overflow-y: auto;
         &::-webkit-scrollbar {
           width: 3px;

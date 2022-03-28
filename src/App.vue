@@ -1,30 +1,47 @@
 <!--
- * @Author: your name
- * @Date: 2021-07-28 15:51:41
- * @LastEditTime: 2022-03-23 19:02:57
+ * @Author: liliang
+ * @Date: 2022-03-24 09:50:07
  * @LastEditors: liliang
- * @Description: In User Settings Edit
+ * @LastEditTime: 2022-03-25 14:28:06
  * @FilePath: /score/src/App.vue
+ * @Description: 
 -->
 <template>
-  <!-- <img src="./assets/logo.png" /> -->
   <router-view></router-view>
 </template>
+<script lang="ts" setup>
+  import { onMounted } from 'vue';
+  import router from './router';
+  import Util from './utils/util';
+  const setLS = (v: Boolean) => {
+    if (!v) {
+      router.push('/log');
+    } else {
+      router.push('/');
+    }
+  };
 
-<script lang="ts">
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    name: 'App'
+  onMounted(() => {
+    setLS(Boolean(Util.checkLogin()));
   });
 </script>
-
 <style lang="less">
-  @import url('../src/assets/style/init.less');
-  #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+  @import url('./assets/style/init.less');
+  @common-style: {
+    background: #fff;
+    border-radius: 2px;
+  };
+  .btn {
+    padding: 16px 16px 0;
+    @common-style();
   }
-  :deep(.el-table) th.gutter {
-    display: table-cell !important;
+  .table {
+    padding: 16px;
+    @common-style();
+  }
+
+  .page {
+    padding: 0 16px;
+    @common-style();
   }
 </style>

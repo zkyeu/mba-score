@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-21 22:27:50
+ * @LastEditTime: 2022-03-27 18:27:36
  * @LastEditors: liliang
  * @Description: 
  * @FilePath: /mba-score/src/views/admin/student/student-info.vue
@@ -317,14 +317,14 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref, computed, onMounted, reactive } from 'vue';
+  import { ref, onBeforeMount, onMounted, reactive } from 'vue';
   import { ArrowRight, Plus, Promotion, Download, UploadFilled } from '@element-plus/icons-vue';
   import TableOption from '../../../components/library/table-options.vue';
   import TableList from '../../../components/library/table-list.vue';
   import Pages from '../../../components/library/pagination.vue';
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
-  import mockData from './mock2';
-  // import aaa from '../../../assets/files/学生信息模版.xlsx'
+  import mockData from '../mockData/studentInfo.json';
+  import $http from '../../../api';
 
   const showLayer = reactive({
     import: false,
@@ -334,7 +334,11 @@
     delete: false,
     title: ''
   });
-  const optionParams = reactive({ obj: {} });
+  const pageData = ref({});
+  const optionParams = ref({
+    pn: 1,
+    rn: 10
+  });
   const options = reactive({
     data: mockData.option
   });
@@ -465,7 +469,7 @@
         showLayer.import = false;
         break;
       case 'downImport':
-        window.open('../../../assets/files/学生信息模版.xlsx', '_blank');
+        window.open('./files/学生信息模版.xlsx', '_blank');
         break;
       case 'export':
         ElMessage.warning('后面待开发');
@@ -484,7 +488,8 @@
 
   // 筛选
   const optionChange = (v: any) => {
-    console.log(v);
+    optionParams.value = Object.assign(optionParams.value, v);
+    getPageData();
   };
 
   // 操作
@@ -517,43 +522,39 @@
   };
   // 页码变化
   const currentPage = (v: any) => {
-    console.log(v);
+    optionParams.value = Object.assign(optionParams.value, v);
+    getPageData();
   };
 
-  // const dialogBtnEvent = (v: any) => {
-  //   console.log('click', v);
-  //   showLayer.value = v.boo;
-  //   console.log(v.obj);
-  // };
+  const getPageData = () => {
+    $http
+      .getstudentinfo({
+        data: optionParams.value
+      })
+      .then((res: any) => {
+        console.log(res);
+      })
+      .catch((err: any) => {
+        console.log(err);
+      })
+      .finally(() => {
+        pageData.value = mockData;
+      });
+  };
 
-  onMounted(() => {
-    // let arr = [{ a: 1 }, { b: 2 }];
-    // let is = arr.map((item, index) => {
-    //   let obj = { ...item };
-    //   return obj;
-    // });
-    // console.log(is);
+  onBeforeMount(() => {
+    getPageData();
   });
 </script>
 
 <style lang="less" scoped>
-  @import url('../../../assets/style/init.less');
+  @import url('../../../assets/style/diy.less');
   .single-page {
     display: block;
-    // background: @root-color-f5;
 
     .bread {
       background: @root-color-f5;
       padding: 11px;
-    }
-
-    .btn {
-      display: flex;
-      justify-content: space-between;
-      margin: 15px 0;
-      :deep(.el-button) {
-        padding: 1px 8px;
-      }
     }
 
     :deep(.create-layer) {

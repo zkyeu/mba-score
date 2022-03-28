@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-16 09:29:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-21 22:43:56
+ * @LastEditTime: 2022-03-27 18:26:40
  * @FilePath: /mba-score/src/views/admin/power/role.vue
  * @Description: 
 -->
@@ -15,7 +15,7 @@
         <el-breadcrumb-item :to="{ path: '/' }">活动学分录入审核</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
-    <div class="btn">
+    <div class="add-role">
       <el-button type="primary" :icon="Plus" @click="handleClick('add', '')">添加权限组</el-button>
     </div>
     <div class="table">
@@ -113,13 +113,14 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref, computed, onMounted, reactive } from 'vue';
+  import { ref, computed, onBeforeMount, reactive } from 'vue';
   import { ArrowRight, Plus } from '@element-plus/icons-vue';
   import TableList from '../../../components/library/table-list.vue';
   import Pages from '../../../components/library/pagination.vue';
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
   import type Node from 'element-plus/es/components/tree/src/model/node';
-  import mockData from './mock';
+  import mockData from '../mockData/roles.json';
+  import $http from '../../../api';
 
   const myRef = ref(null);
   const showLayer = reactive({
@@ -129,8 +130,13 @@
     delete: false,
     title: ''
   });
+  const pageData = ref({});
   const tableData = reactive({
     data: mockData.table
+  });
+  const optionParams = ref({
+    pn: 1,
+    rn: 10
   });
   const total = ref(7);
   const viewObj = reactive({ data: {} });
@@ -244,32 +250,42 @@
   };
   // 页码变化
   const currentPage = (v: any) => {
-    console.log(v);
+    optionParams.value = Object.assign(optionParams.value, v);
+    getPageData();
   };
 
-  onMounted(() => {
-    console.log(myRef.value);
+  const getPageData = () => {
+    $http
+      .getpowerrole({
+        data: optionParams.value
+      })
+      .then((res: any) => {
+        console.log(res);
+      })
+      .catch((err: any) => {
+        console.log(err);
+      })
+      .finally(() => {
+        pageData.value = mockData;
+      });
+  };
+
+  onBeforeMount(() => {
+    getPageData();
   });
 </script>
 
 <style lang="less" scoped>
-  @import url('../../../assets/style/init.less');
+  @import url('../../../assets/style/diy.less');
   .single-page {
     display: block;
-    // background: @root-color-f5;
 
-    .bread {
-      background: @root-color-f5;
-      padding: 11px;
-    }
-
-    .btn {
+    .add-role {
       display: flex;
       justify-content: flex-end;
-      margin: 15px 0;
-      :deep(.el-button) {
-        padding: 1px 8px;
-      }
+      padding: 10px 16px;
+      background: #fff;
+      margin-bottom: 16px;
     }
 
     :deep(.create-layer) {
@@ -303,6 +319,7 @@
         }
       }
     }
+
     :deep(.auth-layer) {
       .el-dialog__body {
         padding: 0 20px;

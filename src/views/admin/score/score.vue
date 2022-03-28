@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-21 22:36:13
+ * @LastEditTime: 2022-03-27 18:08:00
  * @LastEditors: liliang
  * @Description: 
  * @FilePath: /mba-score/src/views/admin/score/score.vue
@@ -316,7 +316,7 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref, computed, onMounted, reactive } from 'vue';
+  import { ref, computed, onBeforeMount, reactive } from 'vue';
   import {
     ArrowRight,
     Plus,
@@ -330,8 +330,8 @@
   import TableList from '../../../components/library/table-list.vue';
   import Pages from '../../../components/library/pagination.vue';
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
-  import mockData from './mock2';
-  // import aaa from '../../../assets/files/学生信息模版.xlsx'
+  import mockData from '../mockData/score.json';
+  import $http from '../../../api';
 
   const showLayer = reactive({
     import: false,
@@ -341,7 +341,11 @@
     delete: false,
     title: ''
   });
-  const optionParams = reactive({ obj: {} });
+  const pageData = ref({});
+  const optionParams = ref({
+    pn: 1,
+    rn: 10
+  });
   const options = reactive({
     data: mockData.option
   });
@@ -465,7 +469,7 @@
         showLayer.import = false;
         break;
       case 'downImport':
-        window.open('../../../assets/files/活动学分信息表.xlsx', '_blank');
+        window.open('./files/活动学分信息表.xlsx', '_blank');
         break;
       case 'single':
         showLayer.title = '添加单人学分';
@@ -526,14 +530,33 @@
   };
   // 页码变化
   const currentPage = (v: any) => {
-    console.log(v);
+    optionParams.value = Object.assign(optionParams.value, v);
+    getPageData();
   };
 
-  onMounted(() => {});
+  const getPageData = () => {
+    $http
+      .getactivityclassify({
+        data: optionParams.value
+      })
+      .then((res: any) => {
+        console.log(res);
+      })
+      .catch((err: any) => {
+        console.log(err);
+      })
+      .finally(() => {
+        pageData.value = mockData;
+      });
+  };
+
+  onBeforeMount(() => {
+    getPageData();
+  });
 </script>
 
 <style lang="less" scoped>
-  @import url('../../../assets/style/init.less');
+  @import url('../../../assets/style/diy.less');
   .single-page {
     display: block;
     // background: @root-color-f5;

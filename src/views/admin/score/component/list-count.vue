@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-19 00:34:51
- * @LastEditTime: 2022-03-23 19:05:30
+ * @LastEditTime: 2022-03-27 21:26:29
  * @LastEditors: liliang
  * @Description: 
  * @FilePath: /score/src/views/admin/score/component/list-count.vue
@@ -40,16 +40,22 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref, computed, onMounted, reactive } from 'vue';
+  import { ref, onBeforeMount, onMounted, reactive } from 'vue';
   import { ArrowRight, Plus, Promotion, Download, UploadFilled } from '@element-plus/icons-vue';
   import TableOption from '../../../../components/library/table-options.vue';
   import TableList from '../../../../components/library/table-list.vue';
   import Pages from '../../../../components/library/pagination.vue';
   import { ElMessageBox, FormInstance, ElMessage } from 'element-plus';
-  import mockData from '../list-count';
+  import mockData from '../../mockData/listCount.json';
+  import $http from '../../../../api';
 
   const showLayer = ref(false);
-  const optionParams = reactive({ obj: {} });
+  const pageData = ref({});
+  const optionParams = ref({
+    pn: 1,
+    rn: 10
+  });
+
   const options = reactive({
     data: mockData.option
   });
@@ -83,7 +89,8 @@
 
   // 筛选
   const optionChange = (v: any) => {
-    console.log(v);
+    optionParams.value = Object.assign(optionParams.value, v);
+    getPageData();
   };
 
   // 操作
@@ -100,10 +107,29 @@
 
   // 页码变化
   const currentPage = (v: any) => {
-    console.log(v);
+    optionParams.value = Object.assign(optionParams.value, v);
+    getPageData();
   };
 
-  onMounted(() => {});
+  const getPageData = () => {
+    $http
+      .getlistcount({
+        data: optionParams.value
+      })
+      .then((res: any) => {
+        console.log(res);
+      })
+      .catch((err: any) => {
+        console.log(err);
+      })
+      .finally(() => {
+        pageData.value = mockData;
+      });
+  };
+
+  onBeforeMount(() => {
+    getPageData();
+  });
 </script>
 
 <style lang="less" scoped>

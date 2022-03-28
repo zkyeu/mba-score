@@ -2,8 +2,8 @@
  * @Author: liliang
  * @Date: 2022-03-22 11:11:41
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-23 08:40:59
- * @FilePath: /mba-score/src/views/admin/log.vue
+ * @LastEditTime: 2022-03-27 21:49:28
+ * @FilePath: /score/src/views/admin/log.vue
  * @Description: 
 -->
 <template>
@@ -24,7 +24,7 @@
           @keyup.enter="login"
         />
         <div class="log-btn" @click="login">登 录</div>
-        <div class="count">默认用户名:<span>admin</span> 密码:<span>mba2108</span></div>
+        <div class="count">默认用户名:<span>admin</span> 密码:<span>mba2022</span></div>
       </div>
     </div>
     <div class="copyright"> Copyright © 2022 BUAA MBA All Rights Reserved </div>
@@ -44,7 +44,7 @@
       ElMessage.warning('【用户名】不正确，请重新输入');
     } else if (!pwd.value) {
       ElMessage.warning('请输入【登录密码】');
-    } else if (pwd && pwd.value != 'mba2108') {
+    } else if (pwd && pwd.value != 'mba2022') {
       ElMessage.warning('【登录密码】不正确，请重新输入');
     } else {
       let LS = window.sessionStorage;
@@ -106,7 +106,7 @@
         }
 
         .log-btn {
-          background: #2483ff;
+          background: #028bff;
           font-size: 16px;
           color: #fff;
           text-align: center;

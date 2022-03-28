@@ -1,12 +1,17 @@
 * {
+  padding: 0;
   margin: 0;
   font-size: 14px;
 }
 html,
 body {
+  margin: 0;
   height: 100%;
-  background: #f8f8f8;
+  background: #f4f5f9;
 }
 li {
   list-style: none;
+}
+:root {
+  --el-color-primary: #028bff;
 }

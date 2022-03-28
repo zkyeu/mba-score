@@ -100,7 +100,7 @@
           .getcomment({
             aid: route.query.id,
             pn: 1,
-            rn: 100,
+            rn: 100
           })
           .then((res: any) => {
             if (res.errNo === 0) {
@@ -121,7 +121,7 @@
           case 'comment':
             commentObj.data = {
               id: obj.id,
-              userId: obj.userId,
+              userId: obj.userId
             };
             break;
           case 'nocomment':
@@ -148,9 +148,9 @@
         user,
         aid,
         handleBtn,
-        commentObj,
+        commentObj
       };
-    },
+    }
   });
 </script>
 
@@ -192,7 +192,7 @@
           display: inherit;
           color: #666;
           .name {
-            color: #2483ff;
+            color: #028bff;
           }
         }
       }
@@ -286,6 +286,6 @@
     }
   }
   .active {
-    color: #2483ff;
+    color: #028bff;
   }
 </style>
