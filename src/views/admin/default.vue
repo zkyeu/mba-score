@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-23 10:10:14
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-27 21:47:42
+ * @LastEditTime: 2022-03-28 08:58:57
  * @FilePath: /score/src/views/admin/default.vue
  * @Description: 网站首页打开预览页面
 -->
@@ -39,6 +39,7 @@
         </div>
       </li>
     </div>
+
     <div class="block-square news-item">
       <div class="left">
         <h1>
@@ -69,9 +70,8 @@
 
 <script lang="ts" setup>
   // 组件引用部分========
-  import { ref, onBeforeMount } from 'vue';
+  import { ref, onBeforeMount, nextTick } from 'vue';
   import * as echarts from 'echarts';
-  import Data from './json';
   import router from '../../router';
   import Util from '../../utils/util';
   import mockData from './mockData/default.json';
@@ -86,10 +86,10 @@
         text: '近3年学生活动学分概览',
         x: 'center',
         y: 'bottom',
-        padding: [20, 0, 0, 0]
+        padding: [0, 0, 20, 0]
       },
       legend: {
-        padding: [10, 0, 0, 0]
+        padding: [15, 0, 0, 0]
       },
       tooltip: {},
       dataset: {
@@ -102,8 +102,7 @@
       },
       xAxis: { type: 'category' },
       yAxis: {},
-      // Declare several bar series, each will be mapped
-      // to a column of dataset.source by default.
+
       series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }]
     });
   };
@@ -225,13 +224,16 @@
         console.log(err);
       })
       .finally(() => {
-        defaultData.value = mockData;
-        setLS(Boolean(Util.checkLogin()));
+        console.log(defaultData.value);
       });
   };
 
   onBeforeMount(() => {
     getDefaultData();
+    defaultData.value = mockData;
+    nextTick(() => {
+      setLS(Boolean(Util.checkLogin()));
+    });
   });
 </script>
 
