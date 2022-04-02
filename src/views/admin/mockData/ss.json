@@ -1,0 +1,450 @@
+ {
+        "tabletitle": [
+
+            {
+                "value": "mba",
+                "label": "专业",
+                "width": "90px"
+            },
+            {
+                "value": "grade",
+                "label": "年级",
+                "width": "80px"
+            },
+            {
+                "value": "period",
+                "label": "学年学期",
+                "width": "190px"
+            },
+            {
+                "value": "colortitle",
+                "label": "活动名称",
+                "width": "320px",
+                "align": "left"
+            },
+            {
+                "value": "leibie",
+                "label": "大类别",
+                "width": "120px"
+            },
+            {
+                "value": "xleibie",
+                "label": "小类别",
+                "width": "150px"
+            },
+            {
+                "value": "is",
+                "label": "是否必修",
+                "width": "90px"
+            },
+            {
+                "value": "jibie",
+                "label": "活动等级",
+                "width": "90px"
+            },
+            {
+                "value": "xingzhi",
+                "label": "活动性质",
+                "width": "90px"
+            },
+            {
+                "value": "status",
+                "label": "活动状态",
+                "width": "90px"
+            },
+
+            {
+                "value": "date",
+                "label": "活动举办时间",
+                "width": "160px"
+            },
+            {
+                "value": "user",
+                "label": "活动负责人",
+                "width": "100px"
+            },
+            {
+                "value": "finsh",
+                "label": "完成情况",
+                "width": "90px"
+            },{
+                "value": "score",
+                "label": "学分录入",
+                "width": "90px"
+            }
+
+        ],
+        "tablelist": [
+            {
+                "id": 1231223,
+                "mba": "MBA",
+                "grade": "2021",
+                "period": "2021-2022学年 第一学期",
+                "colortitle": "《庆新春 迎冬奥》新年云祝福",
+                "leibie": "文体活动",
+                "xleibie": "2022冬奥会系列",
+                "is": "必修",
+                "jibie": "年级",
+                "xingzhi": "线上",
+                "status": "正常","score": 0.1,
+                
+                "date": "2022-03-04",
+                "user": "刘亚菲",
+                "finsh": "已完成"
+            },
+            {
+                "id": 455,
+  
+                "mba": "MBA",
+                "grade": "2021",
+                "period": "2021-2022学年 第一学期",
+                "colortitle": "312新春健步跑步活动",
+                "leibie": "文体活动",
+                "xleibie": "体育活动",
+                "is": "选修",
+                "jibie": "院校级",
+                "xingzhi": "线下",
+                "status": "正常","score": 0.1,
+                "date": "2022-03-04",
+                "user": "刘亚菲",
+                "finsh": "已完成"
+            },
+            {
+                "id": 123234,
+                           "mba": "MBA",
+                "grade": "2021",
+                "period": "2021-2022学年 第一学期",
+                "colortitle": "【阳春二月，书香芬芳】读书活动",
+                "leibie": "文体活动",
+                "xleibie": "读书活动",
+                "is": "选修",
+                "jibie": "班级",
+                "xingzhi": "线上",
+                "status": "正常","score": 0.1,
+                
+                "date": "2022-03-31",
+                "user": "刘亚菲",
+                "finsh": "未完成"
+            },
+            {
+                "id": 432333,
+  
+                "mba": "MBA",
+                "grade": "2021",
+                "period": "2021-2022学年 第一学期",
+                "colortitle": "第十七届企业经营沙盘大赛",
+                "leibie": "赛事",
+                "xleibie": "学生比赛",
+                "is": "必修",
+                "jibie": "院校",
+                "xingzhi": "线下",
+                "status": "正常","score": 0.1,
+                
+                "date": "2022-03-31",
+                "user": "刘亚菲",
+                "finsh": "未完成"
+            },
+            {
+                "id": 123234,
+
+                "mba": "MBA",
+                "grade": "2020",
+                "period": "2021-2022学年 第一学期",
+                "colortitle": "新年云祝福",
+                "leibie": "文体活动",
+                "xleibie": "2022冬奥会系列",
+                "is": "选修",
+                "jibie": "联合会",
+                "xingzhi": "线上",
+                "status": "正常","score": 0.1,
+                
+                "date": "2022-02-28",
+                "user": "刘亚菲",
+                "finsh": "已完成"
+            },
+            {
+                "id": 123,
+                "mba": "MBA",
+                "grade": "2021",
+                "period": "2021-2022学年 第一学期",
+                "colortitle": "北航MBA首届“校内企业经营沙盘”选拔赛",
+                "leibie": "院校活动",
+                "xleibie": "2022比赛系列",
+                "is": "必修",
+                "jibie": "院校",
+                "xingzhi": "线下",
+                "status": "正常","score": 0.1,
+               
+                "date": "2022-03-31",
+                "user": "刘庆日",
+                "finsh": "未完成"
+            },
+            {
+                "id": 43123,
+                "mba": "MBA",
+                "grade": "2021",
+                "period": "2021-2022学年 第一学期",
+                "colortitle": "北航MBA演讲俱乐部举办第二期演讲沙龙活动",
+                "leibie": "社会实践",
+                "xleibie": "2022冬奥会系列",
+                "is": "选修",
+                "jibie": "联合会",
+                "xingzhi": "线下",
+                "status": "正常","score": 0.1,
+                
+                "date": "2022-02-17",
+                "user": "刘庆日",
+                "finsh": "已完成"
+            },
+            {
+                "id": 12424,
+                "mba": "MBA",
+                "grade": "2020",
+                "period": "2020-2021学年 第一学期",
+                "colortitle": "嗅觉品味天地，气味影响人生——北航MPAcc开展文化沙龙主题活动",
+                "leibie": "社会公益",
+                "xleibie": "文体活动",
+                "is": "选修",
+                "jibie": "联合会",
+                "xingzhi": "线下",
+                "status": "正常","score": 0.1,
+                
+                "date": "2022-09-30",
+                "user": "刘亚菲",
+                "finsh": "已完成"
+            },
+            {
+                "id": 1233532,
+               
+                "mba": "MBA",
+                "grade": "2021",
+                "period": "2021-2022学年 第一学期",
+                "colortitle": "知行论坛202108期",
+                "leibie": "文体活动",
+                "xleibie": "2022冬奥会系列",
+                "is": "必修",
+                "jibie": "年级",
+                "xingzhi": "线上",
+                "status": "正常","score": 0.1,
+                
+                "date": "2022-03-04",
+                "user": "刘亚菲",
+                "finsh": "已完成"
+            },
+            {
+                "id": 523423,
+                "rname": "MBA20220528018",
+                "mba": "MBA",
+                "grade": "2021",
+                "period": "2021-2022学年 第一学期",
+                "colortitle": "《北航MBA教育中心组织学生赴北京一轻食品集团参观交流",
+                "leibie": "社会实践",
+                "xleibie": "企业参观",
+                "is": "必修",
+                "jibie": "MBA中心",
+                "xingzhi": "线下",
+                "status": "正常","score": 0.1,
+                
+                "date": "2022-03-04",
+                "user": "刘亚菲",
+                "finsh": "已完成"
+            },
+            {
+                "id": 345235,
+                "rname": "MBA20220228017",
+                "mba": "MBA",
+                "grade": "2021",
+                "period": "2021-2022学年 第一学期",
+                "colortitle": "北航MBA举办红酒主题文化沙龙活动",
+                "leibie": "社会实践",
+                "xleibie": "企业参观",
+                "is": "必修",
+                "jibie": "年级",
+                "xingzhi": "线下",
+                "status": "正常","score": 0.1,
+                
+                "date": "2022-03-04",
+                "user": "刘亚菲",
+                "finsh": "已完成"
+            },
+            {
+                "id": 56123,
+                "rname": "MBA202201280111",
+                "mba": "MBA",
+                "grade": "2020",
+                "period": "2021-2022学年 第一学期",
+                "colortitle": "“云课堂”，疫情阻隔不了的国际交流",
+                "leibie": "文体活动",
+                "xleibie": "2022冬奥会系列",
+                "is": "必修",
+                "jibie": "中心活动",
+                "xingzhi": "线下",
+                "status": "暂停",
+                
+                "date": "2022-03-04",
+                "user": "刘亚菲",
+                "finsh": "已完成"
+            },
+            {
+                "id": 43123,
+                "rname": "ALL20220128018",
+                "mba": "全部",
+                "grade": "2021",
+                "period": "2021-2022学年 第一学期",
+                "colortitle": "知行论坛 — 区块链与数字经济生态",
+                "leibie": "文体活动",
+                "xleibie": "论坛",
+                "is": "必修",
+                "jibie": "年级",
+                "xingzhi": "线上",
+                "status": "正常","score": 0.1,
+                
+                "date": "2022-03-04",
+                "user": "刘亚菲",
+                "finsh": "已完成"
+            },
+            {
+                "id": 77123,
+                "rname": "MBA20220128014",
+                "mba": "MBA",
+                "grade": "2021",
+                "period": "2021-2022学年 第一学期",
+                "colortitle": "书香MBA∣北航MBA20083班寒假读书系列活动",
+                "leibie": "文体活动",
+                "xleibie": "2022冬奥会系列",
+                "is": "必修",
+                "jibie": "联合会",
+                "xingzhi": "线上",
+                "status": "正常","score": 0.1,
+                
+                "date": "2022-03-04",
+                "user": "刘亚菲",
+                "finsh": "已完成"
+            },
+            {
+                "id": 12323,
+                "rname": "MBA20220128012",
+                "mba": "MEM",
+                "grade": "2021",
+                "period": "2021-2022学年 第一学期",
+                "colortitle": "知行论坛 | 演讲与口才系列 — 管理沟通",
+                "leibie": "文体活动",
+                "xleibie": "2022冬奥会系列",
+                "is": "必修",
+                "jibie": "年级",
+                "xingzhi": "线上",
+                "status": "正常","score": 0.1,
+                
+                "date": "2022-03-04",
+                "user": "刘亚菲",
+                "finsh": "已完成"
+            },
+            {
+                "id": 87123,
+                
+                "grade": "2021",
+                "period": "2021-2022学年 第一学期",
+                "colortitle": "《庆新春 迎冬奥》新年云祝福",
+                "leibie": "文体活动",
+                "xleibie": "2022冬奥会系列",
+                "is": "必修",
+                "jibie": "年级",
+                "xingzhi": "线上",
+                "status": "正常","score": 0.1,
+                
+                "date": "2022-03-04",
+                "user": "刘亚菲",
+                "finsh": "已完成"
+            },
+            {
+                "id": 7123,
+                "rname": "MBA2022012801",
+                "mba": "MBA",
+                "grade": "2021",
+                "period": "2021-2022学年 第一学期",
+                "colortitle": "“羽”我同行，挥动梦想",
+                "leibie": "文体活动",
+                "xleibie": "2022冬奥会系列",
+                "is": "选修",
+                "jibie": "年级",
+                "xingzhi": "线下",
+                "status": "正常","score": 0.1,
+                
+                "date": "2022-03-04",
+                "user": "刘亚菲",
+                "finsh": "已完成"
+            },
+            {
+                "id": 8123,
+                "rname": "MBA202201280177",
+                "mba": "EMBA",
+                "grade": "2021",
+                "period": "2021-2022学年 第一学期",
+                "colortitle": "第四届创乐盟大赛初赛",
+                "leibie": "赛事活动",
+                "xleibie": "文体活动",
+                "is": "必修",
+                "jibie": "年级",
+                "xingzhi": "线下",
+                "status": "正常","score": 0.1,
+                
+                "date": "2022-03-04",
+                "user": "刘亚菲",
+                "finsh": "已完成"
+            },
+            {
+                "id": 12123,
+                "rname": "MBA202201280134",
+                "mba": "MPAcc",
+                "grade": "2021",
+                "period": "2021-2022学年 第一学期",
+                "colortitle": "知行论坛 | 李炳森 — 聚力数字新基建，共建能源互联网",
+                "leibie": "文体活动",
+                "xleibie": "2022冬奥会系列",
+                "is": "必修",
+                "jibie": "院校级",
+                "xingzhi": "线上",
+                "status": "正常","score": 0.1,
+                
+                "date": "2022-03-04",
+                "user": "刘亚菲",
+                "finsh": "已完成"
+            },
+            {
+                "id": 12773,
+                
+                "mba": "MBA",
+                "grade": "2021",
+                "period": "2021-2022学年 第一学期",
+                "colortitle": "2020“光明优倍”杯第十八届中国MBA创业大赛",
+                "leibie": "文体活动",
+                "xleibie": "2022冬奥会系列",
+                "is": "必修",
+                "jibie": "年级",
+                "xingzhi": "线上",
+                "status": "正常","score": 0.1,
+                
+                "date": "2022-03-04",
+                "user": "刘亚菲",
+                "finsh": "已完成"
+            },
+            {
+                "id": 12323,
+                
+                "mba": "MBA",
+                "grade": "2021",
+                "period": "2021-2022学年 第一学期",
+                "colortitle": "求知探索 书声琅琅—暨北航MBA社会文化类主题读书活动",
+                "leibie": "文体活动",
+                "xleibie": "2022冬奥会系列",
+                "is": "必修",
+                "jibie": "年级",
+                "xingzhi": "线上",
+                "status": "正常","score": 0.1,
+                
+                "date": "2022-03-04",
+                "user": "刘亚菲",
+                "finsh": "已完成"
+            }
+        ]
+    }
