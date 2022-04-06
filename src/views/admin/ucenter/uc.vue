@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-26 18:41:46
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-26 20:20:02
+ * @LastEditTime: 2022-04-06 11:03:23
  * @FilePath: /score/src/views/admin/ucenter/uc.vue
  * @Description: 
 -->
@@ -125,7 +125,7 @@
           justify-content: space-between;
           height: 75px;
           align-items: center;
-          border-bottom: #ddd solid 1px;
+          border-bottom: #ddd dotted 1px;
           .left {
             font-weight: 700;
             width: 100px;
@@ -139,6 +139,9 @@
             text-align: center;
             color: #7395db;
             cursor: pointer;
+          }
+          &:last-child {
+            border: none;
           }
         }
       }
