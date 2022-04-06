@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-26 19:28:18
  * @LastEditors: liliang
- * @LastEditTime: 2022-04-02 19:12:40
+ * @LastEditTime: 2022-04-06 10:30:17
  * @FilePath: /score/src/views/admin/ucenter/ss.vue
  * @Description: 
 -->
@@ -17,18 +17,22 @@
     </div>
 
     <div class="over-view">
-      <h1>学分概览</h1>
+      <h1
+        ><el-icon><trophy /></el-icon>学分概览</h1
+      >
       <div class="item-list">
-        <li>专业：MBA</li>
-        <li>学号：ZF2108100</li>
-        <li>姓名:我名字</li>
-        <li>总学分：19.7</li>
-        <li>还需学分：11.3</li>
+        <li><label>专业：</label>MBA</li>
+        <li><label>学号：</label>ZF2108100</li>
+        <li><label>姓名：</label>我名字</li>
+        <li><label>已获学分：</label>19.7</li>
+        <li><label>还需学分：</label><span>11.3</span></li>
       </div>
     </div>
 
+    <h1
+      ><el-icon><notebook /></el-icon>参加的活动列表<span>(表格可横向滑动查看)</span></h1
+    >
     <div class="table">
-      <h1>参加的活动列表</h1>
       <table-list :tableData="pageData" :canSelect="false" />
     </div>
 
@@ -90,18 +94,39 @@
 
       .item-list {
         display: flex;
+        padding: 16px;
         li {
-          width: 20%;
+          width: 18%;
           min-width: 200px;
+          font-weight: 700;
+          label {
+            color: #777;
+            font-weight: 400;
+          }
+          span {
+            color: #f00;
+          }
         }
       }
     }
 
     h1 {
+      display: flex;
+      align-items: center;
       background: #eee;
       height: 40px;
       line-height: 40px;
       margin-top: 20px;
+      padding: 0 14px;
+      i {
+        margin-right: 6px;
+        color: #028bff;
+      }
+      span {
+        color: #999;
+        font-weight: 400;
+        font-size: 12px;
+      }
     }
   }
 </style>

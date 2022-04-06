@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-16 08:07:09
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-25 15:34:30
+ * @LastEditTime: 2022-04-06 10:35:00
  * @FilePath: /score/src/components/library/table-list.vue
  * @Description: 
 -->
@@ -42,7 +42,7 @@
           :prop="item.value"
           :label="item.label"
           :align="align"
-          :width="item.width"
+          :min-width="item.width"
         >
           <template v-slot="scope">
             <span class="color-title" @click="handleOperate(item.value, scope.row)">
@@ -53,12 +53,12 @@
 
         <el-table-column
           v-else
-          :key="index + item.value"
+          :key="index + item.value + Math.random()"
           :prop="item.value"
           :label="item.label"
           :sortable="item.sortable"
           :align="align"
-          :width="item.width || operateWidth"
+          :min-width="item.width || operateWidth"
           show-overflow-tooltip
           :fixed="item.fixed"
         >
