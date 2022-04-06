@@ -2,11 +2,11 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-27 21:57:45
+ * @LastEditTime: 2022-04-06 11:56:02
  * @FilePath: /score/src/router/index.ts
  */
 
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory,createWebHashHistory, RouteRecordRaw } from "vue-router";
 
 const routes: Array<RouteRecordRaw> = [
   // 后台首页
@@ -114,7 +114,8 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   // history: createWebHistory(process.env.BASE_URL),
   // history: createWebHistory(import.meta.env.BASE_URL),
-  history: createWebHistory('/'),
+  // history: createWebHistory('/'),
+  history: createWebHashHistory(),
   routes,
 });
 

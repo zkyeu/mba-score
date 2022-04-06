@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-24 09:50:07
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-25 14:28:06
+ * @LastEditTime: 2022-04-06 12:04:25
  * @FilePath: /score/src/App.vue
  * @Description: 
 -->
@@ -22,7 +22,7 @@
   };
 
   onMounted(() => {
-    setLS(Boolean(Util.checkLogin()));
+    // setLS(Boolean(Util.checkLogin()));
   });
 </script>
 <style lang="less">
