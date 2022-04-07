@@ -2,7 +2,7 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-04-06 11:56:02
+ * @LastEditTime: 2022-04-06 16:25:11
  * @FilePath: /score/src/router/index.ts
  */
 
@@ -71,6 +71,10 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/role',
         component: () => import('@/views/admin/power/role.vue')
+      },
+      {
+        path: '/setting',
+        component: () => import('@/views/admin/power/setting.vue')
       },
       // 权限配置 end
 

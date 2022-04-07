@@ -119,31 +119,46 @@
           },
           {
               "id": 10006,
-              "name": "梁娜",
-              "uname": "liangna",
-              "identity": "副主任",
+              "name": "刘茜",
+              "uname": "liuxi",
+              "identity": "老师",
               "role": "超级管理员",
               "updatetime": "2022-03-21 11:03:23",
               "status": "正常",
               "operate": [
                   {
-                      "value": "limit",
-                      "label": "禁用"
-                  },
-                  {
-                      "value": "auth",
-                      "label": "授权"
-                  },
-                  {
-                      "value": "edit",
-                      "label": "编辑"
-                  },
-                  {
-                      "value": "delete",
-                      "label": "删除"
+                      "value": "",
+                      "label": "-"
                   }
               ]
           },
+          {
+            "id": 10006,
+            "name": "梁娜",
+            "uname": "liangna",
+            "identity": "副主任",
+            "role": "超级管理员",
+            "updatetime": "2022-03-21 11:03:23",
+            "status": "正常",
+            "operate": [
+                {
+                    "value": "limit",
+                    "label": "禁用"
+                },
+                {
+                    "value": "auth",
+                    "label": "授权"
+                },
+                {
+                    "value": "edit",
+                    "label": "编辑"
+                },
+                {
+                    "value": "delete",
+                    "label": "删除"
+                }
+            ]
+        },
           {
               "id": 10003,
               "name": "刘亚非",
