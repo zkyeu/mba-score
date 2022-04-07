@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-01-09 16:26:17
  * @LastEditors: liliang
- * @LastEditTime: 2022-04-07 13:58:34
+ * @LastEditTime: 2022-04-07 18:13:18
  * @FilePath: /score/src/components/admin/header.vue
  * @Description: 
 -->
@@ -10,8 +10,8 @@
 <template>
   <div class="layer-header">
     <div class="logo" @click="home">
-      <!-- <img src="../../assets/imgs/logo-white.png" />
-      <h1 class="ys">活动学分管理系统</h1> -->
+      <img src="../../assets/imgs/logo-white.png" />
+      <h1 class="ys">活动学分管理系统</h1>
     </div>
 
     <div class="right-block">

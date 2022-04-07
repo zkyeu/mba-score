@@ -2,13 +2,13 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-04-07 14:55:26
+ * @LastEditTime: 2022-04-07 18:12:37
  * @FilePath: /score/src/components/admin/left-nav.vue
 -->
 
 <template>
   <section class="left-navs">
-    <template v-for="(m, i) in leftNav" :key="i.id">
+    <!-- <template v-for="(m, i) in leftNav" :key="i.id">
       <div class="title" @click="handleClick('')">
         <el-icon>
           <component :is="m.icon" />
@@ -27,9 +27,9 @@
           {{ sm.title }}
         </div>
       </template>
-    </template>
+    </template> -->
 
-    <!-- <el-menu
+    <el-menu
       :uniqueOpened="false"
       default-active="/"
       class="left-nav-menu"
@@ -49,11 +49,14 @@
         </el-menu-item>
         <el-sub-menu :index="String(item.id)" :key="String(item.id)" v-else>
           <template #title>
-            <el-icon v-if="item.icon === 'User'"><User /></el-icon>
+            <el-icon>
+              <component :is="item.icon" />
+            </el-icon>
+            <!-- <el-icon v-if="item.icon === 'User'"><User /></el-icon>
             <el-icon v-if="item.icon === 'Key'"><Key /></el-icon>
             <el-icon v-if="item.icon === 'Trophy'"><Trophy /></el-icon>
             <el-icon v-if="item.icon === 'Soccer'"><Soccer /></el-icon>
-            <el-icon v-if="item.icon === 'Operation'"><Operation /></el-icon>
+            <el-icon v-if="item.icon === 'Operation'"><Operation /></el-icon> -->
             <span class="first-class">{{ item.title }}</span>
           </template>
           <el-menu-item-group>
@@ -63,7 +66,7 @@
           </el-menu-item-group>
         </el-sub-menu>
       </template>
-    </el-menu> -->
+    </el-menu>
   </section>
 </template>
 

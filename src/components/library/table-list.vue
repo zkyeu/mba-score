@@ -1,8 +1,8 @@
 <!--
  * @Author: liliang
- * @Date: 2022-03-16 08:07:09
+ * @Date: 2022-04-07 17:48:05
  * @LastEditors: liliang
- * @LastEditTime: 2022-04-06 10:35:00
+ * @LastEditTime: 2022-04-07 18:11:19
  * @FilePath: /score/src/components/library/table-list.vue
  * @Description: 
 -->
@@ -53,7 +53,7 @@
 
         <el-table-column
           v-else
-          :key="index + item.value + Math.random()"
+          :key="index + item.value"
           :prop="item.value"
           :label="item.label"
           :sortable="item.sortable"

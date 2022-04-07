@@ -1,16 +1,16 @@
 <!--
  * @Author: liliang
- * @Date: 2022-04-07 17:48:05
+ * @Date: 2022-04-07 18:10:28
  * @LastEditors: liliang
- * @LastEditTime: 2022-04-07 17:48:08
- * @FilePath: /score/src/components/library/table-list copy.vue
+ * @LastEditTime: 2022-04-07 18:10:28
+ * @FilePath: /score/src/components/library/table-list copy 2.vue
  * @Description: 
 -->
 <!--
  * @Author: liliang
  * @Date: 2022-03-16 08:07:09
  * @LastEditors: liliang
- * @LastEditTime: 2022-04-06 10:35:00
+ * @LastEditTime: 2022-04-07 18:06:33
  * @FilePath: /score/src/components/library/table-list.vue
  * @Description: 
 -->
@@ -61,7 +61,7 @@
 
         <el-table-column
           v-else
-          :key="index + item.value + Math.random()"
+          :key="index + 'index' + item.value"
           :prop="item.value"
           :label="item.label"
           :sortable="item.sortable"
@@ -87,66 +87,121 @@
   </section>
 </template>
 
-<script lang="ts" setup>
-  import { ref } from 'vue';
-  const props = defineProps({
-    tableData: {
-      type: Object,
-      default: []
+<script lang="ts">
+  // <script lang="ts" setup>
+  // import { ref } from 'vue';
+  // const props = defineProps({
+  //   tableData: {
+  //     type: Object,
+  //     default: []
+  //   },
+  //   operateWidth: {
+  //     type: String,
+  //     default: '200px'
+  //   },
+  //   align: {
+  //     type: String,
+  //     default: 'center'
+  //   },
+  //   canSelect: {
+  //     type: Boolean,
+  //     default: false
+  //   },
+  //   ref: {
+  //     type: String,
+  //     default: ''
+  //   },
+  //   border: {
+  //     type: Boolean,
+  //     default: true
+  //   },
+  //   stripe: {
+  //     type: Boolean,
+  //     default: false
+  //   },
+  //   rowKey: {
+  //     type: String,
+  //     default: ''
+  //   },
+  //   expand: {
+  //     type: Boolean,
+  //     default: false
+  //   }
+  // });
+
+  // const emit = defineEmits(['operate', 'tableSelection']);
+
+  // const handleOperate = (o: any, v: any) => {
+  //   emit('operate', {
+  //     operate: o,
+  //     rowData: v
+  //   });
+  // };
+
+  // const handleSelectionChange = (val: any) => {
+  //   emit('tableSelection', val);
+  // };
+  import { defineComponent } from 'vue';
+  export default defineComponent({
+    name: 'TableList',
+    props: {
+      tableData: {
+        type: Object,
+        default: {}
+      },
+      operateWidth: {
+        type: String,
+        default: '200px'
+      },
+      align: {
+        type: String,
+        default: 'center'
+      },
+      canSelect: {
+        type: Boolean,
+        default: false
+      },
+      ref: {
+        type: String,
+        default: ''
+      },
+      border: {
+        type: Boolean,
+        default: true
+      },
+      stripe: {
+        type: Boolean,
+        default: false
+      },
+      rowKey: {
+        type: String,
+        default: ''
+      },
+      expand: {
+        type: Boolean,
+        default: false
+      }
     },
-    operateWidth: {
-      type: String,
-      default: '200px'
-    },
-    align: {
-      type: String,
-      default: 'center'
-    },
-    canSelect: {
-      type: Boolean,
-      default: false
-    },
-    ref: {
-      type: String,
-      default: ''
-    },
-    border: {
-      type: Boolean,
-      default: true
-    },
-    stripe: {
-      type: Boolean,
-      default: false
-    },
-    rowKey: {
-      type: String,
-      default: ''
-    },
-    expand: {
-      type: Boolean,
-      default: false
+    setup: (props, ctx) => {
+      const handleOperate = (o: any, v: any) => {
+        ctx.emit('operate', {
+          operate: o,
+          rowData: v
+        });
+      };
+      const handleSelectionChange = (val: any) => {
+        ctx.emit('tableSelection', val);
+      };
+      return {
+        handleOperate,
+        handleSelectionChange
+      };
     }
   });
-
-  const emit = defineEmits(['operate', 'tableSelection']);
-
-  const handleOperate = (o: any, v: any) => {
-    emit('operate', {
-      operate: o,
-      rowData: v
-    });
-  };
-
-  const handleSelectionChange = (val: any) => {
-    emit('tableSelection', val);
-  };
 </script>
 
 <style lang="less" scoped>
   .table-list {
-    // :deep(.el-table th.gutter) {
-    //   display: table-cell !important;
-    // }
     :deep(.color-title) {
       color: #028bff;
       font-weight: 500;
