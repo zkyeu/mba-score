@@ -80,7 +80,8 @@ export function testDevice() {
 
 export default {
   checkLogin: ()=>  {
-    let LS = window.sessionStorage;
+    // let LS = window.sessionStorage;
+    let LS = window.localStorage;
     return LS.getItem('acms');
   },
   /**

@@ -306,12 +306,12 @@
     if (!formEl) return;
     await formEl.validate((valid: any, fields: any) => {
       if (valid) {
-        console.log(ruleForm);
-        console.log('submit!');
+        // console.log(ruleForm);
+        // console.log('submit!');
         showLayer.create = false;
         formEl.resetFields();
       } else {
-        console.log('error submit!', fields);
+        // console.log('error submit!', fields);
       }
     });
   };
@@ -390,12 +390,12 @@
         showLayer.delete = true;
         break;
       default:
-        console.log(key);
+      // console.log(key);
     }
   };
   // 页码变化
   const currentPage = (v: any) => {
-    console.log(v);
+    // console.log(v);
     optionParams.value = Object.assign(optionParams.value, v);
     getPageData();
   };
@@ -406,10 +406,10 @@
         data: optionParams.value
       })
       .then((res: any) => {
-        console.log(res);
+        // console.log(res);
       })
       .catch((err: any) => {
-        console.log(err);
+        // console.log(err);
       })
       .finally(() => {
         pageData.value = mockData;

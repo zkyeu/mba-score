@@ -1,34 +1,27 @@
 <!--
+ * @Author: liliang
+ * @Date: 2022-04-07 14:35:11
+ * @LastEditors: liliang
+ * @LastEditTime: 2022-04-07 14:35:14
+ * @FilePath: /score/src/components/admin/left-nav copy.vue
+ * @Description: 
+-->
+<!--
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-04-07 14:55:26
+ * @LastEditTime: 2022-04-07 14:34:58
  * @FilePath: /score/src/components/admin/left-nav.vue
 -->
 
 <template>
   <section class="left-navs">
-    <template v-for="(m, i) in leftNav" :key="i.id">
-      <div class="title" @click="handleClick('')">
-        <el-icon>
-          <component :is="m.icon" />
-        </el-icon>
-        <h1>{{ m.title }}</h1>
-        <el-icon><arrow-up /></el-icon>
-      </div>
-
-      <template v-if="m.child.length">
-        <div
-          v-for="(sm, j) in m.child"
-          :key="sm.id"
-          class="sub-title"
-          @click="handleClick(sm.router)"
-        >
-          {{ sm.title }}
-        </div>
-      </template>
-    </template>
-
+    <div v-for="(m, i) in leftNav" :key="i">
+      <el-icon>
+        <component :is="m.icon" />
+      </el-icon>
+      <h1>{{ m.title }}</h1>
+    </div>
     <!-- <el-menu
       :uniqueOpened="false"
       default-active="/"
@@ -77,7 +70,7 @@
 
   const store = useStore(key);
   const leftNavData = computed(() => store.state.leftNav);
-  const leftNav: any = ref(navData);
+  const leftNav = ref(navData);
   const currentPath = ref('');
 
   // const handleOpen = (key: any, keyPath: any) => {
@@ -92,11 +85,6 @@
   //   console.log(key, keyPath);
   //   // router.push(key);
   // };
-  const handleClick = (v: any) => {
-    if (v) {
-      router.push(v);
-    }
-  };
   onMounted(() => {
     // const { proxy }: any = getCurrentInstance();
     // router.push(proxy.$router.currentRoute.value.path);
@@ -107,32 +95,11 @@
 
 <style lang="less" scoped>
   .left-navs {
-    // display: flex;
+    display: flex;
     width: 200px;
-    // flex-direction: column;
     height: calc(100vh - 82px);
     padding-top: 10px;
     overflow-y: auto;
-    .title {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      width: 200px;
-      height: 40px;
-      background-color: #f6f6f6;
-      margin-bottom: 4px;
-      padding-left: 25px;
-      cursor: pointer;
-      i {
-        margin-right: 10px;
-      }
-    }
-    .sub-title {
-      height: 40px;
-      line-height: 40px;
-      padding-left: 50px;
-      cursor: pointer;
-    }
 
     &:deep(.left-nav-menu) {
       width: 200px;

@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-18 08:38:23
- * @LastEditTime: 2022-03-27 17:23:52
+ * @LastEditTime: 2022-04-07 17:47:22
  * @LastEditors: liliang
  * @Description: In User Settings Edit
- * @FilePath: /mba-score/src/views/admin/activity/activity-classify.vue
+ * @FilePath: /score/src/views/admin/activity/activity-classify.vue
 -->
 <template>
   <section class="single-page">
@@ -132,12 +132,6 @@
         </span>
       </template>
     </el-dialog>
-    <template>
-      <!-- 组件 -->
-      <!-- <dialog-layer :show="showLayer" title="创建活动分类" width="450px">
-        <template #dialogBody> </template>
-      </dialog-layer> -->
-    </template>
   </section>
 </template>
 
@@ -215,12 +209,12 @@
     if (!formEl) return;
     await formEl.validate((valid: any, fields: any) => {
       if (valid) {
-        console.log(ruleForm);
-        console.log('submit!');
+        // console.log(ruleForm);
+        // console.log('submit!');
         showLayer.create = false;
         formEl.resetFields();
       } else {
-        console.log('error submit!', fields);
+        // console.log('error submit!', fields);
       }
     });
   };
@@ -278,7 +272,7 @@
 
   // 操作
   const handleOperate = (v: any) => {
-    console.log(v);
+    // console.log(v);
 
     let key = v.operate;
     viewObj.data = v.rowData;
@@ -301,7 +295,7 @@
         showLayer.delete = true;
         break;
       default:
-        console.log(key);
+      // console.log(key);
     }
   };
   // 页码变化
@@ -316,10 +310,10 @@
         data: optionParams.value
       })
       .then((res: any) => {
-        console.log(res);
+        // console.log(res);
       })
       .catch((err: any) => {
-        console.log(err);
+        // console.log(err);
       })
       .finally(() => {
         pageData.value = mockData;

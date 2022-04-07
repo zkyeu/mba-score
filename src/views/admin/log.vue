@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-22 11:11:41
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-27 21:49:28
+ * @LastEditTime: 2022-04-07 11:36:57
  * @FilePath: /score/src/views/admin/log.vue
  * @Description: 
 -->
@@ -47,7 +47,7 @@
     } else if (pwd && pwd.value != 'mba2022') {
       ElMessage.warning('【登录密码】不正确，请重新输入');
     } else {
-      let LS = window.sessionStorage;
+      let LS = window.localStorage;
       LS.setItem('acms', '1');
       router.push('/');
     }

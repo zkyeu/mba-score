@@ -164,12 +164,12 @@
 
   // 筛选
   const optionChangeFn = (v: any) => {
-    console.log(v);
+    // console.log(v);
   };
 
   // 操作
   const handleOperate = (v: any) => {
-    console.log(v);
+    // console.log(v);
     let key = v.operate;
     viewObj.value = v.rowData;
     switch (key) {
@@ -182,7 +182,7 @@
         showLayer.delete = true;
         break;
       default:
-        console.log(key);
+      // console.log(key);
     }
   };
   // 页码变化
@@ -197,10 +197,10 @@
         data: optionParams.value
       })
       .then((res: any) => {
-        console.log(res);
+        // console.log(res);
       })
       .catch((err: any) => {
-        console.log(err);
+        // console.log(err);
       })
       .finally(() => {
         pageData.value = mockData;

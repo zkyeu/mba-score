@@ -122,11 +122,11 @@
       })
       .then((res: any) => {
         if (res.errNo === 0) {
-          console.log(res);
+          // console.log(res);
         }
       })
       .catch((err: any) => {
-        console.log(err);
+        // console.log(err);
       });
   };
 
@@ -135,11 +135,11 @@
       .getcode()
       .then((res: any) => {
         if (res.errNo === 0) {
-          console.log(res);
+          // console.log(res);
         }
       })
       .catch((err: any) => {
-        console.log(err);
+        // console.log(err);
       });
   };
 

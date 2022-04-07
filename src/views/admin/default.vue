@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-23 10:10:14
  * @LastEditors: liliang
- * @LastEditTime: 2022-03-28 08:58:57
+ * @LastEditTime: 2022-04-07 10:48:22
  * @FilePath: /score/src/views/admin/default.vue
  * @Description: 网站首页打开预览页面
 -->
@@ -70,7 +70,7 @@
 
 <script lang="ts" setup>
   // 组件引用部分========
-  import { ref, onBeforeMount, nextTick } from 'vue';
+  import { ref, onBeforeMount, onBeforeUnmount, nextTick } from 'vue';
   import * as echarts from 'echarts';
   import router from '../../router';
   import Util from '../../utils/util';
@@ -207,9 +207,9 @@
     if (!v) {
       router.push('/log');
     } else {
-      overView();
-      stuentInfo();
-      right();
+      // overView();
+      // stuentInfo();
+      // right();
       router.push('/');
     }
   };
@@ -218,13 +218,13 @@
     $http
       .defaultView()
       .then((res: any) => {
-        console.log(res);
+        // console.log(res);
       })
       .catch((err: any) => {
-        console.log(err);
+        // console.log(err);
       })
       .finally(() => {
-        console.log(defaultData.value);
+        // console.log(defaultData.value);
       });
   };
 
@@ -235,6 +235,10 @@
       setLS(Boolean(Util.checkLogin()));
     });
   });
+
+  // onBeforeUnmount(() => {
+  //   myChart.clear()
+  // });
 </script>
 
 <style lang="less" scoped>

@@ -55,11 +55,6 @@ export default [
         title: '学生活动审核',
         router: '/activity-apply'
       }
-      // {
-      //   id: 104,
-      //   title: '活动申请',
-      //   router: '/activity-verify'
-      // }
     ]
   },
   {
@@ -101,11 +96,6 @@ export default [
         title: '学分规则配置',
         router: '/score-rule'
       }
-      // {
-      //   id: 714,
-      //   title: '学分活动查询',
-      //   router: '/score-activity'
-      // }
     ]
   },
   {
@@ -125,41 +115,41 @@ export default [
         router: '/role'
       }
     ]
+  },
+  {
+    id: 746,
+    title: '数据看板',
+    router: '/board',
+    icon: 'el-icon-setting',
+    child: [
+      {
+        id: 713364,
+        title: '数据看板',
+        router: '/board'
+      },
+      {
+        id: 7146,
+        title: '活动板',
+        router: ''
+      }
+    ]
+  },
+  {
+    id: 794,
+    title: '小工具',
+    router: '/tool',
+    icon: 'el-icon-setting',
+    child: [
+      {
+        id: 71933,
+        title: '小工具',
+        router: '/tool'
+      },
+      {
+        id: 7914,
+        title: '群发短信',
+        router: ''
+      }
+    ]
   }
-  // {
-  //   id: 746,
-  //   title: '数据看板',
-  //   router: '/board',
-  //   icon: 'el-icon-setting',
-  //   child: [
-  //     {
-  //       id: 713364,
-  //       title: '数据看板',
-  //       router: '/board'
-  //     },
-  //     {
-  //       id: 7146,
-  //       title: '活动板',
-  //       router: ''
-  //     }
-  //   ]
-  // },
-  // {
-  //   id: 794,
-  //   title: '小工具',
-  //   router: '/tool',
-  //   icon: 'el-icon-setting',
-  //   child: [
-  //     {
-  //       id: 71933,
-  //       title: '小工具',
-  //       router: '/tool'
-  //     },
-  //     {
-  //       id: 7914,
-  //       title: '群发短信',
-  //       router: ''
-  //     }
-  //   ]
-  // }
 ];

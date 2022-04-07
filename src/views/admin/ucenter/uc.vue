@@ -72,7 +72,7 @@
   const handleClick = (v: any) => {
     switch (v) {
       case 'add':
-        console.log(0);
+        // console.log(0);
 
         break;
 

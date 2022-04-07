@@ -40,44 +40,41 @@
       total: {
         // 总数
         type: Number,
-        default: 0,
+        default: 0
       },
       currentPage: {
         //当前页
         type: Number,
-        default: 0,
+        default: 0
       },
       pageSize: {
         type: Number,
-        default: 0,
+        default: 0
       },
       pageSizes: {
         // 单页数量
         type: Array,
-        default: () => [],
-      },
+        default: () => []
+      }
     },
     setup: (props, context) => {
       const handleSizeChange = (val: any) => {
-        console.log(val, 'page');
-
         context.emit('sizeChange', {
           rn: val,
-          pn: 1,
+          pn: 1
         });
       };
       const handleCurrentChange = (val: any) => {
-        console.log(val, 'page');
         context.emit('currentChange', {
-          pn: val,
+          pn: val
         });
       };
 
       return {
         handleSizeChange,
-        handleCurrentChange,
+        handleCurrentChange
       };
-    },
+    }
   });
 </script>
 

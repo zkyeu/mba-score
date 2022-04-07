@@ -79,7 +79,7 @@
   const tableData = ref(mockData.table);
 
   const handleClick = (v: any, o: any) => {
-    console.log(v);
+    // console.log(v);
   };
 
   // 筛选
@@ -100,10 +100,10 @@
         data: optionParams.value
       })
       .then((res: any) => {
-        console.log(res);
+        // console.log(res);
       })
       .catch((err: any) => {
-        console.log(err);
+        // console.log(err);
       })
       .finally(() => {
         pageData.value = mockData;

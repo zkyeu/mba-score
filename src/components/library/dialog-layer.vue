@@ -27,7 +27,7 @@
   const props = defineProps({
     show: Boolean,
     title: String,
-    width: String,
+    width: String
   });
 
   const emit = defineEmits(['btnClick', 'change', 'delete']);
@@ -52,12 +52,12 @@
     }
     emit('btnClick', {
       boo: boo,
-      obj: obj,
+      obj: obj
     });
   };
 
   onMounted(() => {
-    console.log('===>', props.title);
+    // console.log('===>', props.title);
   });
 </script>
 

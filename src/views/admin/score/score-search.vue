@@ -120,7 +120,7 @@
   });
 
   const tabClick = (v: any) => {
-    console.log(v);
+    // console.log(v);
   };
   const ruleForm = reactive({
     type: '',

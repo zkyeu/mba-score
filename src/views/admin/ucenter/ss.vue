@@ -69,10 +69,10 @@
         data: pageParams.value
       })
       .then((res: any) => {
-        console.log(res);
+        // console.log(res);
       })
       .catch((err: any) => {
-        console.log(err);
+        // console.log(err);
       })
       .finally(() => {
         pageData.value = mockData;

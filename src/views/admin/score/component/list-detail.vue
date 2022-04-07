@@ -356,12 +356,12 @@
   // 批量结算取消
   const cancelImport = () => {
     // importObj =
-    console.log('123');
+    // console.log('123');
   };
 
   // 文件前的回调上传方法
   const uploadFileMe = (v: any) => {
-    console.log(v);
+    // console.log(v);
     // uploadFileInfo = {
     //   filename: v.filename,
     //   size: v.size
@@ -370,7 +370,7 @@
 
   // 文件上传成功返回数据
   const uploadSuccess = (file: any) => {
-    console.log(file, 'file');
+    // console.log(file, 'file');
     // if (file.errMsg === 'OK') {
     //   this.batchUploadInfo.filename = file.data.bosname;
     // } else {
@@ -385,12 +385,12 @@
     if (!formEl) return;
     await formEl.validate((valid: any, fields: any) => {
       if (valid) {
-        console.log(ruleForm);
-        console.log('submit!');
+        // console.log(ruleForm);
+        // console.log('submit!');
         showLayer.create = false;
         formEl.resetFields();
       } else {
-        console.log('error submit!', fields);
+        // console.log('error submit!', fields);
       }
     });
   };
@@ -471,7 +471,7 @@
 
   // 操作
   const handleOperate = (v: any) => {
-    console.log(v);
+    // console.log(v);
 
     let key = v.operate;
     ruleForm.data = v.rowData;
@@ -494,7 +494,7 @@
         showLayer.delete = true;
         break;
       default:
-        console.log(key);
+      // console.log(key);
     }
   };
   // 页码变化
@@ -509,10 +509,10 @@
         data: optionParams.value
       })
       .then((res: any) => {
-        console.log(res);
+        // console.log(res);
       })
       .catch((err: any) => {
-        console.log(err);
+        // console.log(err);
       })
       .finally(() => {
         pageData.value = mockData;

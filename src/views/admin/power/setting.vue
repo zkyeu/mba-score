@@ -161,29 +161,29 @@
   };
   const authData: Tree[] = mockData.authData;
   const getKey = (v: any) => {
-    console.log(v);
+    // console.log(v);
   };
 
   const handleNodeClick = (v: any) => {
-    console.log(v);
+    // console.log(v);
   };
 
   // 批量结算取消
   const cancelImport = () => {
     // importObj =
-    console.log('123');
+    // console.log('123');
   };
 
   const submitForm = async (formEl: FormInstance | undefined) => {
     if (!formEl) return;
     await formEl.validate((valid: any, fields: any) => {
       if (valid) {
-        console.log(ruleForm);
-        console.log('submit!');
+        // console.log(ruleForm);
+        // console.log('submit!');
         showLayer.create = false;
         formEl.resetFields();
       } else {
-        console.log('error submit!', fields);
+        // console.log('error submit!', fields);
       }
     });
   };
@@ -245,7 +245,7 @@
         showLayer.auth = true;
         break;
       default:
-        console.log(key);
+      // console.log(key);
     }
   };
   // 页码变化
@@ -260,10 +260,10 @@
         data: optionParams.value
       })
       .then((res: any) => {
-        console.log(res);
+        // console.log(res);
       })
       .catch((err: any) => {
-        console.log(err);
+        // console.log(err);
       })
       .finally(() => {
         pageData.value = mockData;

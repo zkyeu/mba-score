@@ -41,7 +41,7 @@
             // console.log(res);
           })
           .catch((err: any) => {
-            console.log(err);
+            // console.log(err);
           });
       };
 
@@ -60,9 +60,9 @@
       // 返回当前页面所有使用的数据跟逻辑========
       return {
         articleData,
-        formatDate,
+        formatDate
       };
-    },
+    }
   });
 </script>
 

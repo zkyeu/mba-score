@@ -101,7 +101,7 @@
         showLayer.value = true;
         break;
       default:
-        console.log(key);
+      // console.log(key);
     }
   };
 
@@ -117,10 +117,10 @@
         data: optionParams.value
       })
       .then((res: any) => {
-        console.log(res);
+        // console.log(res);
       })
       .catch((err: any) => {
-        console.log(err);
+        // console.log(err);
       })
       .finally(() => {
         pageData.value = mockData;
