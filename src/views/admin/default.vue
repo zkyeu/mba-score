@@ -2,7 +2,7 @@
  * @Author: liliang
  * @Date: 2022-03-23 10:10:14
  * @LastEditors: liliang
- * @LastEditTime: 2022-04-07 10:48:22
+ * @LastEditTime: 2022-04-07 18:17:40
  * @FilePath: /score/src/views/admin/default.vue
  * @Description: 网站首页打开预览页面
 -->
@@ -207,9 +207,9 @@
     if (!v) {
       router.push('/log');
     } else {
-      // overView();
-      // stuentInfo();
-      // right();
+      overView();
+      stuentInfo();
+      right();
       router.push('/');
     }
   };

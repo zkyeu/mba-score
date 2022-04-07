@@ -112,36 +112,41 @@
   {
       "id": 746,
       "title": "数据看板",
-      "router": "/board",
-      "icon": "el-icon-setting",
+      "router": "",
+      "icon": "DataAnalysis",
       "child": [
           {
               "id": 713364,
               "title": "数据看板",
-              "router": "/board"
+              "router": "/db"
           },
           {
               "id": 7146,
-              "title": "活动板",
-              "router": ""
+              "title": "活动看板",
+              "router": "/activityb"
+          },
+          {
+              "id": 7147,
+              "title": "学分看板",
+              "router": "/scoreb"
           }
       ]
   },
   {
       "id": 794,
-      "title": "小工具",
-      "router": "/tool",
-      "icon": "el-icon-setting",
+      "title": "工具集",
+      "router": "",
+      "icon": "SoldOut",
       "child": [
           {
               "id": 71933,
-              "title": "小工具",
-              "router": "/tool"
+              "title": "调查问卷",
+              "router": "/wj"
           },
           {
               "id": 7914,
               "title": "群发短信",
-              "router": ""
+              "router": "/sms"
           }
       ]
   }

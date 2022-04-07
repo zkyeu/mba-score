@@ -2,7 +2,7 @@
  * @Author: liliang | zkyeu@163.com
  * @Date: 2022-03-18 21:55:21
  * @LastEditors: liliang
- * @LastEditTime: 2022-04-07 15:51:29
+ * @LastEditTime: 2022-04-07 18:15:34
  * @FilePath: /score/src/router/index.ts
  */
 
@@ -16,8 +16,8 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: '/',
-        // component: () => import('@/views/admin/default.vue')
-        component: () => import('@/views/admin/test.vue')
+        component: () => import('@/views/admin/default.vue')
+        // component: () => import('@/views/admin/test.vue')
       },
       // {
       //   path: '/',
